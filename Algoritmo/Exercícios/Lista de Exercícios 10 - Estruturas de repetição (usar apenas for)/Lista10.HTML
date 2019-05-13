@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 10</title>
+    <link rel="stylesheet" href="neutro.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+</head>
+<body>
+    <h1>Lista de Exercícios 10</h1>
+
+    <!-- EXERCÍCIO 1 -->
+        <div id="ex">
+                <h2>Exercício 1</h2>
+        
+                Quantas vezes você quer que essa frase se repita: <input type="number" id="vezes1">
+                <br><br>
+        
+                <button type="button" onclick="repetir1()">Exibir</button>
+            </div>
+        
+            <script>
+                function repetir1() {
+                    for(contador =0; contador < vezes1.value; contador++){
+                        alert(`Turu pom?`)
+                    }
+                }    
+            </script>
+
+
+    <!-- EXERCÍCIO 2 -->
+    <div id="ex">
+            <h2>Exercício 2</h2>
+        
+            Insira uma frase aqui: <input type="text" id="frase">
+            <br><br>
+        
+            Quantas vezes você quer que essa frase se repita: <input type="number" id="vezes2">
+            <br><br>
+        
+            <button type="button" onclick="repetir2()">Exibir</button>
+        </div>
+        
+            <script>
+                function repetir2() {
+                    for(contador=0; contador < vezes2.value; contador++){
+                        alert(`${frase.value}`)
+                    }
+                }
+            </script>
+    
+
+    <!-- EXERCÍCIO 3 -->
+<div id="ex">
+        <h2>Exercício 3</h2>
+    
+        Insira sua frase: <input type="text" id="frase3">
+        <br><br>
+    
+        Número de repetições: <input type="number" id="vezes3">
+        <br><br>
+    
+        <button type="button" onclick="repetir3()">Exibir</button>
+        <br><br>
+    
+        <div id="mensagem3"></div>
+    </div>
+    
+        <script>
+            function repetir3() {
+                for(contador=0; contador < vezes3.value; contador++){
+                    mensagem3.innerHTML += `${frase3.value} <br>`
+                }
+            }
+        </script>
+    
+
+    <!-- EXERCÍCIO 6 -->
+<div id="ex">
+        <h2>EXERCÍCIO 6</h2>
+    
+        <button type="button" onclick="repetir6()">Eu amo o 3 e 4!</button>
+        <br><br>
+    
+        <div id="mensagem6"></div>
+    </div>
+
+    <script>
+        function repetir6(){
+            mensagem6.innerHTML = ``;
+            for(contador=0; contador<=30; contador++){
+
+                if(contador % 3 == 0 && contador % 4 == 0){
+                    mensagem6.innerHTML += `Eu amo 3! 4 são 2 pares! - `
+                
+                }else if (contador % 3 == 0){
+                    mensagem6.innerHTML += `Eu amo 3! - `
+
+                }else if(contador % 4 == 0){
+                    mensagem6.innerHTML += `4 são 2 pares - `
+
+                }else{
+                    mensagem6.innerHTML += `${contador} - `
+                }
+            }
+        }
+    </script>
+
+
+<!-- EXERCÍCIO 8 -->
+<div id="ex">
+        <h2>EXERCÍCIO 8</h2>
+    
+        Nota de Avaliação <input type="number" id="nota8">
+        <br><br>
+    
+        <button type="button" onclick="repetir8()">Ilustrar avaliação</button>
+        <br><br>
+    
+        <div id="mensagem8"></div>
+    </div>
+
+    <script>
+        function repetir8(){
+            mensagem8.innerHTML = ``;
+
+                if(nota8.value <1 || nota8.value >5 ){
+                    alert(`Valor inválido. Só aceito entre 1 e 5`);
+                }
+
+                else{
+                    for(contador =0; contador < nota8.value; contador+= 2){
+                        mensagem8.innerHTML += `<img src="star.png">`
+                    }
+                }
+        }
+    </script>
+
+<!-- EXERCÍCIO 9 -->
+<div id="ex">
+        <h2>EXERCÍCIO 9</h2>
+    
+        Andar atual <input type="number" id="andar1">
+        <br><br>
+    
+        Andar solicitado <input type="number" id="andar2">
+        <br><br>
+    
+        <button type="button" onclick="repetir9()">Partir</button>
+        <br><br>
+    
+        <div id="mensagem9"></div>
+    </div>
+
+    <script>
+        function repetir9(){
+            var andar_atual = Number(andar1.value);
+            var andar_solicitado = Number(andar2.value);
+            mensagem9.innerHTML = ``;
+
+
+            if(andar_atual < 0 || andar_atual > 20 || andar_solicitado < 0 || andar_solicitado > 20){
+                alert(`Andares válidos: entre 0 e 20`)
+            }
+
+            else{
+                if(andar_atual == andar_solicitado){
+                    mensagem9.innerHTML += `Andar solicitado = Andar atual`
+                }
+
+                else {
+                    if(andar_atual < andar_solicitado){
+                        mensagem9.innerHTML += `Subindo <br>`;
+
+                        for(andar_atual; andar_atual <= andar_solicitado; andar_atual++){
+                            mensagem9.innerHTML += `Elevador no andar: ${andar_atual} <br>`
+                        }
+                    }
+
+                    else{
+                        mensagem9.innerHTML += `Descendo <br>`
+
+                        for(andar_atual; andar_atual >= andar_solicitado; andar_atual--){
+                            mensagem9.innerHTML += `Elevador no andar: ${andar_atual} <br>`
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+
+<!-- EXERCÍCIO 12 -->
+<div id="ex">
+        <h2>Exercício 12</h2>
+    
+        <button type="button" onclick="repetir12()">Ver os pares</button>
+        <ul id="mensagempares12"></ul>
+    
+        <button type="button" onclick="repetir121()">Ver os impares</button>
+        <ul id="mensagemimpares12"></ul>      
+    </div>
+
+    <script>
+    function repetir12(){
+        mensagempares12.innerHTML = ``;
+
+        for(contador=10; contador >= 10 && contador <=40; contador +=2){
+            mensagempares12.innerHTML += `<li>${contador}</li>`
+        }
+    }
+
+    function repetir121(){
+        mensagemimpares12.innerHTML += ``;
+
+        for(contador=29; contador >=29 && contador < 50; contador+=2){
+            mensagemimpares12.innerHTML += `<li>${contador}</li>`
+        }
+    }
+    </script>
+
+
+<!-- EXERCÍCIO 14 -->
+<div id="ex">
+        <h2>EXERCÍCIO 14</h2>
+    
+        Estação atual <input type="number" id="estacao1">
+        <br><br>
+    
+        Estação Solicitada <input type="number" id="estacao2">
+        <br><br>
+    
+        <button type="button" onclick="repetir14()">Partir</button>
+        <br><br>
+    
+        <div id="mensagem14"></div>
+    </div>
+
+    <script>
+        function repetir14(){
+            var estacao_atual = Number(estacao1.value);
+            var estacao_solicitada = Number(estacao2.value);
+            mensagem14.innerHTML = ``;
+
+
+            if(estacao_atual < 0 || estacao_atual > 20 || estacao_solicitada < 0 || estacao_solicitada > 20){
+                alert(`Estações válidas: entre 0 e 16`);
+            }
+
+            else{
+                if(estacao_atual == estacao_solicitada){
+                    mensagem14.innerHTML += `Estação Solicitada = Estação Atual`
+                }
+
+                else{
+                    if(estacao_atual < estacao_solicitada){
+                        mensagem14.innerHTML += `Indo para o Norte <br>`;
+
+                        for(estacao_atual; estacao_atual <= estacao_solicitada; estacao_atual++){
+                            mensagem14.innerHTML += `Metrô na estação: ${estacao_atual} <br>`
+                        }
+                    }
+
+                    else{
+                        mensagem14.innerHTML += `Indo para o Sul <br>`;
+
+                        for(estacao_atual; estacao_atual >= estacao_solicitada; estacao_atual--){
+                            mensagem14.innerHTML += `Metrô na estação: ${estacao_atual} <br>`
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+
+
+
+    <!-- EXERCÍCIO 17 -->
+    <div id="ex">
+        <h2>Exercício 17</h2>
+
+        <button type="button" onclick="repetir17()">Exibir números e cores</button>
+        <br><br>
+
+        <div id="mensagem17"></div>
+    </div>
+
+
+    <script>
+        function repetir17(){
+            mensagem17.innerHTML = ``;
+
+            for(contador = 40; contador >= 0; contador--){
+                
+                if(contador == 0){  
+                    mensagem17.innerHTML += `${contador} - `
+                }
+
+                else if(contador % 2 == 0){
+                    mensagem17.innerHTML += `<span style="color:green">${contador} - </span>`
+                }
+
+                else{
+                    mensagem17.innerHTML += `<span style="color:red">${contador} - </span>`
+                }
+            }
+        }
+    </script>
+
+
+
+<!-- EXERCÍCIO 18 -->
+<div id="ex">
+    <h2>Exercício 18</h2>
+
+    Qual deseja ter o fatorial <input type="number" id="valor18">
+    <br><br>
+
+    <button type="button" onclick="repetir18()">Calcular fatorial</button>
+    <br><br>
+
+    <div id="mensagem18"></div>
+</div>
+
+<script>
+    function repetir18(){
+        mensagem18.innerHTML = ``;
+
+        var valor = Number(valor18.value); 
+        var resultado = 1; 
+        var conta_total = '';
+
+        for(contador = valor; contador > 1; contador --){
+            resultado *= contador; 
+            conta_total += `${contador}x`
+        }
+    
+            mensagem18.innerHTML = `Fatorial de ${valor}: ${conta_total}1 = ${resultado}`
+
+        }
+
+</script>
+
+
+<!-- EXERCÍCIO 19 -->
+<div id="ex">
+    <h2>Exercício 19</h2>
+
+    Informe seu número da sorte <input type="number" id="num_sorte">
+    <br><br>
+
+    <button type="button" onclick="repetir19()">Testar Sorte</button>
+    <br><br>
+
+    <div id="mensagem19"></div>
+</div>
+
+<script>
+    function repetir19(){
+        mensagem19.innerHTML = '';
+        var sorte = 0; 
+
+        for(contador=0; contador < 7; contador++){
+            var sorteado = parseInt(Math.random() * 100);
+            mensagem19.innerHTML += `Número sorteado: ${sorteado} <br>`;
+
+            if(sorteado == num_sorte){
+                mensagem19.innerHTML+= `QUe sorte `;
+            }
+        }
+
+        if(sorte == 0){
+                alert (`Você é muito sortudo`)
+            }
+            else{
+                alert(`Você não é sortudo`)
+            }
+    }
+</script>
+
+    
+    
+    
+    
+    
+        
+    
+</body>
+</html>

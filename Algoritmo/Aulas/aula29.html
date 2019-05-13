@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 29</title>
+    <link rel="stylesheet" href="neutro.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+</head>
+<body>
+
+        <h1>Estrutura de repetição For</h1>
+
+    <div id="ex">
+    Quantas vezes? <input type="number" id="repeticoes">
+    <br><br>
+
+    <button type="button" onclick="repetir()">Exibir</button>
+</div>
+
+
+<div id="ex">
+    <h2>Exercício de fixação</h2>
+    <button type="button" onclick="testar1()">Eu amo pares</button>
+    <br><br>
+    <div id="mensagem1"></div><br>
+
+    <button type="button" onclick="testar2()">Exibir em ordem decrescente</button>
+
+</div>
+</body>
+</html>
+
+<script>
+    function repetir(){
+        var v_repeticoes = Number(repeticoes.value);
+
+        for (contador=0; contador < v_repeticoes; contador++){
+            alert('Oi linda :)');
+            // contador++
+        }
+    }
+
+    function testar1(){
+        for(contador=0; contador <= 100; contador += 2){
+            mensagem1.innerHTML += `${contador} - `
+        }
+    }
+
+    function testar2() {
+        for (contador = 10; contador >= 0; contador--){
+            alert (`${contador}`)
+        }
+    }
+</script>
+
+
+
+<!-- for( variável de controle ; condição de repetição ; última linha virtual do for ) -->

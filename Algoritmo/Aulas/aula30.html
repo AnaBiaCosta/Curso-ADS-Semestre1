@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 30</title>
+
+    <link rel="stylesheet" href="neutro.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+</head>
+<body>
+        <h1>VARIÁVEIS GLOBAIS</h1>
+
+    <div id="ex">
+
+    <button type="button" onclick="feliz()">Se está feliz, clique nimim!</button><br><br>
+
+    <div>Você já disse <b id="b_feliz">0</b> vezes que está feliz hoje!</div>
+
+</div>
+</body>
+</html>
+<script>
+var cliques = 0; 
+
+function feliz() {
+    cliques ++;
+    b_feliz.innerHTML = cliques;
+}
+
+</script>

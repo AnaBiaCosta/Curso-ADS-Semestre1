@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 1</title>
+    <link rel="stylesheet" href="neutro.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+</head>
+<body>
+    <h1>LISTA DE EXERCÍCIOS 4 - ESTRUTURA DE DECISÃO</h1>
+
+
+    <!-- EXERCÍCIO 1 -->
+    <div id="ex">
+        <h2>EXERCÍCIO 1</h2>
+
+        Insira sua idade: <input type="number" id="idade1">
+        <br><br>
+
+        <button type="button" onclick="verificar1()">Testar Acesso</button>
+        <br><br>
+
+        <div id="mensagem1"></div>
+    </div>
+
+   
+
+    <!-- EXERCÍCIO 2 -->
+    <div id="ex">
+        <h2>EXERCÍCIO 2</h2>
+
+        Salário Pai: <input type="number" id="pai2">
+        <br><br>
+
+        Salário Mãe: <input type="number" id="mae2">
+        <br><br>
+
+        <button type="button" onclick="verificar2()">Verificar Bolsa Família</button>
+        <br><br>
+
+        <div id="mensagem2"></div>
+    </div>
+
+
+
+
+    <!-- EXERCÍCIO 3 -->
+    <div id="ex">
+        <h2>EXERCÍCIO 3</h2>
+
+        
+        Salário Pai: <input type="number" id="pai3">
+        <br><br>
+
+        Salário Mãe: <input type="number" id="mae3">
+        <br><br>
+
+        <button type="button" onclick="verificar3()">Verificar Bolsa Família</button>
+        <br><br>
+
+        <div id="mensagem3"></div>
+        <div id="mensagem31"></div>
+    </div>
+
+
+    <!-- EXERCÍCIO 4 -->
+    <div id="ex">
+        <h2>EXERCÍCIO 4</h2>
+
+        Nota da Continuada: <input type="number" id="nota_cont4">
+        <br><br>
+
+        Nota da Integrada: <input type="number" id="nota_int4">
+        <br><br>
+
+        <button type="button" onclick="verificar4()">Verificar Nota</button>
+        <br><br>
+
+        <div id="mensagem4"></div>
+        <div id="mensagem41"></div>
+    </div>
+
+
+    <!-- EXERCÍCIO 5 -->
+    <div id="ex">
+        <h2>EXERCÍCIO 5</h2>
+
+        <form>
+            Qual a idade dessa árvore? <input type="number" id="idade5">
+            <br><br>
+
+            <button type="button" onclick="verificar5()">Verificar idade</button>
+            <br><br>
+
+            <div id="mensagem5"></div>
+        </form>
+    </div>
+
+    
+
+    <!-- EXERCÍCIO 6 -->
+
+    <div id="ex">
+        <h2>EXERCÍCIO 6</h2>
+
+        <form>
+            Renda do Pai: <input type="number" id="pai6">
+            <br><br>
+            Renda da Mãe: <input type="number" id="mae6">
+            <br><br>
+            Renda dos Avós: <input type="number" id="avos6">
+            <br><br>
+
+            <button type="button" onclick="verificar6()">Verificar Situação Social</button>
+            <br><br>
+
+            <div id="mensagem6"></div>
+
+        </form>
+    </div>
+
+
+
+    <!-- EXERCÍCIO 7 -->
+    <div id="ex">
+        <h2>EXERCÍCIO 7</h2>
+
+        <form>
+            Valor em R$: <input type="number" id="real7">
+            <br><br>
+
+            Cotação do dólar em R$: <input type="number" id="dolar7">
+            <br><br>
+
+            <button type="button" onclick="verificar7()">Converter e Avaliar</button>
+            <br><br>
+
+            <div id="mensagem7"></div>
+            <div id="mensagem71"></div>
+        </form>
+    </div>
+
+
+
+    <!-- EXERCÍCIO 8 -->
+    <div id="ex">
+        <h2>EXERCÍCIO 8</h2>
+
+        <form>
+            O quanto você gosta de Frutas? <input type="number" id="frutas8">
+            <br><br>
+
+            O quanto você gosta de Fastfood? <input type="number" id="fastfood8">
+            <br><br>
+
+
+            <button type="button" onclick="verificar8()">Avaliar sua preferência</button>
+            <br><br>
+
+            <div id="mensagem8"></div>
+        </form>
+    </div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
+
+<script>
+
+    // EXERCÍCIO 1
+    function verificar1() {
+
+        var frase;
+
+        if (idade1.value <18) {
+            frase = '#jogarplaystation';
+        } else {
+            frase = 'Já pode ir para balada :)';
+        }
+        
+        mensagem1.innerHTML = frase;   
+    }
+
+
+    // EXERCÍCIO 2
+    function verificar2() {
+        var frase;
+
+        var soma = (Number(pai2.value) + Number(mae2.value));
+
+        if (soma < 250.70) {
+            frase= 'Você tem direito ao Bolsa Família'
+
+        } else {
+            frase = 'Nada de Bolsa Família'
+        }
+
+        mensagem2.innerHTML = frase;
+    }
+
+
+    // EXERCÍCO 3
+    function verificar3() {
+        var frase_blue;
+        var frase_red;
+
+        var soma = (Number(pai3.value) + Number(mae3.value));
+
+        if (soma < 250.70) {
+            frase_blue= 'Você tem direito ao Bolsa Família';
+            frase_red = '';
+
+        } else {
+            frase_red = 'Nada de Bolsa Família';
+            frase_blue = '';
+        }
+
+        mensagem3.innerHTML = frase_blue;
+        mensagem31.innerHTML = frase_red;
+        mensagem3.style.color = 'blue';
+        mensagem31.style.color = 'red';
+    }
+
+
+    // EXERCÍCIO 4
+    function verificar4() {
+        var frase_purple;
+        var frase_green;
+
+        soma = (Number(nota_cont4.value) + Number(nota_int4.value));
+        total = soma / 2; 
+
+        if (total < 5) {
+            frase_purple = '#tenteoutravez';
+            frase_green = ''
+            
+        } else {
+            frase_green = '#partiuestágio';
+            frase_purple = ''
+        }
+
+        mensagem4.innerHTML = frase_purple;
+        mensagem41.innerHTML = frase_green; 
+        mensagem4.style.color = 'purple';
+        mensagem41.style.color = 'green';
+    }
+
+
+    // EXERCÍCIO 5
+    function verificar5() {
+        var frase;
+
+        if (idade5.value <= 0) {
+            frase = `Idade inválida!`
+            
+        } else {
+            frase = `Idade Válida!`
+        }
+
+        mensagem5.innerHTML = frase;
+    }
+
+
+
+    //EXERCÍCIO 6 
+    function verificar6 () {
+        var frase;
+
+        var renda = (Number(pai6.value) + Number(mae6.value) + Number(avos6.value));
+
+        if ( renda <= 150.55) {
+            frase = `Abaixo da linha da pobreza!`
+            
+        } else {
+            frase = `Acima da linha da pobreza!`
+        }
+
+        mensagem6.innerHTML = frase;
+
+    }
+
+
+    //EXERCÍCIO 7
+    function verificar7() {
+        var frase; 
+
+        var total = (Number(real7.value) / Number(dolar7.value));
+        
+
+        if (total <= 1000.99 ) {
+            frase= `Você tem poucos dólares!`
+            
+        } else {
+            frase= `Você tem muitos dólares!`
+        }
+
+
+        mensagem7.innerHTML = `R$${real7.value}, na cotação atual dá U$${total}`;
+        mensagem71.innerHTML = frase;
+    }
+
+
+
+    //EXERCÍCIO 8 
+    function verificar8() {
+        var frase; 
+        var f = frutas8.value;
+        var ff = fastfood8.value;
+
+        if ( f > ff ) {
+            frase = `Você gosta mais de frutas! :)`
+            
+        } else if (ff > f) {
+            frase = `Você gosta mais de fastfood... Vai morrer cedo, hein!`
+    
+        } else {
+            frase = `Você gosta tanto de frutas quanto de fastfood`
+        }
+
+        mensagem8.innerHTML = frase;
+
+    }
+
+
+</script>
+
+
+
+
+
+

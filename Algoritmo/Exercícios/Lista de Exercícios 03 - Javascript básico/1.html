@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+
+    <link rel="stylesheet" href="neutro.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+</head>
+<body>
+    <h1>EXERCÍCIOS LISTA 3</h1>
+
+<!-- EXERCICO 1 -->
+<div id="ex">
+    <h2>EXERCÍCIO 1</h2>
+    <form>
+        Sua idade em anos: <input type="number" id="idade1">
+        <br><br>
+
+        <button type="button" onclick="calcular1()">Verificar tempo para aposentar</button>
+        <br><br>
+
+        <div id="mensagem"></div>
+    </form>
+</div>
+<!-- FIM DO EXERCICIO 1 -->
+
+
+
+<br><br>
+
+
+<!-- EXERCICIO 2 -->
+<div id="ex">
+    <h2>EXERCÍCIO 2</h2>
+    <form>
+        Sua idade em anos: <input type="number" id="idade2">
+        <br><br>
+
+        <button type="button" onclick="calcular2()">Aposentadoria para Mulheres</button>
+        <button type="button" onclick="calcular3()">Aposentadoria para Homens</button>
+        <br><br>
+
+        <div id="mensagem2"></div>
+    </form>
+</div>
+<!-- FIM DO EXERCICIO 2 -->
+
+
+<br><br>
+
+
+<!-- EXERCICIO 3 -->
+<div id="ex">
+    <h2>EXERCÍCIO 3</h2>
+    <form>
+        Idade em anos: <input type="number" id="idade3">
+        <br><br>
+
+        <button type="button" onclick="vida()">Calcular Vida</button>
+        <br><br>
+
+        <div id="mensagem3"></div>
+    </form>
+</div>
+<!-- FIM DO EXERCICIO 3 -->
+
+
+<br><br>
+
+
+<!-- EXERCICIO 4 -->
+<div id="ex">
+    <form>
+        <h2>EXERCÍCIO 4</h2>
+
+        Depósito no cofrinho: <input type="number" id="cofrinho">
+        <br><br>
+
+        Valor total no cofrinho: <input type="number" value="0" id="valor_total">
+        <br><br>
+
+        <button type="button" onclick="depositar()">Depositar</button>
+    </form>
+</div> 
+<!-- FIM DO EXERCICIO 4 -->
+
+
+<br><br>
+
+
+<!-- EXERCICIO 5 E 6 -->
+<div id="ex">
+    <form>
+        <h2>EXERCÍCIO 5</h2>
+
+        Nome: <input type="text" id="nome">
+        <br><br>
+
+        Nota Continuada: <input type="number" id="nota1">
+        <br><br>
+
+        Nota Integrada: <input type=number id="nota2">
+        <br><br>
+
+        <button type="button" onclick="notas()">Calcular Nota Final</button>
+
+        <button type="reset" onclick="notas2()">Novo Cálculo</button>
+        <br><br>
+
+        <div id="mensagem4" style="color:green"></div>
+    </form>
+</div>
+<!-- FIM DO EXERCICIO 5 E 6 -->
+
+
+<br><br>
+
+
+<!-- EXERCICIO 7 -->
+<div id="ex">
+    <h2>EXERCÍCIO 7</h2>
+    <form>
+        Escolha uma frase:
+        <select id="obra">
+            <option value="Que eu leve o amor">Onde houver ódio...</option>
+            <option value="Que eu leve o perdão">Onde houver ofensa...</option>
+            <option value="Que eu leve união">Onde houver discórdia...</option>
+            <option value="Que eu leve a fé">Onde houver dúvida...</option>
+            <option value="Que eu leve a verdade">Onde houver erro...</option>
+            <option value="Que eu leve a esperança">Onde houver desespero...</option>
+            <option value="Que eu leve alegria">Onde houver tristeza...</option>
+            <option value="Que eu leve a luz">Onde houver trevas...</option>
+        </select>
+
+        <br><br>
+
+        <button type="button" onclick="boa_obra()">Revelar Boa Obra</button>
+        <br><br>
+
+        <div id="mensagem7"></div>
+    </form>
+</div>
+<!-- FIM DO EXERCICIO 7 -->
+
+
+<br><br>
+
+
+<!-- EXERCICIO 8 -->
+<div id="ex">
+    <h2>EXERCÍCIO 8</h2>
+
+    <form>
+        Nome: <input type="text" id="nome8">
+        <br><br>
+
+        Manifesto Ágil: 
+        <select id="itens">
+            <option value=" ">--ESCOLHA UMA OPÇÃO--</option>
+            <option value="processos e ferramentas e mais Indivíduos e interações">processos e ferramentas</option>
+            <option value="documentação abrangente e mais Software em funcionamento">documentação abrangente</option>
+            <option value="negociação de contratos e mais Colaboração com o cliente">negociação de contratos</option>
+            <option value="seguir um plano e mais Responder a mudanças">seguir um plano</option>
+        </select>
+
+        <br><br>
+
+        <button type="button" style="margin-bottom:25px" onclick="manifesto()">#partiuagilidade</button>
+
+        <div id="mensagem8"></div>
+    </form>
+</div>
+<!-- FIM DO EXERCICIO 8 -->
+
+
+<br><br>
+
+
+<!-- EXERCÍCIO 9 -->
+<div id="ex">
+    <h2>EXERCÍCIO 9</h2>
+
+    <form>
+        Nome: <input type="text" id="nome9">
+        <br><br>
+
+        Continuada 1: <input type="number" id="continuada1">
+        <br><br>
+
+        Continuada 2: <input type="number" id="continuada2">
+        <br><br>
+
+        Continuada 3: <input type="number" id="continuada3">
+        <br><br>
+
+        <button type="button" onclick="prova()">Calcular média para passar</button>
+        <br><br>
+
+        <div id="mensagem9"></div>
+    </form>
+</div>
+<!-- FIM DO EXERCÍCIO 9 -->
+
+
+<br><br>
+
+
+<!-- EXERCICIO 10 -->
+<div id="ex">
+    <h2>EXERCÍCIO 10</h2>
+
+    <form>
+        Nome: <input type="text" id="nome10">
+        <br><br>
+
+        Salário Bruto: <input type="number" id="salario">
+        <br><br>
+
+        Faixa Salaria para INSS: 
+        <select id="desconto">
+            <option value="0">Faixa 1: 0 a 1000</option>
+            <option value="0.1">Faixa 2: 1000 a 3000</option>
+            <option value="0.2">Faixa 3: Mais de 3000</option>
+        </select>
+        <br><br>
+
+        <button type="button" onclick="calcular_desconto()">Cálcular Desconto</button>
+        <br><br>
+
+        <div id="mensagem10"></div>
+    </form>
+</div>
+<!-- FIM DO EXERCICIO 10 -->
+
+
+<br><br>
+
+
+<!-- EXERCICIO 11 -->
+<div id="ex">
+    <h2>EXERCÍCIO 11</h2>
+    <form>
+        Sabor da Pizza: <input type="text" id="sabor" autofocus>
+        <br><br>
+
+        Ingrediente 1:
+        <select id="ingrediente1">
+            <option value="10">Queijo</option>
+            <option value="10">Presunto</option>
+            <option value="10">Ovo</option>
+            <option value="10">Palmito</option>
+            <option value="10">Frango</option>
+            <option value="10">Catupiry</option>
+        </select>
+        <br><br>
+
+        Ingrediente 2:
+        <select id="ingrediente2">
+            <option value="10">Queijo</option>
+            <option value="10">Presunto</option>
+            <option value="10">Ovo</option>
+            <option value="10">Palmito</option>
+            <option value="10">Frango</option>
+            <option value="10">Catupiry</option>
+        </select>
+        <br><br>
+
+        Ingrediente 3:
+        <select id="ingrediente3">
+            <option value="10">Queijo</option>
+            <option value="10">Presunto</option>
+            <option value="10">Ovo</option>
+            <option value="10">Palmito</option>
+            <option value="10">Frango</option>
+            <option value="10">Catupiry</option>
+        </select>
+        <br><br>
+
+        <button type="button" onclick="pizza()">Calcular preço da pizza</button>
+        <br><br>
+
+        <div id="mensagem11" style="color:blue"></div>
+    </form>
+</div>
+<!-- FIM DO EXERCICIO 11 -->
+
+
+
+</body>
+</html>
+
+<script>
+    function calcular1() {
+        total = 65 -  Number(idade1.value);
+        mensagem.innerHTML = `Faltam ${total} anos para você se aposentar`
+    }
+
+    function calcular2() {
+        total2 = 60 - Number(idade2.value);
+        mensagem2.innerHTML = `Faltam ${total2} anos para você se aposentar`
+    }
+
+    function calcular3() {
+        total3 = 65 - Number(idade2.value);
+        mensagem2.innerHTML = `Faltam ${total3} anos para você se aposentar`
+    }
+
+    function vida() {
+        var x = idade3.value * 365;
+        var y = idade3.value * 12;
+
+        mensagem3.innerHTML = `Você já viveu ${x} dias e ${y} meses`
+    }
+
+    function depositar(){
+
+    var soma = Number(cofrinho.value) + Number(valor_total.value);
+    valor_total.value = soma
+    }
+
+    function notas(){
+        var continuada = nota1.value * 0.4;
+        var integrada = nota2.value * 0.6;
+
+        nota_final = continuada + integrada; 
+
+        mensagem4.innerHTML = `<b>Olá ${nome.value}. Sua nota final será ${nota_final}.</b>`;
+    }
+
+    function notas2() {
+        mensagem4.innerHTML = "";
+    }
+
+    function boa_obra (){
+        mensagem7.innerHTML = obra.value;
+    }
+
+    function manifesto() {
+        mensagem8.innerHTML = `Então, ${nome8.value}, valorize menos ${itens.value}`;
+    }
+
+    function prova(){
+        var soma = (5-((( Number(continuada1.value) + Number(continuada2.value) + Number(continuada3.value))/3)*0.4))/0.6;
+
+        mensagem9.innerHTML = `Olá, ${nome9.value}. Para passar você precisa tirar ${soma} na integrada`
+    }
+
+    function calcular_desconto() {
+
+        x = salario.value * desconto.value;
+        y = Number(salario.value) - x; 
+
+
+        mensagem10.innerHTML = `Olá, ${nome10.value}. 
+        Seu desconto de INSS será de R$${x}. Assim, seu salário líquido será de R$${y}"`
+    }
+
+    function pizza(){
+
+        total = Number(ingrediente1.value) + Number(ingrediente2.value) + Number(ingrediente3.value);
+
+        mensagem11.innerHTML = `A pizza de <b>${sabor.value}</b> vai custar um total de <u>R$${total}</u>`;
+    }
+
+
+</script>

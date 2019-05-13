@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EXERCÍCIO 13</title>
+    <link rel="stylesheet" href="neutro.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+    <style>
+     img {
+        height: 100px;
+        width: 100px;
+    }
+</style>
+
+
+</head>
+<h1>EXERCÍCIO 13</h1>
+
+<div id="ex">
+    Valor do depósito <input type="number" id="deposito">
+    <br><br>
+
+    Total já guardado <input type="number" id="guardado" value="0">
+    <br><br>
+
+    <button type="button" onclick="depositar()">Depositar</button>
+    <br><br>
+
+    <div id="mensagem"></div>
+</div>
+
+    <script>
+        function depositar(){
+            var soma = Number(guardado.value) + Number(deposito.value);
+            guardado.value = soma;
+            
+            var imagem; 
+
+            if(guardado.value <4000){
+                imagem= '';
+            }
+            
+            else{
+                if(guardado.value >= 4000){
+                   imagem = `<img src="moto.jpg">`;
+                }
+
+                if(guardado.value >=10000){
+                    imagem = `${imagem} <img src="carro.jpg"> `
+                }
+
+                if(guardado.value >=20000){
+                    imagem = `${imagem} <img src="caro.jpg"> `
+                }
+
+                if(guardado.value >=80000){
+                    imagem = `${imagem} <img src="casa.jpg"> `
+                }
+            }
+
+            mensagem.innerHTML = imagem;
+        }
+    
+    
+    </script>
+<body>
+    
+</body>
+</html>

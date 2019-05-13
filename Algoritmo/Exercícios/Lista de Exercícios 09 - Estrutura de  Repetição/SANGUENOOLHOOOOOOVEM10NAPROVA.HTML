@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VEM 10 NA PROVA</title>
+
+    <link rel="stylesheet" href="neutro.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+<style>
+    img {
+        height: 100px;
+        width: 100px;
+    }
+    .borda{
+        border-style: solid;
+        border-color: black;
+    }
+</style>
+
+
+
+</head>
+<body>
+
+    <div id="ex">
+        <h2>Exercício 1</h2>
+
+        Quantas vezes você quer que essa frase se repita: <input type="number" id="vezes1">
+        <br><br>
+
+        <button type="button" onclick="repetir1()">Exibir</button>
+    </div>
+
+    <script>
+        function repetir1() {
+            var contador = 0;  
+
+            while (contador < vezes1.value) {
+                contador++;
+                alert (`SANGUE NO OLHOOOOOOOOOOOOOO`);
+            }
+        }    
+    </script>
+
+
+<!-- EXERCÍCIO 2 -->
+<div id="ex">
+    <h2>Exercício 2</h2>
+
+    Insira uma frase aqui: <input type="text" id="frase">
+    <br><br>
+
+    Quantas vezes você quer que essa frase se repita: <input type="number" id="vezes2">
+    <br><br>
+
+    <button type="button" onclick="repetir2()">Exibir</button>
+</div>
+
+    <script>
+        function repetir2() {
+            var contador = 0; 
+
+            while (contador < vezes2.value) {
+                contador++;
+                alert (`${frase.value}`);
+
+            }
+        }
+    </script>
+
+
+<!-- EXERCÍCIO 3 -->
+<div id="ex">
+    <h2>Exercício 3</h2>
+
+    Insira sua frase: <input type="text" id="frase3">
+    <br><br>
+
+    Número de repetições: <input type="number" id="vezes3">
+    <br><br>
+
+    <button type="button" onclick="repetir3()">Exibir</button>
+    <br><br>
+
+    <div id="mensagem3"></div>
+</div>
+
+    <script>
+        function repetir3() {
+            var contador = 0;
+            mensagem3.innerHTML = '';
+
+            while (contador < vezes3.value){
+                contador++;
+
+                mensagem3.innerHTML += `${frase3.value} <br>`
+            }
+        }
+    
+    </script>
+
+
+<!-- EXERCÍCIO 4 -->
+<div id="ex">
+    <h2>EXERCÍCIO 4</h2>
+
+    <button type="button" onclick="repetir4()">Eu amo pares!</button>
+    <br><br>
+
+    <div id="mensagem4"></div>
+</div>
+
+    <script>
+        function repetir4(){
+            var contador = 0; 
+            mensagem4.innerHTML = '';
+
+            while(contador < 100) {
+                contador += 2;
+
+                mensagem4.innerHTML += `${contador}/ `;
+            }
+        }
+    </script>
+
+
+<!-- EXERCÍCIO 5 -->
+<div id="ex">
+    <h2>EXERCÍCIO 5</h2>
+
+    <button type="button" onclick="repetir5()">Eu amo o 5!</button>
+    <br><br>
+
+    <div id="mensagem5"></div>
+</div>
+
+    <script>
+        function repetir5() {
+            var contador = 0; 
+            mensagem5.innerHTML = '';
+
+            while(contador < 50){
+                contador +=5;
+
+                mensagem5.innerHTML += `${contador}/ `;
+            }
+        }
+    
+    </script>
+
+
+<!-- EXERCÍCIO 6 -->
+<div id="ex">
+    <h2>EXERCÍCIO 6</h2>
+
+    <button type="button" onclick="repetir6()">Eu amo o 3 e 4!</button>
+    <br><br>
+
+    <div id="mensagem6"></div>
+</div>
+
+    <script>
+        function repetir6() {
+            var contador=0;
+            mensagem6.innerHTML = '';
+
+            while (contador < 30){
+                contador ++;
+
+                if(contador % 3 == 0 && contador % 4 ==0){
+                    mensagem6.innerHTML += `  Eu amo 3 / 4 são 2 pares  -`
+                }
+
+                else if (contador % 3 == 0){
+                    mensagem6.innerHTML += `  Eu amo 3  -`
+                }
+
+                else if (contador % 4 ==0){
+                    mensagem6.innerHTML += `  4 são 2 pares  -`
+                }
+
+                else {
+                    mensagem6.innerHTML += `  ${contador}  -`
+                }
+
+            }
+        }
+
+    </script>
+
+
+<!-- EXERCÍICIO 7 -->
+<div id="ex">
+    <h2>EXERCÍCIO 7</h2>
+
+    Nota de Avaliação <input type="number" id="nota7">
+    <br><br>
+
+    <button type="button" onclick="repetir7()">Ilustrar avaliação</button>
+    <br><br>
+
+    <div id="mensagem7"></div>
+</div>
+
+    <script>
+        function repetir7() {
+            var nota = Number(nota7.value);
+            var contador = 0;
+            mensagem7.innerHTML = '';
+
+
+            if(nota < 0 || nota >5) {
+                alert(`Valor inválido. Só aceito entre 1 e 5`);
+            }
+
+            else {
+                while(contador < nota){
+                    mensagem7.innerHTML += `<img src="star.png">`;
+                    contador++;
+                }
+            }
+        }
+    </script>
+
+
+<!-- EXERCÍCIO 8 -->
+<div id="ex">
+    <h2>EXERCÍCIO 8</h2>
+
+    Nota de Avaliação <input type="number" id="nota8">
+    <br><br>
+
+    <button type="button" onclick="repetir8()">Ilustrar avaliação</button>
+    <br><br>
+
+    <div id="mensagem8"></div>
+</div>
+
+    <script>
+        function repetir8() {
+            var nota = Number(nota8.value);
+            var contador = 0;
+            mensagem7.innerHTML = '';
+
+
+            if(nota < 0 || nota >10) {
+                alert(`Valor inválido. Só aceito entre 1 e 5`);
+            }
+
+            else {
+                while(contador < nota){
+                    mensagem8.innerHTML += `<img src="star.png">`;
+                    contador += 2;
+                }
+            }
+        }
+    </script>
+
+
+
+<!-- EXERCÍCIO 9 -->
+<div id="ex">
+    <h2>EXERCÍCIO 9</h2>
+
+    Andar atual <input type="number" id="andar1">
+    <br><br>
+
+    Andar solicitado <input type="number" id="andar2">
+    <br><br>
+
+    <button type="button" onclick="repetir9()">Partir</button>
+    <br><br>
+
+    <div id="mensagem9"></div>
+</div>
+
+    <script>
+        function repetir9() {
+            var andar_atual = Number(andar1.value);
+            var andar_solicitado = Number(andar2.value); 
+            mensagem9.innerHTML = '';
+  
+
+            if(andar_atual < 0 || andar_atual >20 || andar_solicitado <0 || andar_solicitado >20) {
+                alert (`Andares válidos: entre 0 e 20`);
+            } 
+
+            else {
+                if(andar_atual == andar_solicitado) {
+                    mensagem9.innerHTML = `Andar atual = Andar solicitado`;
+                }
+
+                else{
+                    if(andar_atual < andar_solicitado){
+                        mensagem9.innerHTML = `Subindo <br>`;
+                    
+                        while(andar_atual <= andar_solicitado){
+                            mensagem9.innerHTML += `Elevador no andar ${andar_atual} <br>`;
+                            andar_atual++;
+                        }
+                    }
+
+                    else {
+                        mensagem9.innerHTML = `Descendo <br>`;
+
+                        while(andar_atual > andar_solicitado){
+                            mensagem9.innerHTML += `Elevador no andar ${andar_atual} <br>`;
+                            andar_atual--;
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+<!-- EXERCÍCIO 10 -->
+<div id="ex">
+    <h2>Exercício 10</h2>
+
+    Quantos homens <input type="number" id="homens">
+    <br><br>
+
+    Quantas mulheres <input type="number" id="mulheres">
+    <br><br>
+
+    Quantas crianças <input type="number" id="criancas">
+    <br><br>
+
+    <button type="button" onclick="repetir10()">Ilustrar Elevador</button>
+    <br><br>
+
+    <div class="borda" style="display:none" id="mensagem111">
+        <div id="mensagem10"></div></div>
+</div>
+
+<script>
+    function repetir10(){
+        mensagem111.style.display="block";
+        mensagem10.innerHTML = '';
+
+
+        var contador_homem = 0;
+        var contador_mulher = 0;
+        var contador_crianca = 0;
+
+        while( contador_homem < homens.value ) {
+            contador_homem ++;
+            mensagem10.innerHTML += `<img src="homem.jpg">`;
+        }
+
+        while(contador_mulher < mulheres.value) {
+            contador_mulher ++;
+            mensagem10.innerHTML += `<img src="mulheres.jpg">`;
+        }
+
+        while(contador_crianca < criancas.value) {
+            contador_crianca ++;
+            mensagem10.innerHTML += `<img src="criancas.jpg">`;
+        }
+
+    }
+</script>
+
+
+
+<!-- EXERCÍCIO 11 -->
+<div id="ex">
+    <h2>EXERCÍCIO 11</h2>
+
+    Quantos homens <input type="number" id="homens11">
+    <br><br>
+
+    Quantas mulheres <input type="number" id="mulheres11">
+    <br><br>
+
+    Quantas crianças <input type="number" id="criancas11">
+    <br><br>
+
+    <button type="button" onclick="repetir11()">Ilustrar Elevador</button>
+    <br><br>
+
+    <div class="borda" style="display:none" id="mensagem222">
+        <div id="mensagem11"></div>
+    </div>
+
+</div>
+
+
+<script>
+    function repetir11() {
+        mensagem11.innerHTML = ``;
+        mensagem222.style.display="block";
+    
+
+        var peso_mulher = Number(homens11.value) * 80;
+        var peso_homem = Number(mulheres11.value) * 70;
+        var peso_crianca = Number(criancas11.value) * 30;
+        var peso_total = (peso_homem + peso_mulher + peso_crianca);
+
+        var total_pessoas = (Number(homens11.value) + Number(mulheres11.value) + Number(criancas11.value));
+
+        var contador_homem = 0;
+        var contador_mulher = 0;
+        var contador_crianca = 0; 
+
+
+        if (total_pessoas <= 8){
+            if(peso_total <= 600){
+
+                while(contador_homem < homens11.value){
+                    contador_homem++;
+                    mensagem11.innerHTML += `<img src="homem.jpg">`;
+                }
+
+                while(contador_mulher < mulheres11.value){
+                    contador_mulher++;
+                    mensagem11.innerHTML += `<img src="mulheres.jpg">`;
+                }
+
+                while(contador_crianca < criancas11.value){
+                    contador_crianca++;
+                    mensagem11.innerHTML += `<img src="criancas.jpg">`;
+                }
+            }  
+        } else {
+                alert (`Elevador cheio demais!`);
+            }
+}
+
+
+
+
+
+</script>
+
+
+
+<!-- EXERCÍCIO 12 -->
+<div id="ex">
+    <h2>Exercício 12</h2>
+
+    <button type="button" onclick="repetir12()">Ver os pares</button>
+    <ul id="mensagempares12"></ul>
+
+    <button type="button" onclick="repetir121()">Ver os impares</button>
+    <ul id="mensagemimpares12"></ul>
+
+  
+</div>
+
+
+<script>
+    function repetir12() {
+         var contador = 8; 
+         mensagempares12.innerHTML = '';
+
+
+         while(contador >= 8 && contador < 40) {
+             contador +=2;
+             
+             mensagempares12.innerHTML += `<li>${contador}</li>`;
+         }
+    }
+
+
+    function repetir121() {
+        var contador = 29; 
+         mensagemimpares12.innerHTML = '';
+
+         while(contador >= 29 && contador < 49) {
+            contador +=2;
+            
+             mensagemimpares12.innerHTML += `<li>${contador}</li>`;
+         }
+    }
+
+</script>
+
+
+<!-- EXERCÍCIO 13 -->
+<div id="ex">
+    <h2>Exercício 13</h2>
+
+    Valor do depósito <input type="number" id="valor13">
+    <br><br>
+
+    Tempo de rendimento do dinheiro <input type="number" id="meses13">
+    <br><br>
+
+    <button type="button" onclick="repetir13()">Ver Investimento</button>
+    <br><br>
+
+    <div id="mensagem13"></div>
+</div>
+
+
+<script>
+    function repetir13() {
+        var contador = 0;
+        mensagem13.innerHTML = ``;
+        var total = Number(valor13.value);
+
+
+        while(contador < Number(meses13.value)){
+            contador ++;
+
+            total *= 1.005; // x = x*y 
+            mensagem13.innerHTML += `${contador}mês = ${total.toFixed(2)} <br>`;
+        }
+    }
+</script>
+
+
+
+<!-- EXERCÍCIO 14 -->
+<div id="ex">
+    <h2>EXERCÍCIO 14</h2>
+
+    Estação atual <input type="number" id="estacao1">
+    <br><br>
+
+    Estação Solicitada <input type="number" id="estacao2">
+    <br><br>
+
+    <button type="button" onclick="repetir14()">Partir</button>
+    <br><br>
+
+    <div id="mensagem14"></div>
+</div>
+
+
+<script>
+    function repetir14() {
+        var atual = Number(estacao1.value);
+        var solicitado = Number(estacao2.value);
+        mensagem14.innerHTML = '';
+
+
+        if(atual < 0 || atual > 16 || solicitado < 0 || solicitado > 16){
+            alert (`Estações válidas: entre 0 e 16`);
+
+        } else {
+            if( atual == solicitado) {
+            mensagem14.innerHTML = `Estação atual = Estação solicitado`;
+            
+        } else {
+            if(atual <= solicitado){
+                mensagem14.innerHTML = `Indo para o Sul <br>`;
+
+                while(atual <= solicitado) {
+                    mensagem14.innerHTML += `Metrô na Estação ${atual} <br>`;
+                    atual++; 
+                }
+            }
+
+            else {
+                mensagem14.innerHTML = `Indo para o Norte <br>  `;
+
+                while(atual > solicitado) {
+                    mensagem14.innerHTML += `Metrô na Estação ${atual}<br>`;
+                    atual--; 
+                }
+            }
+        }
+    }
+
+}
+
+</script>
+
+
+<!-- EXERCÍCIO 15 -->
+<div id="ex">
+    <h2>EXERCÍCIO 15</h2>
+
+    Quantos porcos: <input type="number" id="porcos">
+    <br><br>
+
+    Quantos cavalos: <input type="number" id="cavalos">
+    <br><br>
+
+    Quantos bois: <input type="number" id="bois">
+    <br><br>
+
+    <button type="button" onclick="repetir15()">Ilustrar Caminhão</button>
+    <br><br>
+
+
+    <div class="borda" style="display:none"><div id="mensagem15"></div></div>
+   
+</div>
+
+<script>
+    function repetir15() {
+
+        mensagem15.innerHTML = ``;
+        mensagem15.style.display = "block";
+
+        var peso1 =  Number(porcos.value) * 100;
+        var peso2 = Number(cavalos.value) * 600;
+        var peso3 = Number(bois.value) * 1300;
+        var peso_total = (peso1 + peso2 + peso3);
+        var total_animais = (Number(porcos.value) + Number(cavalos.value) + Number(bois.value));
+
+        var contador_porco = 0;
+        var contador_cavalo = 0;
+        var contador_boi = 0;
+
+
+        if(total_animais <= 5){
+            if(peso_total <= 2000) {
+
+                while(contador_porco < porcos.value) {
+                    contador_porco ++;
+                    mensagem15.innerHTML += `<img src="porco.png">`;
+                }
+
+                while(contador_cavalo < cavalos.value){
+                    contador_cavalo ++;
+                    mensagem15.innerHTML += `<img src="cavalo.png">`;
+                }
+
+                while(contador_boi < bois.value) {
+                    contador_boi ++;
+                    mensagem15.innerHTML += `<img src="boi.png">`;
+                }
+
+            }  
+        }
+        else {
+                 alert (`Caminhão cheio demais!`);
+                 }
+    }
+</script>
+
+
+
+<!-- EXERCÍCIO 16 -->
+<div id="ex">
+    <h2>EXERCÍCIO 16</h2>
+
+    Valor do depósito <input type="number" id="deposito16">
+    <br><br>
+
+    Tempo de rendimento <input type="number" id="meses16">
+    <br><br>
+
+    Taxa de Juros <input type="number" id="juros16">
+    <br><br>
+
+    <button type="button" onclick="repetir16()">Ver Investimento</button>
+    <br><br>
+
+    <div id="mensagem16"></div>
+    <div id="mensagem166"></div>
+</div>
+
+
+<script>
+    function repetir16(){
+        var contador = 0;
+        mensagem16.innerHTML = '';
+        mensagem166.innerHTML = '';
+
+        var deposito = Number(deposito16.value);
+        var juros = Number(juros16.value);
+        mensagem166.innerHTML += `Valor depositado: ${deposito16.value} <br>`;
+
+        while( contador < Number(meses16.value)){
+            contador++;
+
+
+            deposito += ((deposito * juros)/100); // x = x*y 
+            mensagem166.innerHTML += `${contador}mês: ${deposito.toFixed(2)} <br>`;
+        }
+    }
+
+</script>
+</body>
+</html>

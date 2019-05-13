@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Lista de Exercícios 4</h1>
+
+
+    <!-- EXERCÍCIO 1 -->
+    <div id="ex">
+        <h2>Exercício 1</h2>
+
+        Sua idade: <input type="number" id="idade1"><br><br>
+
+        <button type="button" onclick="verificar1()">Testar Acesso</button><br><br>
+
+        <div id="mensagem1"></div>
+    </div>
+    
+    <script>
+        function verificar1(){
+            var idade = Number(idade1.value);
+
+            if(idade < 18){
+                mensagem1.innerHTML = `#jogarplaystation`
+            }
+
+            else {
+                mensagem1.innerHTML = `Já pode ir para balada`
+            }
+        }
+    
+    </script>
+    <!-- EXERCÍCIO 1 -->
+
+
+    <div id="ex">
+        <h2>Exercício 2</h2>
+
+        Salário da Mãe: <input type="number" id="salario_mae"><br><br>
+
+        Salário do Pai: <input type="number" id="salario_pai"><br><br>
+
+        <button type="button" onclick="verificar2()">Verificar Bolsa Família</button><br><br>
+
+        <div id="mensagem2"></div>
+    </div>
+
+    <script>
+        function verificar2(){
+            var mae = Number(salario_mae.value);
+            var pai = Number(salario_pai.value);
+            var conta = (mae + pai); 
+
+            if(conta < 250.70){
+                mensagem2.innerHTML = `Você tem direito ao Bolsa Família`
+            }
+
+            else {
+                mensagem2.innerHTML = `Nada de Bolsa Família`
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 2 -->
+
+
+    <!-- EXERCÍCIO 3 -->
+    <div id="ex">
+        <h2>Exercício 3</h2>
+
+        Salário da Mãe: <input type="number" id="salario_mae3"><br><br>
+
+        Slário do Pai: <input type="number" id="salario_pai3"><br><br>
+
+        <button type="button" onclick="verificar3()">Verificar Bolsa Família</button><br><br>
+
+        <div id="mensagem3"></div>
+    </div>
+
+    <script>
+        function verificar3(){
+            var mae = Number(salario_mae3.value);
+            var pai = Number(salario_pai3.value);
+            var conta = (mae+pai);
+            var frase;
+
+            if(conta < 250.70){
+                mensagem3.innerHTML = `Você tem direito ao Bolsa Família`; 
+                mensagem3.style.color = "blue";
+            }
+
+            else {
+                mensagem3.innerHTML = `Nada de Bolsa Família`;
+                mensagem3.style.color = "red";
+            }
+
+        }
+    </script>
+    <!-- EXERCÍCIO 3 -->
+
+
+    <!-- EXERCÍCIO 4 -->
+    <div id="ex">
+        <h2>Exercício 4</h2>
+
+        Nota Continuada: <input type="number" id="nota1"><br><br>
+
+        Nota Integrada: <input type="number" id="nota2"><br><br>
+
+        <button type="button" onclick="verificar4()">Verificar Notas</button><br><br>
+
+        <div id="mensagem4"></div>
+    </div>
+
+    <script>
+        function verificar4(){
+            var conta = ((Number(nota1.value) + Number(nota2.value)) / 2);
+
+            if (conta < 5){
+                mensagem4.innerHTML = `#tenteoutravez`
+            }
+
+            else{
+                mensagem4.innerHTML = `#partiuestágio`
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 4 -->
+
+
+
+    <!-- EXERCÍCIO 5 -->
+    <div id="ex">
+        <h2>Exercício 5</h2>
+
+        Qual idade dessa árvore: <input type="number" id="idade_arvore"><br><br>
+
+        <button type="button" onclick="verificar5()">Validar idade</button><br><br>
+
+        <div id="mensagem5"></div>
+    </div>
+
+
+    <script>
+        function verificar5(){
+            var idade = Number(idade_arvore.value);
+
+            if (idade < 0) {
+                mensagem5.innerHTML = `Idade Inválida!`
+                
+            } 
+            
+            else {
+                mensagem5.innerHTML = `Idade Válida`
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 5 -->
+
+
+    <!-- EXERCÍCIO 6 -->
+    <div id="ex">
+        <h2>Exercício 6</h2>
+
+        Renda do Pai: <input type="number" id="renda_pai"><br><br>
+
+        Renda da Mãe: <input type="number" id="renda_mae"><br><br>
+
+        Renda dos Avós: <input type="number" id="renda_avos"><br><br>
+
+        <button type="button" onclick="verificar6()">Verificar Situação Social</button><br><br>
+
+        <div id="mensagem6"></div>
+    </div>
+
+
+    <script>
+        function verificar6(){
+            var renda = (Number(renda_mae.value) + Number(renda_pai.value) + Number(renda_avos.value));
+
+            if(renda < 150.55){
+                mensagem6.innerHTML = `Abaixo da linha da pobreza!`;
+            }
+
+            else {
+                mensagem6.innerHTML = `Acima da linha da pobreza`;
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 6 -->
+
+
+
+    <!-- EXERCÍCIO 7 -->
+    <div id="ex">
+        <h2>Exercício 7</h2>
+
+        Valor em R$: <input type="number" id="valor"><br><br>
+
+        Cotação do dólar em R$: <input type="number" id="cotacao"><br><br>
+
+        <button type="button" onclick="verificar7()">Converter e avaliar</button><br><br>
+
+        <div id="mensagem7"></div>
+        <div id="mensagem71"></div>        
+    </div>
+
+
+    <script>
+        function verificar7(){
+            var conta = (Number(valor.value) / Number(cotacao.value));
+            mensagem7.innerHTML = `R$${valor.value}, na cotação atual dá U$${conta} <br>`;
+
+
+            if(conta > 1000.99){
+                mensagem71.innerHTML = `Você tem muitos dólares!`
+            }
+
+            else{
+                mensagem71.innerHTML = `Você tem poucos dólares!`
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 7 -->
+
+
+    <!-- EXERCÍCIO 8 -->
+    <div id="ex">
+        <h2>Exercício 8</h2>
+
+        O quanto você gosta de frutas: <input type="number" id="frutas"><br><br>
+
+        O quanto você gosta de fastfood: <input type="number" id="fastfood"><br><br>
+
+        <button type="button" onclick="verificar8()">Avaliar sua preferência</button><br><br>
+
+        <div id="mensagem8"></div>
+    </div>
+
+
+    <script>
+        function verificar8(){
+            if (frutas.value > fastfood.value){
+                mensagem8.innerHTML= `Você gosta mais de frutas!`;
+            }
+
+            else if (fastfood.value > frutas.value){
+                mensagem8.innerHTML = `Você gosta mais de fastfood, vai morrer cedo hein...`;
+            }
+
+            else {
+                mensagem8.innerHTML = `Você gosta tando de frutas quanto de fastfood`
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 8 -->
+
+
+    <!-- EXERCÍCIO 9 -->
+    <div id="ex">
+        <h2>Exercício 9</h2>
+
+        Nome do aluno: <input type="text" id="nome"><br><br>
+
+        Média das continuadas: <input type="number" id="media"><br><br>
+
+        Nota da Integrada: <input type="number" id="integrada"><br><br>
+
+        <button type="button" onclick="verificar9()">Verificar Resultado</button><br><br>
+
+        <div id="mensagem9"></div>
+        <div><img src="" id="imagem"></div>
+    </div>
+
+
+    <script>
+        function verificar9(){
+            var conta1 = (Number(media.value)*0.2);
+            var conta2 = (Number(integrada.value)*0.8);
+            total = (conta1 + conta2);
+
+            if(total >= 5){
+                mensagem9.innerHTML = `Parabéns, ${nome.value}, você foi aprovado com média final ${total.toFixed(2)}`;
+                imagem.src = 'feliz.jpg';
+                mensagem9.style.color = "blue";
+            }
+
+            else {
+                mensagem9.innerHTML = `Olá, ${nome.value}, infelizmente você foi reprovado com média final ${total.toFixed(2)}`;
+                imagem.src = 'triste.jpg';
+                mensagem9.style.color = "red";
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 9 -->
+
+
+
+    <!-- EXERCÍCIO 10 -->
+    <div id="ex">
+        <h2>Exercício 10</h2>
+
+        Qual nota dá para o atendimento: <input type="number" id="nota"><br><br>
+
+        <button type="button" onclick="verificar10()">Salvar avaliação</button><br><br>
+
+        <div id="mensagem10" style="color: "></div>
+    </div>
+
+    <script>
+        function verificar10(){
+            if(nota.value < 0){
+                mensagem10.innerHTML = 'Não existe avaliação menor que 0!';
+                mensagem10.style.color = 'rgb(124, 16, 16)';
+            }
+
+            else {
+                if(nota.value >=0 && nota.value <=2){
+                    mensagem10.innerHTML = 'Sua avaliação foi negativa';
+                    mensagem10.style.color = 'red';
+                }
+
+                else if (nota.value == 3){
+                    mensagem10.innerHTML = 'Sua avaliação foi neutra';
+                    mensagem10.style.color = 'gray';
+                }
+
+                else if (nota.value >= 4 && nota.value <= 5){
+                    mensagem10.innerHTML = 'Sua avaliação foi positiva';
+                    mensagem10.style.color = 'blue';
+                    alert (`Só queria confirmar meus parabéns!`);
+                }
+
+                else {
+                    mensagem10.innerHTML = 'Não existe avaliação maior que 5';
+                    mensagem10.style.color = 'rgb(124, 16, 16)';
+                }
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 10 -->
+
+
+
+    <!-- EXERCÍCIO 11 -->
+    <div id="ex">
+        <h2>Exercício 11</h2>
+
+        Salário: <input type="number" id="salario"><br><br>
+
+        <button type="button" onclick="verificar11()">Status Social</button><br><br>
+
+        <div id="mensagem11"></div>
+    </div>
+
+
+    <script>
+        function verificar11(){
+            var frase;
+
+            if(salario.value < 1000){
+                frase = `#aindatenhoqueralarmuito <br>`;
+
+                if(salario.value < 200){
+                    frase = `#precisodeajuda <br> ${frase}`;
+                }
+            } 
+
+            else{
+                if(salario.value >= 1000){
+                    frase = `#estoumenospobre <br>`;
+                }
+
+                if (salario.value > 2500){
+                    frase = `#ostentação <br> ${frase}`;
+                }
+
+                if(salario.value > 5000){
+                    frase = `#amigodoneymar <br> ${frase}`;
+                }
+            }
+            mensagem11.innerHTML = frase;
+        }
+    </script>
+    <!-- EXERCÍCIO 11 -->
+
+
+
+
+    <!-- EXERCÍCIO 12 -->
+    <div id="ex">
+        <h2>Exercício 12</h2>
+
+        Idade: <input type="number" id="idade12"><br><br>
+
+        Quantidade de filhos: <input type="number" id="filhos12"><br><br>
+
+        <button type="button" onclick="verificar12()">Analisar Vida</button><br><br>
+
+        <div id="mensagem12"></div>
+    </div>
+
+
+    <script>
+        function verificar12(){
+
+            var idade = Number(idade12.value);
+            var filhos = Number(filhos12.value);
+            var frase;
+
+
+            if(idade < 18){
+                frase = `Você é menor de idade <br>`;
+
+                if(idade < 14){
+                    frase = `Você é praticamente uma criança <br> ${frase}`;
+
+                    if(filhos > 0){
+                        frase = `Nossa, começou cedo, hein :O <br> ${frase}`;
+                    }
+                }
+            }
+
+            else {
+                if(idade >= 18){
+                    frase = `Você é maior de idade <br>`;
+
+                    if(filhos < 3){
+                        frase = `Parabéns pelos filhos! <br> ${frase}`;
+                    }
+
+                    else{
+                        frase = `Não tem TV nem internet em casa?! <br> ${frase}`;
+                    }
+                }
+            }
+            mensagem12.innerHTML = frase;
+        }
+    </script>
+    <!-- EXERCÍCIO 12 -->
+
+
+    <!-- EXERCÍCIO 13 -->
+    <div id="ex">
+        <h2>Exercício 13</h2>
+
+        Valor do depósito: <input type="number" id="valor_deposito"><br><br>
+
+        Total já guardado: <input type="number" value=0 id="total_guardado"><br><br>
+
+        <button type="button" onclick="verificar13()">Depositar</button><br><br>
+
+        <div id="mensagem13"></div>
+    </div>
+
+
+    <script>
+        function verificar13(){
+
+            var imagem;
+
+            var total = (Number(total_guardado.value) + Number(valor_deposito.value));
+            total_guardado.value = total;
+
+            if(total < 4000){
+                imagem = '';
+            }
+
+            else{
+                if (total >= 4000){
+                imagem = `<img src="moto.jpg">`;
+
+                if(total > 10000){
+                    imagem = `<img src="carro.jpg">`;
+                }
+
+                if(total > 20000){
+                    imagem = `<img src="caro.jpg">`;
+                }
+
+                if(total > 80000){
+                    imagem = `<img src="casa.jpg">`;
+                }
+
+                }
+            }
+            mensagem13.innerHTML = imagem;
+        }
+    </script>
+    <!-- EXERCÍCIO 13 -->
+
+
+
+    <!-- EXERCÍCIO 14 -->
+    <div id="ex">
+        <h2>Exercício 14</h2>
+
+        Votos do Zé Ruela: <input type="number" value="0" id="votos_ze"><br><br>
+
+        <button type="button" onclick="votar_ze()">Votar no Zé Ruela</button><br><br>
+
+
+        Votos da Maria Bigodenha: <input type="number" value="0" id="votos_maria"><br><br>
+
+        <button type="button" onclick="votar_maria()">Votar na Maria Bigodenha</button><br><br>
+
+        <button type="button" onclick="verificar14()">Resultado Parcial</button>
+    </div>
+
+
+
+    <script>
+        function votar_ze(){
+            votos_ze.value++;
+        }
+
+        function votar_maria(){
+            votos_maria.value++;
+        }
+
+        function verificar14(){
+
+            if(votos_ze.value == votos_maria.value){
+                votos_ze.style.color = 'black';
+                votos_maria.style.color = 'black';
+            }
+
+            else{
+                if(votos_ze.value > votos_maria.value){
+                votos_ze.style.color = 'blue';
+                votos_maria.style.color = 'red';
+            } 
+            
+            if (votos_maria.value > votos_ze.value){
+                votos_maria.style.color = 'blue';
+                votos_ze.style.color = 'red';
+            }
+            }
+        }
+    </script>
+    
+    
+    <!-- EXERCÍCIO 15 -->
+
+    <div id="ex">
+        <h2>Exercício 15</h2>
+
+        <img src="cofrinho.png" id="cofrinho"><br><br>
+
+        Meta: <input type="number" id="meta"><br><br>
+
+        Novo Depósito: <input type="number" id="deposito"><br><br>
+
+        Total depositado até agora: R$<b id="b_total">0</b><br><br>
+
+        <button type="button" onclick="verificar15()">Depositar</button><br><br>
+
+        <div id="mensagem15"></div>
+    </div>
+
+
+
+    <script>
+        function verificar15(){
+
+            var total = Number(b_total.innerHTML);
+            total = total + Number(deposito.value);
+            b_total.innerHTML = total;
+
+            var conta = (Number(meta.value) - Number(b_total.innerHTML));
+
+
+            if(meta.value < b_total.innerHTML){
+                mensagem15.innerHTML= `Ainda faltam R$${conta} para a meta! #focanameta!`;
+                mensagem15.style.color= "green";
+            }
+
+            else{
+                mensagem15.innerHTML = `Ai sim, bati a meta!`;
+                mensagem15.style.color= "blue";
+
+                cofrinho.src = 'cofrinho_feliz.png';
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 15 -->
+
+
+    <br><br>
+    Faltam exercícios 16 e 17
+
+
+    <!-- EXERCÍCIO 17 -->
+    <div id="ex">
+        <h2>Exercício 17</h2>
+
+        <img src="sebastian.jpg" style="width:200px" id="sebastian">
+        <div style="width: 200px; background-color: black" id="sebastian_div">i</div>
+        <button type="button" onclick="sebastian_apanhar()">Apanhar</button>
+
+        <br><br>
+
+        <img src="rin.jpg" style="width:200px" id="rin">
+        <div style="width: 200px; background-color: rgb(18, 18, 114)" id="rin_div">i</div>
+        <button type="button" onclick="rin_apanhar()">Apanhar</button>
+    </div>
+
+
+    <script>
+        function sebastian_apanhar(){
+            rin_div.style.width = "-25px"
+
+        }
+
+        function rin_apanhar(){
+
+        }
+    
+    
+    
+    
+    </script>
+
+</body>
+</html>

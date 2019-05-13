@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        img{
+            height: 200px;
+        }
+    
+    </style>
+</head>
+<body>
+
+<!-- EXERCÍCIO 2 -->
+    Depositado até agora: R$<span id="valor">0</span><br><br>
+
+    Novo depósito: <input type="number" id="deposito"><br><br>
+    
+    <button type="button" onclick="depositar()">Depositar</button>
+    
+<script>
+     cofrinho = 0
+
+    function depositar(){
+        cofrinho = cofrinho + Number(deposito.value);
+        valor.innerHTML = cofrinho;
+    }
+</script>
+
+<br><br><br><br>
+
+
+<!-- EXERCÍCIO 3 -->
+<img src="1.jpg" onclick="kento()"> Votos: <span id="voto1">0</span><br><br>
+
+<img src="2.jpg" onclick="taichi()"> Votos: <span id="voto2">0</span><br><br>
+
+
+<button type="button" onclick="ganhar()">Finalizar Votação</button><br><br>
+
+<div id="resultado_votacao"></div>
+
+
+<script>
+aumentar = 0;
+aumentar2 = 0; 
+
+function kento(){
+    aumentar ++;
+    voto1.innerHTML = aumentar;
+}
+
+function taichi(){
+    aumentar2 ++;
+    voto2.innerHTML = aumentar2;
+} 
+
+function ganhar(){
+    resultado_votacao.innerHTML = ``; 
+
+    if(Number(voto1.innerHTML) > Number(voto2.innerHTML)){
+        resultado_votacao.innerHTML = `Kento ganhou!!!`
+    } 
+
+    else if(Number(voto2.innerHTML) > Number(voto1.innerHTML)) {
+        resultado_votacao.innerHTML = `Taichi ganhou!!!`
+    } 
+
+    else {
+        resultado_votacao.innerHTML = ``;
+    }
+}
+</script>
+<br><br><br><br>
+
+
+
+<!-- EXERCÍCIO 4 -->
+<button type="button" onclick="entrar_homem()">Entrou um Homem</button>
+<button type="button" onclick="entrar_mulher()">Entrou uma Mulher</button>
+<button type="button" onclick="entrar_crianca()">Entrou uma Criança</button>
+
+<br><br>
+
+<div id="elevador">
+    <span id="homem">0</span> Homens<br>
+    <span id="mulher">0</span> Mulheres<br>
+    <span id="crianca">0</span> Crianças<br>
+    
+    Peso total = <span id="p_total">0</span>
+</div>
+
+
+<script>
+    aumentar_homem = 0;
+    aumentar_mulher = 0;
+    aumentar_crianca = 0;
+
+    peso_homem = 90;
+    peso_mulher = 75;
+    peso_homem = 40;
+
+    peso_total = Number(p_total.innerHTML);
+
+function entrar_homem(){
+    aumentar_homem++;
+    homem.innerHTML = aumentar_homem;
+
+    peso_total += peso_homem;
+    p_total.innerHTML = peso_total;
+    
+}
+
+function entrar_mulher(){
+    aumentar_mulher++;
+    mulher.innerHTML = aumentar_mulher;
+
+    peso_total += peso_mulher;
+    p_total.innerHTML = peso_total;
+}
+
+function entrar_crianca(){
+    aumentar_crianca++;
+    crianca.innerHTML = aumentar_crianca;
+
+    peso_total += peso_crianca;
+    p_total.innerHTML = peso_total;    
+}
+</script>
+<br><br><br><br>
+
+
+
+<!-- EXERCÍCIO 5 -->
+<img src="g1.png" id="imagem">
+<button type="button" onclick="treinar()">Treinar</button>
+
+
+<script>
+treinar = 0; 
+
+function treinar() {
+    treinar ++;
+
+    if(treinar > 4){
+        imagem.src = 'g2.jpg';
+    }
+
+    if (treinar >= 6 ){
+        imagem.src = 'g3.png';
+    }
+
+    if (treinar >= 10){
+        imagem.src = 'g4.jpg';
+    }
+
+    if (treinar >= 14){
+        imagem.src = 'g5.jpg';
+    }
+
+    else {
+        imagem.src = 'g6.jpg'
+    }
+
+
+
+   
+}
+
+
+
+</script>
+
+
+
+
+
+
+<!--  
+var feira = {uvas: 20, bananas: 10, peras: 1}
+feira.uvas // para ver os valores individuais;
+
+feira['bananas']
+
+feira.bananas = 12 // para alterar
+
+feira.banana++ ou +=
+-->
+</body>
+</html>

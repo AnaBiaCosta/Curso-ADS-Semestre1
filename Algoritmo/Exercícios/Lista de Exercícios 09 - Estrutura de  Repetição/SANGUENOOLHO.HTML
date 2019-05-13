@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EXERCÍCIO 9 - DESAFIO</title>
+</head>
+<body>
+
+    <h1 style="text-align: center">ELEVADOR</h1>
+
+    Andar Atual <input type="number" id="andar1">
+    <br><br>
+
+    Andar Solicitado <input type="number" id="andar2">
+    <br><br>
+
+    <button type="button" onclick="ir()">Partir</button>
+    <br><br>
+
+    <div id="andar"></div>
+
+</body>
+</html>
+<script>
+    function ir() {
+        var andar_atual = andar1.value;
+        var andar_solicitado = andar2.value;
+
+        andar.innerHTML = '';
+
+        if (andar_atual < 0 || andar_atual > 20 || andar_solicitado < 0 || andar_solicitado > 20) {
+            alert ('Andares válidos: entre 0 e 20'); 
+        } else {
+            if (andar_atual == andar_solicitado){
+                andar.innerHTML = `Andar atual = Andar solicitado`;
+
+            } else { 
+                if (andar_atual < andar_solicitado){
+                    andar.innerHTML = 'Subindo <br>';
+
+                    while (andar_atual <= andar_solicitado){
+                        andar.innerHTML += `Elevador no andar ${andar_atual} <br>`;
+                        andar_atual++;
+                    } 
+                } 
+
+                else {
+                    andar.innerHTML = 'Descendo <br>';
+
+                    while (andar_atual > andar_solicitado){
+                        andar.innerHTML += `Elevador no andar ${andar_atual} <br>`;
+                        andar_atual --;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+</script>

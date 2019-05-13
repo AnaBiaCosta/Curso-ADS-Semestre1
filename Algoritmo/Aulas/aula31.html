@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+    Vitórias: <input type="number" id="vitorias"><br><br>
+    Empates: <input type="number" id="empates"><br><br>
+    Derrotas: <input type="number" id="derrotas"><br><br>
+
+
+    <button type="button" onclick="analisar()">Analisar Campanha</button>
+</form>
+
+<div id="resultado"></div>
+
+</body>
+</html>
+
+<script>
+    function analisar(){
+    //quando já tem valores na tela 
+
+    // var campanha = { v:0, e:0, d:0};
+    // campanha.v = Number(vitorias.value),
+    // campanha.e = Number(empates.value),
+    // campanha.d =Number(derrotas.value)
+
+    var campanha = {
+        v: Number(vitorias.value),
+        e: Number(empates.value),
+        d: Number(derrotas.value)
+    };
+
+
+    // JSON para as regras de pontuação
+
+    var pts = {v:5, e:2, d:1};
+
+    var pontos = campanha.v*pts.v + campanha.e*pts.e + campanha.d*pts.d;
+
+    resultado.innerHTML = `O time terminou com ${pontos} pontos`
+
+
+
+
+}
+
+
+</script>
