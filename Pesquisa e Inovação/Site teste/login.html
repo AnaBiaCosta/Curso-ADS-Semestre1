@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日本語を話しましょう!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+    <link rel="stylesheet" href="site.css">
+
+
+
+</head>
+<body>
+ <h1 class="a">日本語を話しましょう! - Login</h1>
+
+ <div class="login">
+    <h2>Login</h2>
+    
+    Email: <input type="text" id="email">
+    <br>
+
+    Senha: <input type="password" id="senha">
+    <br>
+
+    <button type="button" class="botao" onclick="enviar()">Entrar</button>
+    <br><br>
+
+    <a>Ainda não é cadastrado? Clique aqui</a>
+
+    
+ </div>
+    
+</body>
+</html>
+
+<script>
+        function enviar(){
+            if( email.value == "estudante@gmail.com" && senha.value == "queroaprender"){
+                window.location = ".html"
+            }
+            else{
+                alert('Dados inválidos')
+            }
+        }
+    </script>
