@@ -1,3 +1,5 @@
+-- VERIFICAR ITENS 17, 
+
 create database ExercicioAula12;
 use ExercicioAula12;
 
@@ -96,24 +98,30 @@ select * from projeto;
 select * from funcProj;
 
 -- Item 2
+-- inserindo a funcionaria Cecilia Ribeiro
 -- O comando não vai funcionar porque o idFun não é auto_increment, assim, não pode ser null
 
 -- Item 3
+-- inserindo a funcionaria Alice sousa com salario 2800 no sistema
 -- O comando não vai funcionar porque já existe uma funcionária Alice Sousa com o mesmo idFun 3
 
 -- Item 4 
+-- inserindo a funcionaria Cecilia Ribeiro com depto 107
 -- O comando não vai funcionar pois o departamento 107 não existe
 
 -- Item 5
+-- inserindo funcionaria Cecília Ribeiro
 insert into funcionario values 
 	(9, 'Cecília Ribeiro', 2800, 'f', 4, '1980-04-05', 104);
     
 -- Item 6
+-- excluindo a tupla da tabela FuncProj
 -- O comando funcionou pois além de estarmos apagando apenas o relacionamento da funcionario com o projeto, inserimos a chave primária corretamente,
 -- pois o comando delete só funciona com a chave primária, essa que no caso, é composta 
 delete from FuncProj where fkproj = 3 and fkfunc = 10;
 
 -- Item 7
+-- excluindo tupla da tabela funcionario que está referenciada na tabela funcionario (relacionamento recursivo / auto relacionamento)
 -- O comando não vai funcionar devido à restrição da chave estrangeira
 delete from funcionario where idfun = 4;
 
@@ -153,10 +161,115 @@ select * from funcionario order by salario desc;
 
 -- Item 17 
 -- exibir os dados dos funcionarios que tenham o salario entre 2000 e 4000
+select * from funcionario where salario between 2000 and 4000;
+
+-- Item 18
+-- exibir os nomes e os salarios dos funcionarios cujos nomes comecam com a letra j
+select * from funcionario where nomeFun like 'j%';
+
+-- Item 19
+-- exibir os nomes e os salarios dos funcionarios cujos nomes terminam com a letra a
+select * from funcionario where nomeFun like '%a';
+
+-- Item 20
+-- exibir os nomes dos funcionarios que tem a letra 'n' como terceira letra do nome
+select * from funcionario where nomeFun like '___n%';
+
+-- Item 21
+-- exibir os nomes e as datas de nascimento dos funcionarios cujos nomes tenham a letra s como a 5a letra de tras para frente
+select nomeFun, datanasc from funcionario where nomeFun like '%s____';
+
+-- Item 22
+-- exibir os dados dos funcionarios que trabalham no depto pesquisa
+select * from funcionario where fkdepto = 105;
+
+-- Item 23
+-- exibir os dados dos funcs que trabalham no depto pesquisa e tenham salario acima de 3500
+select * from funcionario where fkdepto = 105 and salario > 3500;
+
+-- Item 24
+ -- exibir os dados dos funcs que trabalham no depto pesquisa e tenham o nome com inicial j
+ select * from funcionario where fkdepto = 105 and nomeFun like 'j%';
+ 
+ -- Item 25
+ -- exibir o idfunc e o nome de cada func, juntamente com o idfunc e o nome do supervisor. faça com que o titulo da coluna seja idfunc 
+ -- para funcionario e idsupervisor para o id do supervisor 
+ 
+select f.idfun as idFuncionario, f.nomefun, s.idfun as idSupervisor, s.nomefun 
+							from funcionario as f, funcionario as s where f.idsupervisor = s.idfun;
+
+-- Item 26
+-- exibir para cada projeto localizado em sp o id, num do departamento que o controla, nome e data de nasc do gerente
+select p.idProj, d.iddepto, f.nomefun, f.datanasc from projeto as p, departamento as d, funcionario as f
+				where p.fkdepto = d.iddepto and d.idgerente = f.idfun and localproj = 'são paulo' ;
+
+-- Item 27
+-- exibir o idfunc e o nome do funcionario, o projeto e o nome do projeto em que trabalha, a qtd de horas que trabalha nesse projeto
+select * from funcionario as f, projeto as p, funcproj as fp where fp.fkproj = p.idproj and fp.fkfunc = f.idfun;
+
+select f.idfun, f.nomefun, p.idproj, p.nomeproj, fp.horas from funcionario as f, projeto as p, funcproj as fp 
+		where fp.fkproj = p.idproj and fp.fkfunc = f.idfun;
+
+-- Item 28
+-- exibir os nomes dos funcs que nasceram antes de 1980
+select nomefun, datanasc from funcionario where datanasc < '1980';
+
+-- Item 29
+-- aplique um reajuste de 10% nos salarios dos funcionarios que trabalham no dept pesquisa
+-- exemplo de como fazer: update produtos set preco_custo = preco_custo * 0.5 
+select * from funcionario; 
+update funcionario set salario = (salario + (salario * 0.1)) where fkdepto = 105;
+
+-- Item 30
+-- exibir a qtd de salarios diferentes q existem na empresa
+select count(distinct salario) from funcionario;  
+
+-- Item 31
+-- exibir a qtd de locais deferentes de projeto
+select count(distinct localProj) from projeto;  
+
+-- Item 32
+-- exibir o salario medio da empresa e a soma dos salarios
+select avg(salario) as 'Salário Médio', sum(salario) as 'Soma dos Salários' from funcionario;
+
+-- Item 33
+-- exibir o menor e o maior salario da empresa
+select min(salario) as 'Salário Mínimo', max(salario) as 'Salário Máximo' from funcionario;
+
+-- Item 34
+-- exibir o iddepto, o salario medio e a soma do salario de cada departamento (agrupado por depto)
+select fkdepto as 'idDepto', avg(salario) as 'Salário Médio', sum(salario) as 'Soma dos Salários' from funcionario group by fkdepto;
+
+-- Item 35
+-- exibir o iddepto, o menor e o maior salario de cada departamento (agrupado por departamento)
+select fkdepto as 'idDepto', min(salario) as 'Salário Mínimo', max(salario) as 'Salário Máximo' from funcionario group by fkdepto;
+
+-- Item 36
+-- inserir mais os seguintes funcionarios na tabela funcionario:
+insert into funcionario values 
+(10, 'José da Silva', 1800, 'm', 3, '2000-10-12', null),
+(11, 'Benedito Almeida', 1200, 'm', 5, '2001-09-01', null);
+
+-- Item 37
+-- inserir mais o seguinte depto na tabela departamento
+insert into departamento values 
+(110, 'RH', 3, '2018-11-10');
+
+-- Item 38
+-- exibir os dados de todos os funcionarios (inclusive os que não estão alocados em nenhum departamento) e os dados dos departamento em que trabalham
+select * from funcionario departamento where fkdepto = iddepto; -- dessa forma, os funcionarios que não tem departamento não aparecem
+-- USAR LEFT JOIN,  | (FUNCIONARIO ----- FUNCIONARIO & DEPARTAMENTO) ----- DEPARTAMENTO |
+select * from funcionario left join departamento on fkdepto = iddepto; 
+
+
+-- Item 39
+-- exibir os dados dos funcionarios que estão alocados em departamentos e os dados de todos os departamentos (mesmo os que não têm funcionários alocados)
+-- USAR RIGHT JOIN  | FUNCIONARIO ----- (FUNCIONÁRIO & DEPARTAMENTO ----- DEPARTAMENTO |
+select * from funcionario right join departamento on fkdepto = iddepto; 
+
+
 
  
-
-    
     
     
 
