@@ -1,0 +1,19 @@
+body{
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    background-image: url("");
+}
+
+.cabecalho{
+    background-color: pink;
+    width: 100%;
+    height: 60px;
+    font-family: 'Cookie', cursive;
+    color: white;
+    /* font-size: 45px; */
+    margin-bottom: 20px;
+}
+
+h1,h2,h3{
+    text-align: center;
+}

@@ -1,0 +1,65 @@
+
+.corpo{
+      background-color: #E8F8FF;
+      margin-left: 10%;
+      margin-right: 10%;
+      border-radius:20px;
+      margin-top: 50px;
+      margin-bottom: 100px;
+  }
+
+  
+.corpo2{
+    background-color: #E8F8FF;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius:20px;
+    margin-top: 50px;
+    padding: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 200px;
+}
+
+  p{
+      text-align: center;
+      padding: 20px;
+      margin-left: 8%;
+      margin-right: 8%;
+  }
+
+  .testes{
+      margin-bottom: 100px;
+  }
+
+  .img-cabecalho{
+      margin-top: 5%;
+      margin-left: 20%;
+  }
+
+  .img-teste{
+      height: 250px;
+      margin-right: 100px;
+  }
+
+  .img-teste1{
+    height: 250px;
+    margin-right: 100px;
+    margin-left: 20%;
+}
+
+.img-perfil{
+    height: 450px;
+    margin-left: 80px;
+}
+
+.texto{
+    text-align: justify;
+    padding-left: 100px;
+}
+
+
+
+  
+  
+  

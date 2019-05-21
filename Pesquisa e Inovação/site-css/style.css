@@ -1,0 +1,51 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    font-size: 20px;
+    background-color: #A1C3E8;
+    background-image: linear-gradient(to bottom, transparent, #E6BDFF);
+    background-repeat: no-repeat;
+
+}
+
+.a {
+    background-color: rgba(255, 255, 255, 0.699);
+    color: #67B8DE;
+}
+
+h1,h2,h3{
+    text-align: center;
+    font-size: 50px;
+    color: #67B8DE
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#A1C3E8;
+    transition: width 2s;
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: #E8F8FF;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color:#B4DCED;
+  }
+
+
+.footer{
+    text-align: center;
+}

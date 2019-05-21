@@ -1,0 +1,27 @@
+.corpo{
+    background-color: #E8F8FF;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius:20px;
+    margin-top: 50px;
+    padding-left: 70px; 
+    padding-right: 70px; 
+    margin-bottom: 100px;
+}
+
+h4{
+    font-size: 25px;
+}
+
+td{
+    padding-right: 100px;
+}
+
+.botao {
+    background-color: pink;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,white), color-stop(100%,#e4526b)) !important;
+    border-radius: 10px;
+    border-color: pink;
+    margin-top: 30px;
+    font-size: 15px;
+}

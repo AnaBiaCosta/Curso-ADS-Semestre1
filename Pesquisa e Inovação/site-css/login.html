@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日本語を話しましょう! - Login</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- INICIO NAVBAR -->
+        <ul>
+            <li style="float:left"><a href="index.html">日本語を話しましょう!</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+    <!-- FIM NAVBAR -->
+        
+
+    
+    <!-- DIV LOGIN -->
+        <div class="login">
+           <h2>ログイン</h2>
+
+           <form>
+           
+           Email: <input type="text" id="email" required>
+           <br>
+       
+           Senha: <input type="password" id="senha" required>
+           <br>
+       
+           <button type="button" class="botao" onclick="enviar(email.value, senha.value)">Entrar</button>
+           <br><br>
+
+           <div id="mensagem_erro"></div>
+
+        </form>
+        </div>
+    <!-- DIV LOGIN -->
+    
+    
+</body>
+</html>
+
+
+<script>
+    function enviar(email, senha){
+        mensagem_erro.innerHTML = '';
+
+
+        if(email == "usuario@gmail.com" && senha == "senha"){
+            window.location = "index.html"
+        }
+
+        else if(email == "" || senha == ""){
+            mensagem_erro.innerHTML = 'Todos os campos precisam ser preenchidos!';
+        }
+
+        else{
+            mensagem_erro.innerHTML = 'Dados Inválidos'
+        }
+
+
+    }
+
+
+
+</script>

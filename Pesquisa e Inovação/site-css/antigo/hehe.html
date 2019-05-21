@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>日本語を話しましょう!</title>
+    <title>日本語を話しましょう! - Login</title>
 
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
@@ -15,7 +15,7 @@
 
 </head>
 <body>
- <h1 class="a">日本語を話しましょう! - Login</h1>
+ <h1 class="a">日本語を話しましょう!</h1>
 
  <div class="login">
     <h2>Login</h2>
@@ -26,7 +26,7 @@
     Senha: <input type="password" id="senha">
     <br>
 
-    <button type="button" class="botao" onclick="enviar()">Entrar</button>
+    <button type="button" class="botao" onclick="enviar(email.value, senha.value)">Entrar</button>
     <br><br>
 
     <a>Ainda não é cadastrado? Clique aqui</a>
@@ -38,9 +38,9 @@
 </html>
 
 <script>
-        function enviar(){
-            if( email.value == "estudante@gmail.com" && senha.value == "queroaprender"){
-                window.location = ".html"
+        function enviar(email, senha){
+            if( email == "estudante@gmail.com" && senha == "queroaprender"){
+                window.location = "index.html"
             }
             else{
                 alert('Dados inválidos')

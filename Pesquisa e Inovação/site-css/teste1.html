@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日本語を話しましょう! - Totoro Kawaii</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="testes.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+        <ul>
+                <li style="float:left"><a href="">日本語を話しましょう!</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#testes">Testes</a></li>
+        </ul>
+
+
+        <!-- TESTE 1 -->
+        <div class="corpo">
+            <h1>Totoro Kawaii</h1>
+
+
+                    <h4>問題１- ひらがな</h4>
+                    
+                    Escreva o som: <br>
+
+                    ち: <input type="text" id="q11"><br>
+                    ゆ: <input type="text" id="q12"><br><br>
+    
+
+                    <h4>問題2- カタカナ</h4>
+
+                    Escreva o som: <br>
+
+                    シ: <input type="text" id="q21"><br>
+                    ソ: <input type="text" id="q22"><br><br>
+
+
+                    <h4>問題3- 漢字</h4>
+
+                    Escreva o som: <br>
+
+                    何: <input type="text" id="q31"><br>
+                    中: <input type="text" id="q32"><br><br>
+                    
+
+                    <h4>問題4- 文法 「ぶんぽう」</h4>
+
+                    Traduza as seguintes frases: <br><br>
+
+                    今日は火曜日。
+                    <input type="text" id="q41"><br><br>
+
+                    えいがはたのしかったです。
+                    <input type="text" id="q42"><br><br>
+
+
+                    <h4>問題5- 粒子 「りゅうし」</h4>
+                    Qual a particula correta? Escreva a resposta em romaji<br><br>
+
+                    学校 「 」 行きます。<input type="text" id="q51"><br><br>
+             
+                    パン「 」 食べます。<input type="text" id="q52"><br><br>
+
+
+
+                <button type="button" class="botao" onclick="calcular(q11.value, q12.value, q21.value, q22.value, q31.value, q32.value, q41.value, q42.value, q51.value, q52.value)">
+                Ver Pontuação</button><br><br>
+
+                <div id="resultado"></div>
+        </div>
+
+        <div class="footer">
+            © 2019 日本語を話しましょう! - Todos os Direitos Reservados 
+        </div>
+
+</body>
+</html>
+
+<script>
+    function calcular(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10){
+
+        var contador = 0; 
+
+        // Checando quais estão certas
+
+        if(q1 == "chi" && q2 == "yu"){
+            contador += 2;
+        } else if(q1 == "chi" || q2 == "yu"){
+            contador ++;
+        }
+        
+        
+        if(q3 == "shi" && q4 == "so"){
+             contador += 2;
+         }else if (q3 == "shi" || q4 == "so"){
+             contador++;
+         }
+
+
+        if(q5 == "nani" && q6 == "naka"){
+            contador += 2;
+        } else if (q5 == "nani" || q6 == "naka"){
+            contador ++;
+        }
+
+
+        if(q7 == "hoje é terça feira" && q8 == "o filme foi divertido"){
+            contador += 2;
+        } else if (q7 == "hoje é terça feira" || q8 == "o filme foi divertido"){
+            contador++;
+        } 
+
+        if(q9 == "he" && q10 == "wo"){
+            contador += 2;
+        } else if(q9 == "he" || q10 == "wo"){
+            contador++;
+        }
+
+
+
+        // Resultados
+
+        if(contador <= 4){
+            resultado.innerHTML = `Você aceitou ${contador}. Totoro não ficou feliz com sua nota (T^T)  頑張りましょう!`
+        }
+
+        else if (contador > 4 && contador <=7){
+            resultado.innerHTML = `Você aceitou ${contador}. Totoro achou sua nota boa! Mas ainda dá para melhorar! #Fighting!`
+        }
+
+        else if (contador > 7){
+            resultado.innerHTML = `Você aceitou ${contador}. おめでとうございます!!! <br> <img style= "width:300px" src="img/95-958769_totoro-png.png"> `;
+
+        }
+    }
+
+
+</script>
+
+
+
+

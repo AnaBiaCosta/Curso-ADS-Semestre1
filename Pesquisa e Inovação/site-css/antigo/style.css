@@ -1,0 +1,18 @@
+
+
+
+
+.a {
+    background-color: rgba(255, 255, 255, 0.699);
+    color: black;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+a{
+    font-weight: 10px;
+    color: black;
+    text-underline-position: none;
+}
+
+

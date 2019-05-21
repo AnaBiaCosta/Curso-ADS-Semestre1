@@ -1,0 +1,98 @@
+body{
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    background-image: url("img/architecture-buildings-city-1134166.jpg");
+}
+
+
+.cabecalho{
+    background-color: rgba(255, 255, 255, 0.699);
+    width: 97.5%;
+    color: black;
+    padding: 20px;
+    text-align: right;
+    /* position: fixed; */
+    overflow:auto; 
+    font-weight: bold;
+}
+
+
+li {
+    display: inline;
+    margin-right: 60px;
+  }
+
+.logo{
+    text-align: left;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+
+.corpo{
+    background-color: rgba(255, 255, 255, 0.822);
+    color: black;
+    margin-left:20%;
+    margin-right: 20%;
+    margin-top: 35px;
+    padding: 20px;
+    text-align: center;
+}
+
+.corpo2{
+    background-color: rgba(255, 255, 255, 0.822);
+    color: black;
+    margin-left:20%;
+    margin-right: 20%;
+    margin-top: 35px;
+    padding: 20px;
+    text-align: center;
+}
+
+.a{
+    background-color: rgba(255, 255, 255, 0.699);
+    color: black;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center
+} 
+
+
+a{
+    font-weight: 10px;
+    color: black;
+    text-underline-position: none;
+}
+
+.titulo{
+    text-align: center;
+    color: rgb(91, 43, 136);
+}
+
+#circle{
+    /* border-radius: 50%; */
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.quadrado{
+    border: solid;
+    border-width:2px;
+}
+
+
+/* .testes{
+    background-color: rgba(135, 28, 168, 0.555);
+    color: black;
+    margin-left:20%;
+    margin-right: 20%;
+    margin-top: 35px;
+    padding: 20px;
+    text-align: center;
+} */

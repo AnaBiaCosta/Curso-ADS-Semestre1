@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日本語を話しましょう! - Cadastro</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Sawarabi+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+        <!-- INICIO NAVBAR -->
+        <ul>
+                <li style="float:left"><a href="index.html">日本語を話しましょう!</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        <!-- FIM NAVBAR -->
+ 
+
+        
+    <!-- DIV CADASTRO -->
+            <div class="cadastro">
+               <h2>登録</h2>
+
+               <form>
+               
+               Nome: <input type="text" id="nome" required>
+               <br>
+               
+               Email: <input type="text" id="email" required>
+               <br>
+           
+               Senha: <input type="password" id="senha" required>
+               <br>
+           
+               <button type="button" class="botao" onclick="cadastrar(nome.value, email.value, senha.value)">Cadastrar</button>
+               <br><br>
+    
+               <div id="mensagem_erro"></div>
+            </form>
+            </div>
+    <!-- DIV CADASTRO -->
+    
+        
+    
+</body>
+</html>
+
+
+<script>
+    function cadastrar(nome, email, senha){
+
+        mensagem_erro.innerHTML = "";
+
+        if(nome=="Bia" && email=="bia@gmail.com" && senha=="bia123"){
+            alert(`Parabéns ${nome}! você foi cadastrado(a) com sucesso! Agora basta fazer o login!`);
+            window.location = "login.html"
+        }
+        
+
+        else if (nome=="" || email=="" || senha==""){
+            mensagem_erro.innerHTML = "Todos os campos são obrigatórios!"
+        }
+
+        else{
+            mensagem_erro.innerHTML = "Dados Inválidos"
+        }
+
+
+    }
+
+
+
+</script>
