@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 12 - JSON VAMO LÁ BIAAAAAAAA</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Lista 12 - JSON</h1>
+
+
+    <!-- EXERCÍCIO 1 -->
+    <div id="ex">
+        <h2>Exercício 1</h2>
+        
+        <p>Crie um programa no qual informe quantas vitórias, quantos empates e quantas derrotas um time de futebol 
+            possui no campeonato. Após clicar num botão "Analisar campanha", exiba uma frase como esta:
+            O time terminou o campeonato com X pontos
+
+          Onde X é calculado assim:
+          Vitória: 3 pontos
+          Empate: 1 ponto
+          Derrota: 0 pontos</p>
+
+
+          Vitórias: <input type="number" id="vitorias1">
+          Empates: <input type="number" id="empates1">
+          Derrotas: <input type="number" id="derrotas1">
+
+          <button type="button" onclick="verificar1(Number(vitorias1.value), Number(empates1.value),Number(derrotas1.value))">
+                Analisar Campanha</button><br><br>
+
+        <div id="mensagem1"></div>
+    </div>
+
+    <script>
+        function verificar1(v, e, d){
+            mensagem1.innerHTML = '';
+
+            var campanha = {v, e, d};
+            var pontos = {v:3, e:1, d:0};
+            var calcular_pontos = campanha.v * pontos.v + campanha.e * pontos.e + campanha.d * pontos.d; 
+
+            mensagem1.innerHTML = `O time terminou o campeonado com ${calcular_pontos} pontos`
+
+        }
+    </script>
+
+
+
+
+    <!-- EXERCÍCIO 2 -->
+        <div id="ex">
+            <h2>Exercício 2</h2>
+
+            <p>Crie um programa no qual informe os nomes do times, quantas vitórias, quantos empates e quantas derrotas 2 times de futebol 
+                possuem no campeonato. Após clicar num botão "Comparar campanhas", exiba uma frase como esta:
+                    O time A terminou o campeonato com AX pontos
+                    O time B terminou o campeonato com BX pontos
+              Onde o X de cada time é calculado assim:
+              Vitória: 3 pontos
+              Empate: 1 ponto
+              Derrota: 0 pontos</p><br>
+
+
+
+              <b>TIME A:</b>
+              Vitórias: <input type="number" id="vitoriasa">
+              Empates: <input type="number" id="empatesa">
+              Derrotas: <input type="number" id="derrotasa"><br><br>
+
+              <b>TIME B:</b>
+              Vitórias: <input type="number" id="vitoriasb">
+              Empates: <input type="number" id="empatesb">
+              Derrotas: <input type="number" id="derrotasb"><br><br>
+
+              <button type="button" onclick="verificar2()">Comparar Campanhas</button><br><br>
+
+              <div id="timea"></div>
+              <div id="timeb"></div>
+        </div>
+        
+        <script>
+            function verificar2(){
+
+                var campanha_a = {
+                    v: Number(vitoriasa.value),
+                    e: Number(empatesa.value),
+                    d: Number(derrotasa.value)
+                }
+
+                var campanha_b = {
+                    v: Number(vitoriasb.value),
+                    e: Number(empatesb.value),
+                    d: Number(derrotasb.value)
+                }
+
+                var pontos = {v:3, e:1, d:0};
+
+                var calc_a = (campanha_a.v * pontos.v + campanha_a.e * pontos.e + campanha_a.d * pontos.d);
+                var calc_b = (campanha_b.v * pontos.v + campanha_b.e * pontos.e + campanha_b.d * pontos.d);
+
+                timea.innerHTML = `O time A terminou o campeonato com ${calc_a} pontos`;
+                timeb.innerHTML = `O time B terminou o campeonato com ${calc_b} pontos`;
+                
+            }
+        </script>
+
+
+
+    <!-- EXERCÍCIO 3 -->
+    <div id="ex">
+            <h2>Exercício 3</h2>
+
+            <p>Crie um programa no qual você informa quantas medalhas de ouro, prata e bronze um país já ganhou na olimpíada. 
+                Após clicar num botão "Analisar medalhas", exiba uma frase como esta:
+                    O país tem X pontos até agora
+              Onde X é calculado assim:
+              Medalha de ouro: 10000 pontos
+              Medalha de prata: 100 pontos
+              Medalha de bronze: 1 ponto</p><br><br>
+
+              Medalhas de ouro: <input type="number" id="ouro">
+              Medalhas de prata: <input type="number" id="prata">
+              Medalhas de bronze: <input type="number" id="bronze"><br><br>
+
+              <button type="button" onclick="verificar3()">Analisar Medalhas</button><br><br>
+
+            <div id="mensagem3"></div>
+        </div>
+        
+        <script>
+            function verificar3(){
+                mensagem3.innerHTML = '';
+                
+                var medalhas = { o: Number(ouro.value),
+                                 p: Number(prata.value),
+                                 b: Number(bronze.value)
+                }
+
+                var pontos = {o:10000, p:100, b:0}
+                var conta = (medalhas.o*pontos.o + medalhas.p*pontos.p + medalhas.b*pontos.b)
+
+                mensagem3.innerHTML = `O país tem ${conta} pontos até agora`
+            }
+        </script>
+
+
+
+
+
+
+    <!-- EXERCÍCIO 4 -->
+    <div id="ex">
+            <h2>Exercício 4</h2>
+
+            <p>Crie um programa que possui 2 endereços já cadastrados. Nesses endereços constam o cep, o endereço completo e o apelido. 
+                Ex: cep: 04301-000, end_completo: 'Av Xyz, 100. Ap 10', apelido: 'casa'
+                    O usuário não vê esses endereços em lugar nenhum, mas pode pesquisar eles digitando um cep e clicando num botão 
+                    "Pesquisar". Ao clicar nesse botão:
+                    CASO o cep seja um dos 2 cadastrados, exiba a frase:
+                       Endereço APELIDO: ENDEREÇO_COMPLETO, cep: CEP
+                    CASO o cep não seja nenhum dos cadastrados:
+                      Cep não encontrado!</p><br>
+
+                CEP: <input type="text" id="pesquisar">
+                <button type="button" onclick="verificar4(pesquisar.value)">Pesquisar</button><br><br>
+
+                <div id="mensagem4"></div>
+        </div>
+        
+        <script>
+            function verificar4(pesquisa){
+                mensagem4.innerHTML = '';
+
+            var endereco1 = {
+            cep: '05876-090',
+            end: 'Rua Miguel Luongo, 01',
+            apelido: 'Casa'
+        } 
+
+        var endereco2 = {
+            cep: '01414-002',
+            end: 'Rua Haddock Lobo, 595',
+            apelido: 'Faculdade'
+        }
+
+        
+        if(pesquisa == endereco1.cep){
+            mensagem4.innerHTML += `Endereço ${endereco1.apelido}: ${endereco1.end}, CEP: ${endereco1.cep}`
+        }
+
+        else if(pesquisa == endereco2.cep){
+            mensagem4.innerHTML += `Endereço ${endereco2.apelido}: ${endereco2.end}, CEP: ${endereco2.cep}`
+        }
+
+        else{
+            mensagem4.innerHTML = 'Cep não encontrado!'
+        }
+
+    }
+</script>
+
+
+
+
+    <!-- EXERCÍCIO 5 -->
+    <div id="ex">
+            <h2>Exercício 5</h2>
+
+            <p>Crie um programa que simule o uso de uma conta Poupança de banco do usuário.
+                    Ela deve ter as seguintes informações na tela:
+                        Saldo: R$ 0.00
+                        Depósitos: 0
+                        Saques: 0
+                    Abaixo dessas informações, devem haver os botões: "Depositar 100" e "Sacar 20".
+                    Ao clicar no primeiro botão, o saldo na tela atualiza aumentando em 100 e o número de depósitos aumenta em 1.
+                    Ao clicar no segundo botão, o saldo na tela atualiza reduzindo em 20 e o número de saques aumenta em 1.
+                    </p><br><br>
+
+
+
+            Saldo: R$<span id="saldo">0</span><br>
+            Depósito: <span id="deposito">0</span><br>
+            Saques: <span id="saques">0</span><br><br>
+
+            <button type="button" onclick="depositar()">Depositar 100</button>
+            <button type="button" onclick="sacar()">Sacar 20</button>
+    </div>
+        
+        <script>
+            function depositar(){
+
+                var banco = {
+                    s: Number(saldo.innerHTML),
+                    d: Number(deposito.innerHTML)
+                }
+
+                var valor = {
+                    s: 100,
+                    d: 1
+                }
+
+                var aumentando_saldo = (banco.s + valor.s);
+                var aumentando_deposito = (banco.d + valor.d);
+
+                saldo.innerHTML = aumentando_saldo; 
+                deposito.innerHTML = aumentando_deposito;
+
+            }
+
+            function sacar(){
+
+                var banco = {
+                    sl: Number(saldo.innerHTML),
+                    sq: Number(saques.innerHTML)
+                }
+
+                var valor = {
+                    sl: 20,
+                    sq: 1
+                }
+
+                var diminuindo_saldo = (banco.sl - valor.sl);
+                var aumentando_saques = (banco.sq + valor.sq);
+
+                saldo.innerHTML = diminuindo_saldo; 
+                saques.innerHTML = aumentando_saques;
+
+            }
+        </script>
+</body>
+</html>
+
+
+<!-- EXEMPLO SEM UTILIZAR JSON  -->
+
+            <!-- // function depositar(){
+
+            //     var aumentando_saldo = (Number(saldo.innerHTML) + 100);
+            //     saldo.innerHTML = aumentando_saldo;
+            //     deposito.innerHTML ++;
+            // }
+
+            // function sacar(){
+
+            //     var diminuindo_saldo = (Number(saldo.innerHTML) - 20);
+            //     saldo.innerHTML = diminuindo_saldo;
+            //     saques.innerHTML ++;
+            // }
+     -->

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Algoritmos de repetição</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+
+<body>
+    <h1>Estrutura de repetição / Loops</h1>
+    <div id="exercise">
+        <h2>Teste / exemplo</h2>
+        <button type="button" onclick="repetir()">Repetir</button>
+    </div>
+
+    <!--Exercício 1-->
+    <div id="exercise">
+        <h2>Quantas vezes repetir a frase?</h2>
+        <form>
+            Quantas vezes você quer que a frase apareça?
+            <input type="number" id="vezesRep1">
+            <br>
+            <button type="button" onclick="exibirNvezes(vezesRep1.value)">Exibir</button>
+        </form>
+    </div>
+
+    <!--Exercício 2-->
+    <div id="exercise">
+        <h2>Quantas vezes repetir a
+            <b>sua</b> frase?</h2>
+        <form>
+            Qual a sua frase?
+            <input type="text" id="textRep2">
+            <br> Quantas vezes você quer que a frase apareça?
+            <input type="number" id="vezesRep2">
+            <br>
+            <button type="button" onclick="exibirNvezes2(vezesRep2.value, textRep2.value)">Exibir</button>
+        </form>
+    </div>
+
+    <!--Exercício 3-->
+    <div id="exercise">
+        <h2>Quantas vezes repetir a
+            <b>sua</b> frase?</h2>
+        <form>
+            Qual a sua frase?
+            <input type="text" id="textRep3">
+            <br> Quantas vezes você quer que a frase apareça?
+            <input type="number" id="vezesRep3">
+            <br>
+            <button type="button" onclick="exibirNvezes3(vezesRep3.value, textRep3.value)">Exibir</button>
+        </form>
+        <div id="div_frasesRep"></div>
+    </div>
+
+    <!--EXERCÍCIO 4-->
+    <div id="exercise">
+        <h2>Eu amo pares!</h2>
+        <button type="button" onclick="showPares()">EU AMO PARES!</button>
+        <div id="div_pares"></div>
+    </div>
+
+    <!--EXERCÍCIO 5-->
+    <div id="exercise">
+        <h2>Eu amo cincos!</h2>
+        <button type="button" onclick="showCinco()">EU AMO CINCOS!</button>
+        <div id="div_cinco"></div>
+    </div>
+
+    <!--EXERCÍCIO 6-->
+    <div id="exercise">
+        <h2>Eu amo divisores!</h2>
+        <button type="button" onclick="pulando()">EU AMO DIVIDIR!</button>
+        <div id="div_pulando"></div>
+    </div>
+
+    <!--EXERCÍCIO 7-->
+    <div id="exercise">
+        <h2>Avaliação ilustrada</h2>
+        Nota da avaliação:
+        <input type="number" id="repetirEstrela">
+        <br>
+        <button type="button" onclick="ilustrar(repetirEstrela.value)"> Ilustrar</button>
+        <div id="estrelinhas"></div>
+    </div>
+
+    <!--EXERCÍCIO 8-->
+    <div id="exercise">
+        <h2>Avaliação ilustrada II</h2>
+        Nota da avaliação:
+        <input type="number" id="repetirEstrela2">
+        <br>
+        <button type="button" onclick="ilustrar2(repetirEstrela2.value)"> Ilustrar</button>
+        <div id="estrelinhas2"></div>
+    </div>
+
+    <!--EXERCÍCIO 9-->
+    <div id="exercise">
+        <h2>Simulação de elevador</h2>
+        Andar atual: <input type="number" id="atual"> <br>
+        Andar desejado: <input type="number" id="final"> <br>
+        <button type="button" onclick="partir(Number(atual.value), Number(final.value))">Partir</button>
+        <div id="mensagemAndar"></div>
+    </div>
+
+    <!--EXERCÍCIO 10-->
+    <div id="exercise">
+        <h2>Simulação do elevador II</h2>
+        Quantos homens? <input type="number" id="num_homens"> <br>
+        Quantas mulheres? <input type="number" id="num_mulheres"> <br>
+        Quantas crianças? <input type="number" id="num_criancas"> <br>
+        <button type="button" onclick="ver_elevador(Number(num_homens.value), Number(num_mulheres.value), Number(num_criancas.value))">Partir</button>
+        <div id="elevador_img" style="border: 4px solid black; max-width: 100%; display: none"></div>
+    </div>
+
+    <!--EXERCÍCIO 11-->
+    <div id="exercise">
+        <h2>Simulação do elevador III</h2>
+        Quantos homens? <input type="number" id="num_homens2"> <br>
+        Quantas mulheres? <input type="number" id="num_mulheres2"> <br>
+        Quantas crianças? <input type="number" id="num_criancas2"> <br>
+        <button type="button" onclick="ver_elevador_peso(Number(num_homens2.value), Number(num_mulheres2.value), Number(num_criancas2.value))">Partir</button>
+        <div id="elevador_img2" style="border: 4px solid black; max-width: 100%; display: none"></div>
+    </div>
+
+    <!--EXERCÍCIO 12-->
+    <div id="exercise">
+        <h2>Par! Ímpar!</h2>
+        <button type="button" onclick="ver_pares()">Par!</button> <br>
+        <button type="button" onclick="ver_impares()">Ímpar!</button>
+        <ul id="ver_nums"></ul>
+    </div>
+
+    <!--EXERCÍCIO 13-->
+    <div id="exercise">
+        <h2>POUPAnça</h2>
+        Qual o depósito inicial? <input type="number" id="depositoIni"> <br>
+        Por quantos meses você quer deixar esse $ rendendo? <input type="number" id="mesesRendendo"> <br>
+        <button type="button" onclick="sim_poupanca(Number(depositoIni.value), Number(mesesRendendo.value))">Simular</button>
+        <div id="valor_poupa"></div>
+    </div>
+
+    <!--EXERCÍCIO 14-->
+    <div id="exercise">
+        <h2>Tipo do elevador, mas com Metrô</h2>
+        Estação atual: <input type="number" id="metro_inic"> <br>
+        Estação final: <input type="number" id="metro_fin"> <br>
+        <button type="button" onclick="partir_metro(Number(metro_inic.value), Number(metro_fin.value))">partir</button>
+        <div id="metro_partiu"></div>
+    </div>
+
+    <!--EXERCÍCIO 15-->
+    <div id="exercise">
+        <h2>Tipo o do elevador, mas com animais</h2>
+        Quantos porcos? <input type="number" id="num_porcos"> <br>
+        Quantos cavalos? <input type="number" id="num_cavalos"> <br>
+        Quantos bois? <input type="number" id="num_bois"> <br>
+        <button type="button" onclick="ilu_caminhao(Number(num_porcos.value), Number(num_cavalos.value), Number(num_bois.value))">Ilustrar caminhao</button>
+        <div id="caminhao_ilustrado" style="border: 3px black solid; display: none; max-width: 100%"></div>
+    </div>
+
+    <!--EXERCÍCIO 16-->
+    <div id="exercise">
+        <h2></h2>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // EXERCÍCIO 15
+    function ilu_caminhao (porcos, cavalos, bois) {
+        var peso_porcos = porcos * 100;
+        var peso_cavalos = cavalos * 600;
+        var peso_bois = bois * 1300;
+
+        var soma_peso_animais = peso_porcos + peso_cavalos + peso_bois;
+        var soma_animais = porcos + cavalos + bois;
+
+        var imagens;
+        var mostrar;
+
+        imagens = '';
+        mostrar = 'none';
+
+        if (soma_animais > 5 || soma_peso_animais > 2000) {
+            alert('Caminhão cheio demais!!');
+        } else {
+            var contador_porcos = 0;
+            while (contador_porcos < porcos) {
+                imagens += '<img src="https://img.icons8.com/metro/420/pig.png" width="50px">';
+                mostrar = 'block';
+                contador_porcos++;
+            }
+            var contador_cavalos = 0;
+            while (contador_cavalos < cavalos) {
+                imagens += '<img src="https://img.icons8.com/metro/420/horse.png" width="50px">';
+                mostrar = 'block';
+                contador_cavalos++;
+            }
+            var contador_bois = 0;
+            while (contador_bois < bois) {
+                imagens += '<img src="https://cdn4.iconfinder.com/data/icons/finance-16/48/bull-512.png" width="50px">'
+                mostrar = 'block';
+                contador_bois++;
+            }
+        }
+        caminhao_ilustrado.innerHTML = imagens;
+        caminhao_ilustrado.style.display = mostrar;
+    }
+
+    // EXERCÍCIO 14
+    function partir_metro(inicio, final) {
+        var frase;
+        frase = '';
+
+        if (inicio < 0 || final > 16) {
+            alert('Estações válidas: entre 0 e 16');
+        } else {
+            if (inicio == final) {
+                frase = 'Metrô vai ficar onde está!';
+            } else if (inicio < final) {
+                frase += 'Indo ao norte <br>';
+                var contador = inicio;
+                while (contador <= final) {
+                    frase += `Metro na estação ${contador} <br>`;
+                    contador++;
+                }
+            } else {
+                frase += 'Indo ao sul <br>';
+                var contador = inicio;
+                while (contador >= final) {
+                    frase += `Metro na estação ${contador} <br>`;
+                    contador--;
+                }
+            }
+        }
+
+        metro_partiu.innerHTML = frase;
+    }
+
+
+    // EXERCÍCIO 13 - NÃO CONSEGUI FAZER OS JUROS COMPOSTOS
+    function sim_poupanca(dep, meses) {
+        valor_poupa.innerHTML = '';
+        valor_poupa.innerHTML += `Valor depositado: R$${dep.toFixed(2)} <br>`;
+        var juros = 0.05
+
+        var contador = 1;
+        while (contador <= meses) {
+            var valor = dep * Math.pow( 1 + juros, contador);
+            //var valor2 = Math.pow(valor, contador);
+
+            //var depnovo = dep + contador * dep * juros;
+            valor_poupa.innerHTML += `${contador}º Mês: R$${(valor).toFixed(2)}. <br>`;
+            contador++;
+        }
+    }
+
+    // EXERCÍCIO 12
+    function ver_pares() {
+        ver_nums.innerHTML = '';
+
+        var contador = 10;
+        while (contador <= 40) {
+            ver_nums.innerHTML += `<li>${contador}</li>`;
+            contador +=2;
+        }
+    }
+
+    function ver_impares() {
+        ver_nums.innerHTML = '';
+
+        var contador = 31
+        while (contador <= 50) {
+            ver_nums.innerHTML += `<li>${contador}</li>`;
+            contador +=2;
+        }
+    }
+
+    // EXERCÍCIO 11
+    function ver_elevador_peso(hom, mul, cri) {
+        elevador_img2.innerHTML = "";
+
+        var peso_elevador;
+        peso_elevador = hom * 80 + mul * 70 + cri * 30;
+
+        var soma_pessoas;
+        soma_pessoas = Number(hom) + Number(mul) + Number(cri);
+
+        if (peso_elevador <= 600 && soma_pessoas <= 8) {
+            var contador_hom = 0;
+            var contador_mul = 0;
+            var contador_cri = 0;
+
+            while (contador_hom < hom) {
+                elevador_img2.style.display = "block";
+                elevador_img2.innerHTML += '<img src="https://cdn1.iconfinder.com/data/icons/user-experience/512/man-512.png" width="50px" style="margin: 5px">';
+                contador_hom++;
+            }
+
+            while (contador_mul < mul) {
+                elevador_img2.style.display = "block";
+                elevador_img2.innerHTML += '<img src="https://cdn.pixabay.com/photo/2016/04/16/10/33/woman-1332779_960_720.png" width="25px" style="margin: 5px">';
+                contador_mul++;
+            }
+
+            while (contador_cri < cri) {
+                elevador_img2.style.display = "block";
+                elevador_img2.innerHTML += '<img src="https://cdn2.iconfinder.com/data/icons/eldorado-navigation/40/baby_child-512.png" width="50px" style="margin: 5px">';
+                contador_cri++;
+            }
+        } else {
+            alert('Elevador muito cheio!');
+            elevador_img2.innerHTML = "";
+            elevador_img2.style.display = "none";
+        }
+    }
+
+
+
+    // EXERCÍCIO 10
+    function ver_elevador(hom, mul, cri) {
+        elevador_img.innerHTML = "";
+        var contador_hom = 0;
+        var contador_mul = 0;
+        var contador_cri = 0;
+
+        while (contador_hom < hom) {
+            elevador_img.style.display = "block";
+            elevador_img.innerHTML += '<img src="https://cdn1.iconfinder.com/data/icons/user-experience/512/man-512.png" width="50px" style="margin: 5px">';
+            contador_hom++;
+        }
+
+        while (contador_mul < mul) {
+            elevador_img.style.display = "block";
+            elevador_img.innerHTML += '<img src="https://cdn.pixabay.com/photo/2016/04/16/10/33/woman-1332779_960_720.png" width="25px" style="margin: 5px">';
+            contador_mul++;
+        }
+
+        while (contador_cri < cri) {
+            elevador_img.style.display = "block";
+            elevador_img.innerHTML += '<img src="https://cdn2.iconfinder.com/data/icons/eldorado-navigation/40/baby_child-512.png" width="50px" style="margin: 5px">';
+            contador_cri++;
+        }
+    }
+
+    // EXERCÍCIO 9
+    function partir(andarComeco, andarFim) {
+        mensagemAndar.innerHTML = '';
+        var frase;
+        frase = " ";
+        if (andarComeco > 20 || andarComeco < 0 || andarFim > 20 || andarFim < 0) {
+            alert('Andar inválido. Aceito entre 0 e 20');
+        } else {
+            if (andarComeco == andarFim) {
+                frase = 'Elevador já está no destino <br>';
+            } else if (andarComeco < andarFim) {
+                frase += 'Subindo <br>';
+                contador = andarComeco;
+                while (contador <= andarFim) {
+                    frase += `Elevador no andar ${contador} <br>`;
+                    contador++;
+                }
+            } else {
+                frase += 'Descendo <br>';
+                contador = andarComeco;
+                while (contador >= andarFim) {
+                    frase += `Elevador no andar ${contador} <br>`;
+                    contador--;
+                }
+            }
+            frase += `Você chegou!`
+        }
+        mensagemAndar.innerHTML += frase;
+    }
+
+    // EXERCÍCIO 8
+    function ilustrar2(notaAqui) {
+        estrelinhas2.innerHTML = '';
+        if (notaAqui <= 0 || notaAqui > 10) {
+            alert('Valor inválido. Só aceito entre 1 e 10');
+        } else {
+            contador = 0
+            while (contador < notaAqui) {
+                contador += 2;
+                estrelinhas2.innerHTML += '<img src="https://www.mariowiki.com/images/thumb/8/8b/MarioPartyStarRushStar.png/200px-MarioPartyStarRushStar.png" width="100px">';
+            }
+        }
+    }
+
+    // EXERCÍCIO 7
+    function ilustrar(notaAqui) {
+        estrelinhas.innerHTML = '';
+        if (notaAqui <= 0 || notaAqui > 5) {
+            alert('Valor inválido. Só aceito entre 1 e 5');
+        } else {
+            contador = 0
+            while (contador < notaAqui) {
+                estrelinhas.innerHTML += '<img src="https://www.mariowiki.com/images/thumb/8/8b/MarioPartyStarRushStar.png/200px-MarioPartyStarRushStar.png" width="100px">';
+                contador++;
+            }
+        }
+    }
+
+    // EXERCÍCIO 6
+    function pulando() {
+
+        div_pulando.innerHTML = '';
+        var contador = 0;
+
+        while (contador < 30) {
+            contador++;
+
+            if (contador % 3 == 0 && contador % 4 == 0) {
+                div_pulando.innerHTML += `Eu amo 3 e 4 <br>`;
+
+            } else if (contador % 3 == 0) {
+                div_pulando.innerHTML += `Eu amo 3 <br>`;
+
+            } else if (contador % 4 == 0) {
+                div_pulando.innerHTML += `Eu amo 4 <br>`
+
+            } else {
+                div_pulando.innerHTML += `${contador} <br> `;
+            }
+
+            //div_pulando.innerHTML += ` ${contador} <br>`;
+        }
+    }
+
+    // EXERCICIO 5
+    function showCinco() {
+        div_cinco.innerHTML = '';
+
+        var contador = 0;
+        while (contador < 50) {
+            contador += 5;
+            div_cinco.innerHTML += `- ${contador} -`;
+        }
+
+    }
+
+    // EXERCÍCIO 4
+    function showPares() {
+        div_pares.innerHTML = '';
+
+        var contador = 0;
+        while (contador < 100) {
+            contador += 2;
+            div_pares.innerHTML += `${contador} / `;
+        }
+    }
+
+    // EXERCÍCIO 3
+    function exibirNvezes3(nExibir, fExibir) {
+        div_frasesRep.innerHTML = '';
+
+        var contador = 0;
+
+        while (contador++ < nExibir) {
+            div_frasesRep.innerHTML += `${fExibir} <br>`;
+            //contador++;
+        }
+    }
+
+    // EXERCÍCIO 2
+    function exibirNvezes2(nExibir, fExibir) {
+        var contador = 0;
+        while (contador < nExibir) {
+            alert(`${fExibir}`);
+            contador++;
+        }
+    }
+
+
+    // EXERCÍCIO 1
+    function exibirNvezes(nExibir) {
+        var contador = 0;
+        while (contador < nExibir) {
+            alert('Parabéns, você sabe apertar um botão!');
+            contador++;
+        }
+    }
+
+    // EXEMPLO
+    function repetir() {
+        //usando uma Estrutura de repetição
+
+        // Estrutura WHILE ("enquanto")
+        // como o if, mas o if checa se é true ou false apenas uma vez.
+        // se true, executa o que está no corpo {     aqui     }
+        // While repete até a resposta da expressão boleana ser "false"
+        var contador = 0;
+        while (contador < 3) /* << expressao lógica, expressão boleana => 'condição de repeticao' */ {
+            alert(`I S2 algoritmos ${contador}`);
+            contador++;
+        }
+
+        // Estrutura FOR
+        /*for (i = 0; i < 12; i++) {
+            alert('I S2 algoritmos');
+        }*/
+    }
+
+
+
+</script>

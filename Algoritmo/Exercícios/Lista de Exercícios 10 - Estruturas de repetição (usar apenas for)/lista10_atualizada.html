@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 10</title>
+    <link rel="stylesheet" href="neutro.css">
+
+    <style>
+            .borda{
+                border: solid;
+                display: none;
+            }
+    </style>
+
+
+</head>
+<body>
+    <h1>Lista 10 - For</h1>
+
+
+
+<!-- EXERCÍCIO 1 -->
+<div id="ex">
+    <h2>Exercício 1</h2>
+
+    <p>Crie um programa que pergunte ao usuário quantas vezes ele quer exibir uma frase qualquer. Ele digita isso num campo e clica num botão "Exibir".
+            Ao clicar nesse botão, uma frase qualquer, escolhida por você exibe N vezes em "alerts".</p>
+
+    Quantas vezes quer repetir a frase: <input type="number" id="vezes1"><br><br>
+
+    <button type="button" onclick="repetir1(vezes1.value)">Exibir</button>
+</div>
+
+<script>
+    function repetir1(valor){
+
+        for(contador =0; contador < valor; contador++){
+            alert ('VEM 10 NA PROVA!')
+        }
+
+        vezes1.value = '';
+    }
+    
+</script>
+
+
+
+<!-- EXERCÍCIO 2 -->
+<div id="ex">
+        <h2>Exercício 2</h2>
+
+        <p>Crie um programa que pergunte ao usuário quantas vezes ele quer exibir uma frase definida por ele. Ele digita esse número e a frase na tela e clica num botão "Exibir".
+                Ao clicar nesse botão, uma frase qualquer, escolhida por ele exibe N vezes em "alerts".
+                
+                </p>
+
+        Frase: <input type="text" id="frase1"><br><br>
+        Vezes: <input type="number" id="vezes2">
+
+        <button type="button" onclick="repetir2(frase1.value, vezes2.value)">Exibir</button>
+    </div>
+    
+    <script>
+        function repetir2(frase, valor){
+
+            for(contador = 0; contador < valor; contador++){
+                alert (`${frase}`);
+            }
+
+            frase1.value = '';
+            vezes2.value = '';
+        }
+    </script>
+
+
+
+<!-- EXERCÍCIO 3 -->
+<div id="ex">
+        <h2>Exercício 3</h2>
+
+        <p>Refaça a questão anterior, porém, ao invés de exibir "alerts", exiba as frases na própria página, logo abaixo do botão
+            </p>
+
+        Frase: <input type="text" id="frase2"><br><br>
+        Vezes: <input type="number" id="vezes3">
+
+        <button type="button" onclick="repetir3(frase2.value, vezes3.value)">Exibir</button><br><br>
+
+        <div id="mensagem3"></div>
+    </div>
+    
+    <script>
+        function repetir3(frase, valor){
+            mensagem3.innerHTML = ''; 
+
+            for(contador = 0; contador < valor; contador++){
+                mensagem3.innerHTML += `${frase}<br>`
+            }
+        }
+    </script>
+
+
+
+
+<!-- EXERCÍCIO 4 -->
+<div id="ex">
+    <h2>Exercício 4</h2>
+
+    <p>Crie um programa no qual, ao clicar no botão "Eu amo pares", ele exiba abaixo dele, um abaixo do outro, todos os números pares entre 0 e 100.
+        </p>
+
+    <button type="button" onclick="repetir4()">Eu amo pares!</button><br><br>
+
+    <div id="mensagem4"></div>
+</div>
+
+<script>
+    function repetir4(){
+
+        for(contador = 0; contador <= 100; contador += 2){
+            mensagem4.innerHTML += `${contador} - `
+        }
+    }
+</script>
+
+
+
+
+<!-- EXERCÍCIO 5 -->
+<div id="ex">
+        <h2>Exercício 5</h2>
+
+        <p>Ao clicar num botão, exiba em alerts todos os números de 10 a 1, em ordem decrescente.</p>
+
+        <button type="button" onclick="repetir5()">Exibir</button>
+    </div>
+    
+    <script>
+        function repetir5(){
+
+            for(contador = 10; contador >=1; contador--){
+                alert(`${contador}`);
+            }
+        }
+    </script>
+
+
+
+
+<!-- EXERCÍCIO 6 -->
+<div id="ex">
+    <h2>Exercício 6</h2>
+
+    <p>Crie um programa no qual, ao clicar no botão "Eu amo o 3 e 4", ele exiba abaixo dele, um abaixo do outro, 
+        quase todos os números entre 0 e 30. Por que "quase"? Se o número for múltiplo de 3, ao invés do número, 
+        exiba "Eu amo 3!". Se o número for múltiplo de 4, ao invés do número exiba "4 são 2 pares".</p>
+
+    <button type="button" onclick="repetir6()">Eu amo o 3 e o 4</button><br><br>
+
+    <div id="mensagem6"></div>
+</div>
+
+<script>
+    function repetir6(){
+        
+        for(contador =0; contador <=30; contador++){
+            
+
+            if(contador % 3 == 0 && contador % 4 == 0){
+                mensagem6.innerHTML += `Eu amo o 3! / 4 são 2 pares <br>`
+            }
+
+            else if(contador % 3 == 0){
+                mensagem6.innerHTML += `Eu amo o 3! <br>`
+            }
+
+            else if(contador % 4 ==0){
+                mensagem6.innerHTML += `4 são 2 pares <br>`
+            }
+
+            else{
+                mensagem6.innerHTML += `${contador} <br>`
+            }
+        }
+    }
+</script>
+
+
+
+<!-- EXERCÍCIO 7 -->
+<div id="ex">
+    <h2>Exercício 7</h2>
+
+    <p>Crie um programa no qual o usuário digita uma nota num campo de formulário identificado como "Nota de avaliação". 
+            Após clicar em "Ilustrar Avaliação", caso a nota seja menor que 1 ou maior que 5, exiba um alert com a frase 
+            "Valor inválido. Só aceito entre 1 e 5". Caso a nota esteja entre 1 e 5, exiba 1 ou 5 estrelinhas amarelas de 
+            mesmo tamanho, uma do lado da outra, conforme a nota digitada (nota 1, uma estrela. Nota 2, duas estrelas...)</p>
+
+    
+            Nota de avaliação: <input type="number" id="nota7">
+
+            <button type="button" onclick="repetir7(nota7.value)">Ilustrar Avaliação</button><br><br>
+
+            <div id="mensagem7"></div>
+</div>
+
+<script>
+    function repetir7(nota){
+        mensagem7.innerHTML = '';
+
+        if(nota < 0 || nota > 5){
+            alert('Nota Inválida')
+        }
+
+        else{
+            for(contador=0; contador < nota; contador++){
+                mensagem7.innerHTML += `<img src="star.png">`
+            }
+        }
+    }
+
+</script>
+
+
+
+
+<!-- EXERCÍCIO 8 -->
+<div id="ex">
+        <h2>Exercício 8</h2>
+
+        <p>Recrie o programa do enunciado anterior, porém as notas válidas são entre 1 e 10. Exiba: 1 estrela para notas entre 1 e 2;
+                2 estrelas para notas entre 3 e 4; 3 estrelas para notas entre 5 e 6; 4 estrelas para notas entre 7 e 8; 5 estrelas para notas entre 9 e 10.</p>
+        
+        Nota de avaliação: <input type="number" id="nota8">
+
+        <button type="button" onclick="repetir8(nota8.value)">Ilustrar Avaliação</button><br><br>
+
+        <div id="mensagem8"></div>
+
+</div>
+
+<script>
+    function repetir8(nota){
+
+        mensagem8.innerHTML = '';
+
+        if(nota < 0 || nota > 10){
+            alert('Nota Inválida')
+        }
+
+        else{
+            for(contador=0; contador < nota; contador += 2){
+                mensagem8.innerHTML += `<img src="star.png">`
+            }
+        }
+    } 
+</script>
+
+
+
+
+<!-- EXERCÍCIO 9 -->
+<div id="ex">
+        <h2>Exercício 9</h2>
+
+        <p>Crie um programa que simule o funcionamento de um elevador. O usuário informa 2 valores: "Andar atual" e "Andar solicitado".
+            Após clicar num botão "Partir", o programa primeiro valida se os valores informados são válidos. Para ambos o campos o mínimo é 0 
+            (equivalente ao "térreo") e o máximo é 20. Caso o usuário informe um valor errado em algum deles, exiba um alert "Andares válidos: 
+            entre 0 e 20". Caso os valores de ambos os campos estejam corretos, exiba várias frases abaixo do botão: Primeiro informando de está 
+            subindo ou descendo e depois várias, uma abaixo da outra, simulando o caminho do elevador. Veja os exemplos abaixo:
+        </p>
+
+
+        Andar atual: <input type="number" id="andar_atual"><br><br>
+        Andar solicitado: <input type="number" id="andar_solicitado">
+
+        <button type="button" onclick="repetir9(andar_atual.value, andar_solicitado.value)">Partir</button><br><br>
+
+        <div id="mensagem9"></div>
+        <div id="mensagem91"></div>
+    </div>
+    
+    <script>
+        function repetir9(aat, asl){
+
+            mensagem9.innerHTML = '';
+            mensagem91.innerHTML = '';
+
+            if(aat < 0 || aat > 15 || asl < 0 || asl > 15 ){
+                alert('Andares válidos: entre 0 e 20')
+            }
+
+            else{
+
+                if(aat <= asl){
+                    mensagem9.innerHTML += 'Subindo';
+
+                    for(aat; aat <= asl; aat++){
+                        mensagem91.innerHTML += `Elevador no andar: ${aat} <br>`
+                    }
+                }
+
+                else{
+                    mensagem9.innerHTML += 'Descendo';
+
+                    for(aat; aat >= asl; aat--){
+                        mensagem91.innerHTML += `Elevador no andar: ${aat} <br>`
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+
+    <!-- EXERCÍCIO 10-->
+<div id="ex">
+        <h2>Exercício 10</h2>
+
+        <p>rie um programa no qual o usuário informe quantos homens, mulheres e crianças vão entrar num elevador. 
+                Após clicar no botão "Ilustrar Elevador", deve aparecer um "elevador" (uma caixa com bordas da cor que quiser) e, 
+                dentro dela, N imagens de homens, N imagens de mulheres e N imagens de crianças, conforme os valores digitados para cada 
+                quantidade.</p>
+
+        Homens: <input type="number" id="homens10"><br><br>
+        Mulheres: <input type="number" id="mulheres10"><br><br> 
+        Crianças: <input type="number" id="criancas10"><br><br>
+
+        <button type="button" onclick="repetir10(homens10.value, mulheres10.value, criancas10.value)">Ilustrar Elevador</button><br><br>
+
+        <div id="mensagem10" class="borda"></div>
+    </div>
+    
+    <script>
+        function repetir10(h, m, c){
+            mensagem10.innerHTML = '';
+
+
+            for(contador=0; contador < h; contador++){
+                mensagem10.innerHTML += `<img src="homens.jpg">`;
+            }
+
+            for(contador=0; contador < m; contador++){
+                mensagem10.innerHTML += `<img src="mulheres.jpg">`;
+            }
+
+            for(contador=0; contador < c; contador++){
+                mensagem10.innerHTML += `<img src="criancas.jpg">`;
+            }
+
+            mensagem10.style.display = "block"
+        }
+    </script>
+
+
+
+
+
+    <!-- EXERCÍCIO 11 -->
+<div id="ex">
+        <h2>Exercício 11</h2>
+
+        <p>Melhore a questão anterior de tal forma que ela valide se o elevador pode ou não partir. 
+            A regra é que o elevador só aguenta 600kg. E considera-se que:
+              Um homem adulto pesa, em média, 80kg. 
+              Uma mulher adulta pesa, em média, 70kg. 
+              Uma criança pesa, em média, 30 kg.
+            Caso a soma dos pesos seja mais que 600kg, exiba um alert "Elevador pesado demais. Alguém deve sair" e não 
+            faça mais nada. O elevador só aguenta 8 pessoas no total (não importa se homem, mulher ou criança)
+            Ao clicar em "Ilustrar Elevador", o programa só vai "desenhar" o elevador caso as condições de embarque 
+            sejam adequadas. Em caso contrário, apenas exiba um alert "Elevador cheio demais!" e "limpe" o desenho do 
+            elevador, caso já esteja desenhado na tela,</p><br>
+
+            Homens: <input type="number" id="homens11"><br><br>
+            Mulheres: <input type="number" id="mulheres11"><br><br> 
+            Crianças: <input type="number" id="criancas11"><br><br>
+    
+            <button type="button" onclick="repetir11(Number(homens11.value), Number(mulheres11.value), Number(criancas11.value))">Ilustrar Elevador</button><br><br>
+    
+            <div id="mensagem11" class="borda"></div><br>
+    </div>
+    
+    <script>
+        function repetir11(h, m, c){
+            mensagem11.innerHTML = '';
+
+            var pessoas_total = (h + m + c);
+            var pesoh = (h * 80);
+            var pesom = (m * 70);
+            var pesoc = (c * 30);
+            var peso_total = (pesoh + pesom + pesoc);
+
+
+            if(pessoas_total > 8){
+                alert('Elevador cheio demais!')
+            }
+
+            else{
+                if(peso_total <= 600){
+
+                    for(contador = 0; contador < h; contador++){
+                        mensagem11.innerHTML += `<img src="homens.jpg">`
+                    }
+
+                    for(contador = 0; contador < m; contador++){
+                        mensagem11.innerHTML += `<img src="mulheres.jpg">`
+                    }
+
+                    for(contador = 0; contador < c; contador++){
+                        mensagem11.innerHTML += `<img src="criancas.jpg">`
+                    }
+
+                    mensagem11.style.display = "block";
+                }
+
+                else{
+                    alert('Elevador pesado demais!')
+                }
+            }
+        } 
+    </script>
+
+
+
+
+
+
+<!-- EXERCÍCIO 12 -->
+<div id="ex">
+    <h2>Exercício 12</h2>
+
+    <p>Crie um programa no qual o usuário pode clicar em 2 botões diferentes: "Ver os pares" ou "Ver os ímpares".
+            Ao clicar no primeiro, devem aparecer abaixo do botão todos os números pares entre 10 e 40.
+            Ao clicar no segundo, devem aparecer abaixo do botão todos os números ímpares entre 30 e 50. 
+    </p><br>
+    
+    <button type="button" onclick="repetir_pares()">Ver os pares</button>
+    <button type="button" onclick="repetir_impares()">Ver os impares</button>
+
+    <ul id="pares"></ul>
+    <ul id="impares"></ul>
+</div>
+
+<script>
+    function repetir_pares(){
+
+        for(contador=10; contador <= 40; contador += 2){
+            pares.innerHTML += `<li>${contador}</li>`
+        }
+
+    }
+
+    function repetir_impares(){
+
+        for(contador=29; contador <= 50; contador += 2){
+            impares.innerHTML += `<li>${contador}</li>`
+        }
+
+    }
+</script>
+
+
+<!-- EXERCÍCIO 13 -->
+    <div id="ex">
+        <h2>Exercício 13</h2>
+    </div>
+
+
+<!-- EXERCÍCIO 14 -->
+<div id="ex">
+        <h2>Exercício 14</h2>
+    </div>
+
+
+<!-- EXERCÍCIO 15 -->
+<div id="ex">
+        <h2>Exercício 15</h2>
+    </div>
+
+<!-- EXERCÍCIO 16 -->
+<div id="ex">
+        <h2>Exercício 16</h2>
+    </div>
+
+
+
+
+
+<!-- EXERCÍCIO 17 -->
+    <div id="ex">
+        <h2>Exercício 17</h2>
+
+        <p>Crie um programa que, ao clicar no botão, exiba todos os números a partir de 40 até 0 (zero). 
+            Os pares, exiba na cor verde, os ímpares, na cor vermelha e o 0 (zero), na cor preta.</p><br>
+
+
+            <button type="button" onclick="repetir17()">Mostrar Números</button><br>
+
+            <div id="mensagem17"></div>
+    </div>
+
+    <script>
+        function repetir17(){
+            mensagem17.innerHTML = '';
+
+            for(contador = 40; contador >=0; contador--){
+
+                if(contador == 0){
+                    mensagem17.innerHTML += `${contador}  -  `
+                }
+
+                else if(contador % 2 == 0){
+                    mensagem17.innerHTML += `<span style="color:green">${contador}</span>  -  `
+                }
+
+                else{
+                    mensagem17.innerHTML += `<span style="color:red">${contador}<span>  -  `
+                }
+            }
+        }
+    </script>
+
+
+
+<!-- EXERCÍCIO 18 -->
+<div id="ex">
+        <h2>Exercício 18</h2>
+</div>
+
+
+
+
+
+<!-- EXERCÍCIO 19 -->
+    <div id="ex">
+        <h2>Exercício 19</h2>
+
+        <p>Crie um programa no qual o usuário informa seu número da sorte, em 0 e 100.
+                Ao clicar num botão, faça 7 sorteios de números aleatórios, cada um deles, entre 0 e 100. 
+                Exiba os números sorteados, um abaixo do outro, abaixo do botão.
+                Se após 7 sorteios, o número da sorte saiu, exiba um alert "Parabéns, você tem sorte!'. 
+                Caso contrário, exiba um alert "Você não é tão sortudo!"</p>
+
+                <p>Em Javascript, para obter um número aleatório, usamos a instrução Math.random().
+                        Ela retorna um número aleatório entre 0 e 1.
+                        Portanto, para obter um número aleatório entre 0 e 100, fazemos: Math.random() * 100
+                        Para ficarmos apenas com a parte inteira do número, fazemos: parseInt(Math.random() * 100)</p><br>
+
+        
+        Número da sorte: <input type="number" id="numero_sorte">
+
+        <button type="button" onclick="sortear(Number(numero_sorte.value))">Testar Sorte</button><br><br>
+
+        <div id="mensagem19"></div>
+    </div>
+
+<script>
+    function sortear(n_sorte){
+        mensagem18.innerHTML = '';
+        var sorte =0; 
+
+
+        for(contador=0; contador < 7; contador++){
+            n_sorteado = parseInt(Math.random()*100);
+            mensagem19.innerHTML += `Número sorteado = ${n_sorteado}<br>`;
+
+            if(n_sorteado == n_sorte){
+                sorte++;
+            }
+        }
+
+        if(sorte ==0){
+            alert('Você não é muito sortudo')
+        }
+
+        else{
+            alert('Parabéns! Você tem sorte!')
+        }
+    }
+</script>
+</body>
+</html>

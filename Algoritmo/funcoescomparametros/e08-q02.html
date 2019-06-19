@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 08, questão 02</title>
+</head>
+<body>
+<form>
+    Salário: <input type="number" id="salario">
+    <br>
+    <button type="button" onclick="ver_descontos()">
+        Ver descontos
+    </button>
+</form>
+<div id="div_inss"></div>
+<div id="div_ir"></div>
+<div id="div_vt"></div>
+</body>
+</html>
+<script>
+    function ver_descontos() {
+        var v_salario = Number(salario.value);
+        calc_inss(v_salario);
+        calc_ir(v_salario);
+        calc_vt(v_salario);
+    }
+
+    function calc_inss(v_salario) {
+        var inss = v_salario * 0.1;
+        div_inss.innerHTML = `Desconto INSS: R$${inss}`;
+    }
+
+    function calc_ir(v_salario) {
+        var ir = v_salario * 0.15;
+        div_ir.innerHTML = `Desconto IR: R$${ir}`;        
+    }
+
+    function calc_vt(v_salario) {
+        var vt = v_salario * 0.07;
+        div_vt.innerHTML = `Desconto Vale Transporte: R$${vt}`;
+    }
+</script>

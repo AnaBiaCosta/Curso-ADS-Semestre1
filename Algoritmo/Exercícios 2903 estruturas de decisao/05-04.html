@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 5</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <h1>IDADE ÁRVORE</h1>
+
+    <form>
+        Qual idade dessa árvore? <input type="number" id="idade">
+        <br><br>
+
+        <button type="button" onclick="calcular()">Validar idade</button>
+        <br><br>
+
+        <div id="div_mensagem"></div>
+    </form>
+
+    
+</body>
+</html>
+
+<script>
+    function calcular() {
+        if (idade.value <= 0) {
+            div_mensagem.innerHTML = "Idade inválida!";
+        } 
+        
+        else { div_mensagem.innerHTML = "Idade válida!"
+            
+        }
+    }
+
+
+</script>

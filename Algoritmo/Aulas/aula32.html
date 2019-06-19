@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 32</title>
+
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Vetor ou Array</h1>
+    <!-- Pode ter + de um valor -->
+    <!-- Dentro do Array a posição do valor é posição ou índice -->
+    <!-- A posição começa do 0 -->
+    <!-- Tamanho do vetor, NÃO É A POSIÇÃO = vetor.length -->
+    <!-- Mudar para outro item =  vetor[posição] = 'novo_item' -->
+
+
+<div id="ex">
+    <h2>Exemplo 1</h2>
+    <form>
+
+    Filmes que mais gosta: <input type="text" id="novo_filme">
+
+    <button type="button" onclick="cadastrar()">Cadastrar filme</button><br><br>
+
+    <button type="button" onclick="ver()">Ver favoritos</button><br><br>
+    
+    <div id="div_filmes"></div>
+
+    </form>
+</div>
+
+    <script>
+        // Variável Global porque tem que ser lembrada para ser usada nas duas funções; 
+
+        var filmes = [];
+
+        function cadastrar(){
+            // Inserindo elemento no vetor
+            filmes.push(novo_filme.value);
+            novo_filme.value = '';
+        }
+
+        function ver(){
+            var texto = `Filmes: ${filmes}<br> 
+            Total:${filmes.length} <br> 
+            O que mais gosta é: ${filmes[0]} <br> 
+            O que você menos gosta: ${filmes [filmes.length-1]}`;
+
+            div_filmes.innerHTML = texto;
+        }
+    </script>
+
+
+<!-- EXEMPLO 2 -->
+
+
+    <div id="ex">
+        <h2>Exemplo 2</h2>
+
+        Lugares para onde já viajou: <input type="text" id="lugares">
+        <button type="button" onclick="cadastrar2()">Cadastrar</button><br><br>
+
+
+        Relembrar lugares: <input type="number" id="lembrar">
+        <button type="button" onclick="relembrar()">Relembrar</button><br><br>
+
+        <div id="mensagem2"></div>
+    </div>
+
+
+    <script>
+        var viagem = [];
+
+        function cadastrar2(){
+            viagem.push(lugares.value);
+            lugares.value = '';
+        }
+
+        function relembrar(){
+
+            if(lembrar.value <= viagem.length){
+                mensagem2.innerHTML = `Sua viagem ${lembrar.value}, 
+                foi para: ${viagem [Number(lembrar.value) -1]}`
+            }
+
+            else{
+                mensagem2.innerHTML = `Você não fez uma ${lembrar.value}ª viagem!`
+            }
+        }
+    </script>
+
+
+<!-- EXEMPLO 3 -->
+<div id="ex">
+    <h2>Exemplo 3</h2>
+
+    Projetos que já criou: <input type="text" id="projetos">
+
+    <button type="button" onclick="cadastrar3()">Registar projeto</button><br><br>
+
+    <div id="mensagem3"></div>
+</div>
+
+
+<script>
+
+    var projetos_cadastrados = [];
+
+
+    function cadastrar3(){
+
+        projetos_cadastrados.push(projetos.value);
+        projetos.value = '';
+
+
+        if(projetos_cadastrados.length <= 4){
+            mensagem3.innerHTML = `Você já fez ${projetos_cadastrados.length}. Por isso você é um profissional Júnior`;
+        }
+
+        else if (projetos_cadastrados.length >4 && projetos_cadastrados.length <=12){
+            mensagem3.innerHTML = `Você já fez ${projetos_cadastrados.length}. 
+            Por isso você é um profissional Pleno e seu 5° projeto foi: ${projetos_cadastrados[4]}`;
+        }
+
+        else{
+            mensagem3.innerHTML = `Você já fez ${projetos_cadastrados.length}. 
+            Por isso você é um profissional Sênior e seu 13° projeto foi:${projetos_cadastrados[12]}`;
+        }
+    }
+</script>
+
+
+
+
+
+
+    
+</body>
+</html>

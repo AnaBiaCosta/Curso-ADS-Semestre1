@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Aula 38</h1>
+
+    <div id="ex">
+
+        <button type="button" onclick="vai()">Vai!</button><br><br>
+        <div id="mensagens"></div>
+    </div>
+
+</body>
+</html>
+
+
+<script>
+    function vai(){
+        mensagens.innerHTML  = '';
+
+        setInterval (function () { //Operação assíncrona, quando clica várias vezes, não é que fica mais rápido, mas sim, pq vai executando vários ao mesmo tempo
+            mensagens.innerHTML += `Há! iéié! <br>`
+        }, 2000); 
+
+        setTimeout (function (){
+            mensagens.innerHTML += `É nóis!!! <br>`
+        }, 1000); // só executa uma vez
+
+        mensagens.innerHTML += 'bom dia <br>';
+        mensagens.innerHTML += 'boa tarde <br>';
+        mensagens.innerHTML += 'boa noite <br>';
+
+    }
+</script>

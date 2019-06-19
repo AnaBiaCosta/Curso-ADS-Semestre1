@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ex 05 - 12</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <div id="title">
+    <h1>Novos exercícios!</h1>
+  </div>
+  <!--EXERCÍCIO 5-->
+  <div id="exercise">
+    <h2>Calculando idade das árvores</h2>
+    <form>
+      Qual a idade dessa árvore? <input type="number" id="ageTree" autofocus>
+      <button type="button" onclick="calcTreeAge()">Validar idade</button>
+    </form>
+    <br>
+    <div id="treeMsg"></div>
+  </div>
+
+  <!--EXERCÍCIO 6-->
+  <div id="exercise">
+    <h2>Cadastrando famílias</h2>
+    <form>
+      Qual a renda da mãe? <input type="number" id="incomeMother" autofocus> <br>
+      Qual a renda do pai? <input type="number" id="incomeFather"> <br>
+      Qual a renda dos avós? <input type="number" id="incomeGrandParents"> <br>
+      <button type="button" onclick="calcFamIncome()">Calcular a renda da família</button>
+    </form>
+    <br>
+    <div id="famIncome"></div>
+  </div>
+
+  <!--EXERCÍCIO 7-->
+  <div id="exercise">
+    <h2>Equipe Idão aprendendo conversão</h2>
+    <form>
+      Valor em R$: <input type="number" id="valueReais"> <br>
+      Cotação do dólar, em R$: <input type="number" id="priceDolar">
+      <button type="button" onclick="priceReal2Dolar()">Quantos dólares você tem?</button>
+    </form>
+    <br>
+    <div id="priceReal1"></div>
+    <div id="priceReal2"></div>
+  </div>
+
+  <!--EXERCÍCIO 8-->
+  <div id="exercise">
+    <h2>Frutas ou FastFood?</h2>
+    <form>
+      O quanto você gosta de frutas? <input type="number" id="likeFruits"> <br>
+      O quanto você gosta de fast food? <input type="number" id="likeFastFood"> <br>
+      <button type="button" onclick="fruitsXfastFood()">Avaliar sua preferência</button>
+    </form>
+    <br>
+    <div id="answerLikeFruits"></div>
+  </div>
+
+  <!--EXERCÍCIO 9-->
+  <div id="exercise">
+    <h2>Calculando média aluno BandTec</h2>
+    <form>
+      Nome do aluno: <input type="text" id="studentsName"> <br>
+      Média das integradas: <input type="number" id="studentsGrade1"> <br>
+      Nota da continuada: <input type="number" id="studentsGrade2"> <br>
+      <button type="button" onclick="studentsFinal()">Calcular média</button>
+    </form>
+    <br>
+    <div id="studentsMsg"></div> <br>
+    <img id="studentsResponse">
+  </div>
+
+  <!--EXERCÍCIO 10-->
+  <div id="exercise">
+    <h2>Avaliando!</h2>
+    <form>
+      De 0 a 5, que nota você dá para o atendimento? <input type="number" id="serviceGrade"> <br>
+      <button type="button" onclick="giveGrade()">Salvar avaliação</button>
+    </form>
+    <div id="serviceMsg"></div>
+  </div>
+
+  <!--EXERCÍCIO 11-->
+  <div id="exercise">
+    <h2>Status Social!</h2>
+    <form>
+      Qual o seu salário? <input type="number" id="salary"> <br>
+      <button type="button" onclick="getSocialStatus()">Verificar Status Social</button>
+    </form>
+    <div id="socialStatusMsg"></div>
+  </div>
+
+  <!--EXERCÍCIO 12-->
+  <div id="exercise">
+    <h2>Analisando sua vida</h2>
+    <form>
+      Qual a sua idade? <input type="number" id="userAge"> <br>
+      Quantos filhos você tem? <input type="number" id="userKids"> <br>
+      <button type="button" onclick="analiseLife()">Analisar vida.</button>
+    </form>
+    <div id="lifeAge"></div>
+    <div id="lifeKids"></div>
+  </div>
+
+</body>
+
+</html>
+<script>
+  // EXERCÍCIO 12
+  function analiseLife() {
+    var phraseAge;
+    var phraseKids;
+    var ageUser = Number(userAge.value);
+    var kidsUser = Number(userKids.value);
+
+    if (ageUser < 14) {
+      phraseAge = 'Você é praticamente uma criança';
+    } else {
+      if (ageUser < 18) {
+        phraseAge = 'Você é menor de idade';
+        if (kidsUser <= 0) {
+          phraseKids = ' '; 
+        }
+      } else {
+        phraseAge = 'Você é maior de idade'
+      }
+    }
+
+    if (ageUser < 18) {
+      if (kidsUser > 0) {
+        phraseKids = 'Nossa, começou cedo, hein!'
+      }
+    }
+    if (ageUser >= 18) {
+        if (kidsUser > 0) {
+          if (kidsUser < 3) {
+            phraseKids = 'Parabéns pelos filhos!'
+          } else {
+            phraseKids = 'Não tem TV nem internet em casa?'
+          }
+        }
+      }
+    
+  lifeAge.innerHTML = phraseAge;
+  lifeKids.innerHTML = phraseKids;
+  }
+  
+  /*
+    Caso a idade for menor de 18 e tenha filhos: Nossa, começou cedo, hein : O
+  
+    Caso a idade for 18 ou mais e tenha menos de 3 filhos: Parabéns pelos filhos!
+    Caso a idade for 18 ou mais e tenha 3 ou mais filhos: Não tem TV nem internet em casa ?
+  */
+
+  // EXERCÍCIO 11
+  function getSocialStatus() {
+    var phrase;
+    var salaryValue = Number(salary.value);
+    if (salaryValue < 200) {
+      phrase = '#aindatenhoqueralarmuito';
+    } else {
+      if (salaryValue < 1000) {
+        phrase = '#precisodeajuda';
+      }
+      if (salaryValue >= 1000) {
+        phrase = '#estoumenospobre';
+      }
+      if (salaryValue > 2500) {
+        phrase = '#ostentação';
+      }
+      if (salaryValue > 5000) {
+        phrase = '#amigodoNeymar';
+      }
+    }
+    socialStatusMsg.innerHTML = phrase;
+  }
+
+
+  // EXERCÍCIO 10
+  function giveGrade() {
+    var phrase;
+    var grade = Number(serviceGrade.value);
+    if (grade > 5) {
+      phrase = 'Não existe nota maior que 5!';
+      color = 'maroon';
+    } if (grade < 0) {
+      phrase = 'Não existe nota menor que 0.';
+      color = 'maroon';
+    } else {
+      if (grade <= 2) {
+        phrase = 'Sua avaliação foi negativa';
+        color = 'red';
+      }
+      if (grade == 3) {
+        phrase = 'Sua avaliação foi neutra';
+        color = 'gray';
+      }
+      if (grade <= 5) {
+        phrase = 'Sua avaliação foi positiva!';
+        color = 'blue';
+        alert('Só queria confirmar: Meus parabéns!!')
+      }
+    }
+    serviceMsg.innerHTML = phrase;
+    serviceMsg.style.color = color;
+  }
+
+  // EXERCÍCIO 9
+  function studentsFinal() {
+    var phrase;
+    var color;
+    var gradeFinal = studentsGrade1.value * 0.2 + studentsGrade2.value * 0.8;
+    if (gradeFinal >= 5) {
+      phrase = `Parabéns, ${studentsName.value}, você foi aprovado com média final ${gradeFinal.toFixed(2)}!`;
+      color = 'blue';
+      image = 'approval.gif';
+    } else {
+      phrase = `Olá, ${studentsName.value}, infelizmente você foi reprovado com média final ${gradeFinal.toFixed(2)}.`;
+      color = 'red';
+      image = 'disapproval.gif';
+    }
+    studentsMsg.innerHTML = phrase;
+    studentsMsg.style.color = color;
+    studentsResponse.src = image;
+  }
+
+  // EXERCÍCIO 5
+  function calcTreeAge() {
+    var phrase;
+    if (ageTree.value <= 0) {
+      phrase = 'Idade inválida!';
+    } else {
+      phrase = 'Idade válida.';
+    }
+    treeMsg.innerHTML = phrase;
+  }
+
+  // EXERCÍCIO 6
+  function calcFamIncome() {
+    var phrase;
+    var sumFamIncome = Number(incomeMother.value) + Number(incomeFather.value) + Number(incomeGrandParents.value);
+    if (sumFamIncome >= 150.55) {
+      phrase = 'Acima da linha da pobreza.'
+    } else {
+      phrase = 'Abaixo da linha da pobreza.'
+    }
+    famIncome.innerHTML = phrase;
+  }
+
+  // EXERCÍCIO 7
+  function priceReal2Dolar() {
+    var phrase1;
+    var phrase2;
+    var finalPrice = valueReais.value / priceDolar.value;
+    phrase1 = `R$${valueReais.value}, na cotação atual dá U$${finalPrice.toFixed(2)}`;
+
+    if (finalPrice > 1000.99) {
+      phrase2 = 'Você tem muitos dólares!'
+    } else {
+      phrase2 = 'Você tem poucos dólares.'
+    }
+    priceReal1.innerHTML = phrase1;
+    priceReal2.innerHTML = phrase2;
+  }
+
+  // EXERCÍCIO 8
+  function fruitsXfastFood() {
+    var phrase;
+    if (Number(likeFruits.value) == Number(likeFastFood.value)) {
+      phrase = 'Você gosta tanto de frutas quanto de fast food';
+    } else {
+      if (Number(likeFruits.value) > Number(likeFastFood.value)) {
+        phrase = 'Você gosta mais de frutas do que de fast food. <br> Parabéns! Seu corpo agradece!';
+      } else {
+        phrase = 'Você gosta mais de fast food do que de frutas. <br> Já prepare sua lápide.';
+      }
+    }
+    answerLikeFruits.innerHTML = phrase;
+  }
+
+</script>

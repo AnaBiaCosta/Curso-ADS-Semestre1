@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 15 - cofrinho</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div id="exercise">
+        <img src="https://openclipart.org/download/302081/1526538474.svg" alt="piggy bank" id="img_piggybank" height="20%"
+            width="20%">
+        <div id="exxHere" style="display: inline-block; margin-left: 50px">
+
+            <h2>Cofrinho da meta!</h2>
+            Meta: <input type="number" id="goal" value="0"> <br>
+            Novo depósito <input type="number" id="newDepos" value="0"> <br>
+            <button type="button" onclick="deposit()">Depositar</button>
+            <br>
+            Total depositado até agora: R$<b id="b_value">0</b>
+            <div id="div_msg"></div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function deposit() {
+        var phrase;
+        var color;
+        var goalPiggy = Number(goal.value);
+        var depositNow = Number(newDepos.value);
+        // Changing num on phrase of how much until the moment
+        var bTotal = Number(b_value.innerHTML);
+        bTotal = bTotal + Number(newDepos.value);
+        b_value.innerHTML = bTotal;
+        // calculating whats left to goal
+        var restToGoal = goalPiggy - depositNow;
+
+        if (goalPiggy <= 0) {
+            phrase = 'A meta deve ser maior que 0';
+            color = 'red';
+        } else if (depositNow <= 0) {
+            phrase = 'Não pode depositar zero nem negativo, né?'
+            color = 'red';
+        } else {
+            if (bTotal < goalPiggy) {
+                color = 'green';
+                phrase = `Ainda falta R$${restToGoal.toFixed(2)} para a meta! #focanameta`
+            } else {
+                color = 'blue';
+                phrase = 'Ai sim, bati a meta!';
+                img_piggybank.src = "https://www.pharmacymentor.com/wp-content/uploads/2017/11/piggy-bank.png";
+            }
+        }
+        div_msg.innerHTML = phrase;
+        div_msg.style.color = color;
+    }
+
+
+</script>

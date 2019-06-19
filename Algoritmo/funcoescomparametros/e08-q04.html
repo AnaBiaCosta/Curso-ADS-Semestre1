@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 08, questão 04</title>
+</head>
+<body>
+<form>
+    Votos do Zé: <b id="votos_ze">0</b>
+    <br>
+    Votos da Maria: <b id="votos_maria">0</b>
+    <br>    
+    <button type="button" onclick="votar(votos_ze)">
+        Votar no Zé
+    </button>
+    <button type="button" onclick="votar(votos_maria)">
+        Votar na Maria
+    </button>
+</form>
+</body>
+</html>
+<script>
+    function votar(quem) {
+        var votos = Number(quem.innerHTML);
+        votos++;
+        quem.innerHTML = votos;
+    }
+</script>

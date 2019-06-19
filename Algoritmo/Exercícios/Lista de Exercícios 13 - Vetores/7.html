@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+                <form>
+                    Insira um número qualquer: <input type="number" id="numero_qualquer"> <br>
+                    <button type="button" onclick="registrar_qualquer(Number(numero_qualquer.value))">Registrar</button>
+                    <br>
+                    <button type="button" onclick="ver_ns_sep()">Ver números separados</button>
+                </form>
+            </p>
+    
+            <div id="tituloPares" style="display: none">
+                Números Pares
+                <ul id="div_numerosPares"></ul>
+            </div>
+    
+            <div id="tituloImpares" style="display: none">
+                Números Ímpares
+                <ul id="div_numerosImpares"></ul>
+            </div>
+        </div>
+    
+    
+</body>
+</html>
+
+
+<script>
+var numerosPares = [];
+    var numerosImpares = [];
+    function registrar_qualquer(num) {
+        numero_qualquer.value = '';
+        if (num % 2 == 0) {
+            numerosPares.push(num);
+        } else {
+            numerosImpares.push(num);
+        }
+    }
+    function ver_ns_sep() {
+        tituloPares.style.display = 'block';
+        tituloImpares.style.display = 'block';
+        var listaPares = '';
+        var listaImpares = '';
+        if (numerosPares.length == 0) {
+            listaPares = 'Você ainda não adicionou nenhum número par';
+        } else {
+            for (i = 0; i < numerosPares.length; i++) {
+                listaPares += `<li>${numerosPares[i]}</li>`;
+            }
+        }
+        if (numerosImpares.length == 0) {
+            listaImpares = 'Você ainda não adicionou nenhum número ímpar';
+        } else {
+            for (i = 0; i < numerosImpares.length; i++) {
+                listaImpares += `<li>${numerosImpares[i]}</li>`;
+            }
+        }
+        div_numerosPares.innerHTML = listaPares;
+        div_numerosImpares.innerHTML = listaImpares;
+    }
+</script>

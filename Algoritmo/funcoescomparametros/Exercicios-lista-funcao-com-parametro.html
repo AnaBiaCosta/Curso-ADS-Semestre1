@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fui embora mais cedo</title>
+   <link rel="stylesheet" type="text/css" href="estilos.css"> 
+</head>
+
+<body>
+  <h1>Funções com parâmetros</h1>
+  <!--EXERCÍCIO exemplo-->
+  <div id="exercise">
+    <h2><i>Exemplo do Yoshi</i></h2>
+    <div id="fraseBr" style="display: none;">
+      Vida de casado é boa. Só perde pra de solteiro
+    </div>
+    <div id="fraseEua" style="display: none;">
+      I always will remember us this way
+    </div>
+
+    <button type="button" onclick="musica(fraseBr, fraseEua)">
+      Sucesso musical no Brasil
+    </button>
+    <button type="button" onclick="musica(fraseEua, fraseBr)">
+      Sucesso musical nos EUA
+
+    </button>
+  </div>
+
+  <!--EXERCÍCIO 1-->
+  <div id="exercise">
+    <h2>Exercício 1 da lista</h2>
+    <div id="zn" style="color: gray" onclick="changeColor(zn)">Zona Norte</div> <br>
+    <div id="zs" style="color: gray" onclick="changeColor(zs)">Zona Sul</div> <br>
+    <div id="zl" style="color: gray" onclick="changeColor(zl)">Zona Leste</div> <br>
+    <div id="zo" style="color: gray" onclick="changeColor(zo)">Zona Oeste</div> <br>
+  </div>
+
+  <!--EXERCÍCIO 2-->
+  <div id="exercise">
+    <h2>Descontos no Salário</h2>
+    Insira seu salário: <input type="number" id="salario"> <br>
+    <button type="button" onclick="calcINSS(salario.value)">Ver descontos</button>
+    <div id="div_inss"></div>
+    <div id="div_ir"></div>
+    <div id="div_vt"></div>
+  </div>
+
+  <!--EXERCÍCIO 3-->
+  <div id="exercise">
+    <h2>Calculando aposentadorias</h2>
+    Idade do Pai: <input type="number" id="idadePai"> <br>
+    Idade da Mãe: <input type="number" id="idadeMae"> <br>
+    <button type="button" onclick="verificar(idadePai.value, idadeMae.value)">Verificar aposentadoria</button>
+    <div id="div_aposent"></div>
+  </div>
+
+  <!-- EXERCÍCIO 4 -->
+  <div id="exercise">
+    <h2>Votação</h2>
+    Votos do Zé: <b id="votosZe">0</b> <br>
+    Votos da Maria: <b id="votosMaria">0</b> <br>
+    <button type="button" onclick="votar(votosZe)">Votar no Zé</button>
+    <button type="button" onclick="votar(votosMaria)">Votar na Maria</button>
+  </div>
+
+  <!-- EXERCÍCIO 5 -->
+  <div id="exercise">
+    <h2>Os 4 elementos</h2>
+    <img src="terra.png" id="terra" style="display: none; width: 80px">
+    <img src="ar.png" id="ar" style="display: none; width: 80px">
+    <img src="agua.png" id="agua" style="display: none; width: 80px">
+    <img src="fogo.png" id="fogo" style="display: none; width: 80px">
+    <button type="button" onclick="mostrar(terra)">Terra</button>
+    <button type="button" onclick="mostrar(ar)">Ar</button>
+    <button type="button" onclick="mostrar(agua)">Água</button>
+    <button type="button" onclick="mostrar(fogo)">Fogo</button>
+  </div>
+
+  <!-- EXERCÍCIO 6 -->
+  <div id="exercise">
+    <h2>Os elementos II</h2>
+    <img src="terra.png" id="elemento" style="display: block; width: 80px">
+    <br>
+    <select id="sel_elemento" onchange="mudar()">
+      <option value="terra.png">Terra</option>
+      <option value="ar.png">Ar</option>
+      <option value="agua.png">Água</option>
+      <option value="fogo.png">Fogo</option>
+    </select>
+  </div>
+
+  <!-- EXERCÍCIO 7 -->
+  <div id="exercise">
+    <h2>Feliz Páscoa (ou não)</h2>
+    <form>
+      Preço do ovo: <input type="number" id="ovo_preco" required> <br>
+      Peso do ovo (gramas) <input type="number" id="ovo_peso" required> <br>
+      Preço da barra <input type="number" id="barra_preco" required> <br>
+      Peso da barra (gramas) <input type="number" id="barra_peso" required> <br>
+      Preço da caixa de bombons <input type="number" id="caixa_preco" required> <br>
+      Peso da caixa (gramas) <input type="number" id="caixa_peso" required> <br>
+      <button type="button"
+        onclick="calcularOvo(ovo_preco.value, ovo_peso.value, barra_preco.value, barra_peso.value, caixa_preco.value, caixa_peso.value)">Calcular
+        o desperdício</button>
+    </form>
+    <div id="msgPascoa"></div>
+  </div>
+
+  <!-- EXERCÍCIO 8 -->
+  <div id="exercise">
+    <h2>Votação</h2>
+    Votos do Zé: <b id="votosZe_jogo" style="color: blue">0</b> <br>
+    Votos da Maria: <b id="votosMaria_jogo" style="color: red">0</b> <br>
+    <button type="button" onclick="votar_jogo(votosZe_jogo, zeBarra, zeNumero)">Votar no Zé</button>
+    <button type="button" onclick="votar_jogo(votosMaria_jogo, mariaBarra, mariaNumero)">Votar na Maria</button>
+
+    <div id="zeBarra" style="background-color:blue; height: 20px; width: 0px; max-width: 100%"></div>
+    <div id="zeNumero" style="display: none">0</div>
+
+    <div id="mariaBarra" style="background-color:red; height: 20px; width: 0px;  max-width: 100%"></div>
+    <div id="mariaNumero" style="display: none">0</div>
+  </div>
+
+  <!-- EXERCÍCIO 9 -->
+  <div id="exercise">
+    <h2>Vai passar??</h2>
+    <form>
+      Média das continuadas: <input type="number" id="mediaCont"> <br>
+      Nota da Integrada: <input type="number" id="notaInt"> <br>
+      Frequência, %: <input type="number" id="frequencia"> <br>
+      <button type="button" onclick="eAgora()">E agora?</button>
+    </form>
+    <div id="mediaGeralSem"></div>
+    <div id="resultadoSem"></div>
+  </div>
+
+  <!-- EXERCÍCIO 10 -->
+  <div id="exercise">
+    <h2>Cotação do Real</h2>
+    <select id="moeda" onchange="cotarReal(moeda.value)">
+      <option value="0">Escolha a moeda</option>
+      <option value="0.25">Dólar Americano (U$)</option>
+      <option value="0.75">Iene Japonês (¥)</option>
+      <option value="0.20">Euro (€)</option>
+      <option value="8000">Bolívar Venezuelano (Bs.F)</option>
+    </select>
+    <div id="cotacaoReal"></div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  // EXERCÍCIO 10
+  function cotarReal(currency) {
+    var phrase;
+
+    if (currency == 0) {
+      phrase = 'Escolha a moeda!';
+    } else {
+      phrase = `Cotação em Real: R$${currency}`;
+    }
+
+    cotacaoReal.innerHTML = phrase;
+
+  }
+
+  // EXERCÍCIO 9
+  function eAgora() {
+    var cont = Number(mediaCont.value);
+    var int = Number(notaInt.value);
+    var freq = Number(frequencia.value);
+    var mediafinalAluno;
+
+    calcMedia(cont, int);
+    calcAprov(freq);
+  }
+  
+  function calcMedia(cont, int) {
+    mediafinalAluno = cont * 0.4 + int * 0.6;
+    mediaGeralSem.innerHTML = `Sua média geral foi <b>${mediafinalAluno}</b>`;
+  }
+
+  function calcAprov(freq) {
+    var aprovacao;
+    if (mediafinalAluno >= 5 && freq >= 75) {
+      aprovacao = 'aprovado';
+    } else {
+      aprovacao = 'reprovado';
+    } 
+    resultadoSem.innerHTML = `Seu resultado final foi <b>${aprovacao}</b>`;
+  }
+
+  
+
+  // EXERCÍCIO 8
+  function votar_jogo(candidato, barra, numero) {
+    candidato.innerHTML++;
+
+    var novoValor = Number(numero.innerHTML) + 20;
+ 
+    barra.style.width = `${novoValor}px`;
+    numero.innerHTML = novoValor;
+  }
+
+  // EXERCÍCIO 7
+  function calcularOvo(ovoS, ovoP, barraS, barraP, cxS, cxP) {
+    var calcOvo = ((ovoS / ovoP) * 500).toFixed(2);
+    var calcBarra = ((barraS / barraP) * 500).toFixed(2);
+    var calcCaixa = ((cxS / cxP) * 500).toFixed(2);
+    msgPascoa.innerHTML = `Cada 1/2kg (500g) do ovo saem por R$ ${calcOvo} <br>
+   Cada 1/2kg (500g) da barra saem por R$ ${calcBarra} <br>
+   Cada 1/2kg (500g) da caixa saem por R$ ${calcCaixa}`;
+  }
+
+  // EXERCÍCIO 6
+  function mudar() {
+    elemento.src = sel_elemento.value;
+  }
+
+  // EXERCÍCIO 5
+  function mostrar(elemento) {
+    terra.style.display = 'none';
+    ar.style.display = 'none';
+    agua.style.display = 'none';
+    fogo.style.display = 'none';
+
+    elemento.style.display = 'block'
+  }
+
+  // EXERCÍCIO 4
+  function votar(candidato) {
+    var votos = Number(candidato.innerHTML);
+    votos++;
+    candidato.innerHTML = votos
+  }
+
+  // EXERCÍCIO 3
+  function verificar(pai, mae) {
+    div_aposent.innerHTML = `Faltam ${65 - pai} anos para o pai se aposentar <br>
+    Faltam ${60 - mae} anos para a mãe se aposentar`;
+  }
+
+
+  // EXERCÍCIO 2
+  // Tinha que criar uma funcao para cada desconto... 
+  // e acho que fiz o esquema dos parametros errado... >> CORRIGI colocando .value no parametro la em cima
+  // mas deu certo
+  function calcINSS(valor) {
+    div_inss.innerHTML = `Desconto de INSS: R$${valor * 0.1} <br>
+    Desconto de Imposto de Renda: R$${valor * 0.15} <br>
+    Desconto de VT: R$${valor * 0.06}`;
+  }
+
+  // EXERCÍCIO 1
+  function changeColor(frase) {
+    zn.style.color = 'gray';
+    zs.style.color = 'gray';
+    zl.style.color = 'gray';
+    zo.style.color = 'gray';
+
+    frase.style.color = 'blue';
+  }
+
+  // EXERCÍCIO exemplo
+  function musica(mostrar, esconder) {
+    mostrar.style.display = 'block'; // exibir
+    esconder.style.display = 'none'; // ocultar
+  }
+</script>

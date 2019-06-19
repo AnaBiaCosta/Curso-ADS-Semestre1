@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Aula 37</h1>
+
+    <!-- O usuário digita uma palavra qualquer e clica em 'Salvar'
+    Quantas vezes quiser
+    Porém, caso digite uma palavra que já tenha salvo, exiba um alert
+    'Opa! Repetida!' e ignorar seu registro 
+
+
+    Sempre que clicar em 'Salvar', exiba abaixo todas as palavras digitadas da forma
+    mais simples possível (Dica: só mostrar o vetor direito)-->
+
+
+    <div id="ex">Digite uma palavra: <input type="text" id="texto"><br><br>
+    <button type="button" onclick="digitar(texto.value)">Salvar</button><br><br>
+
+    <div id="mensagem"></div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    let palavras = [];
+
+   function digitar(texto){
+
+       if(palavras.length == 0){
+           palavras.push(texto)
+       }
+
+       else{
+           for(c=0; c<palavras.length; c++){
+               if(palavras[c] == texto){
+                   alert('Opa! Repetida!');
+                   break;
+               }
+           }
+
+           if(c == palavras.length){
+               palavras.push(texto)
+           }
+       }
+
+       mensagem.innerHTML = `${palavras}`
+       
+   }
+</script>
+
+
+

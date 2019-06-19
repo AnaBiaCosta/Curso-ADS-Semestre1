@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prova</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Continuada 3</h1>
+
+    <div id="ex">
+        
+        Nome do astronauta: <input type="text" id="nome"><br><br>
+        Quantidade de dias: <input type="number" id="dias"><br><br>
+        Quantidade de horas: <input type="number" id="horas"><br><br>
+        Quantidade de minutos: <input type="number" id="minutos"><br><br>
+
+        <button type="button" onclick="registrar(nome.value, Number(dias.value), 
+                                Number(horas.value), Number(minutos.value))">Registar Viagem</button>
+
+        <button type="button" onclick="relatar()">Relatório de viagens</button><br><br>
+
+
+        <div id="div_relatorio"></div>
+        <div id="mensagem"></div>
+    </div>
+
+
+    <script>
+        var astronautas = [];
+   
+
+        function registrar(n, d, h, m){
+
+            if(nome.value != '' && d> 0 || h>0 || m>0){
+                astronautas.push({
+                    nome: n,
+                    dias: d,
+                    horas: h,
+                    minutos: m,
+                    final: 0
+                })
+            }
+
+            else{
+                alert('Informe um tempo de viagem válido!')
+            }
+
+        }
+
+        function relatar(){
+            div_relatorio.innerHTML += '';
+
+            for(t=0; t < astronautas.length; t++){
+                var tempo = ( Number(astronautas[t].dias)*1440 + Number(astronautas[t].horas) * 60 + Number(astronautas[t].minutos));
+
+                var tempo_anos = parseInt( tempo / 525600 * 120);
+        
+
+                astronautas[t].final = tempo_anos;
+
+
+                div_relatorio.innerHTML += `Astronauta ${astronautas[t].nome} ficou fora por pelo menos ${tempo_anos} anos no tempo da Terra
+                <br>Como a pessoa estava quando chegou? <br>`;
+
+
+                if( tempo_anos <= 1){
+                    div_relatorio.innerHTML += `<img src="1.png"> <br><br>`
+                }
+                else if( tempo_anos > 1 && tempo_anos <=13 ){
+                    div_relatorio.innerHTML += `<img src="2.png"> <br><br>`
+                }
+
+                else if( tempo_anos > 13 && tempo_anos <=30){
+                    div_relatorio.innerHTML += `<img src="3.png"> <br><br>`
+                }
+
+                else if( tempo_anos >30 && tempo_anos <=45){
+                    div_relatorio.innerHTML += `<img src="4.png"> <br><br>`
+                }
+
+                else{
+                    div_relatorio.innerHTML += `<img src="5.png"> <br><br>`
+                }
+            }
+
+
+            var astronauta_mais_tempo =0;
+            var astronauta_mais_nome; 
+            var vezes; 
+
+            for(c=0; c < astronautas.length; c++){
+                astronauta_mais_tempo = astronautas[c].final;
+
+                astronauta_mais_nome = astronautas[c].nome;
+
+                vezes = c + Number(1);
+
+                mensagem.innerHTML = `O Astronauta que passou mais tempo foi o ${astronauta_mais_nome}, <br>
+                que ficou pelo menos ${astronauta_mais_tempo}ª anos da Terra vaijando. <br>
+                Essa foi sua <span>${vezes}</span> viagem registrada`;
+
+            }          
+        }
+            
+
+    
+    
+    
+    </script>
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desafio</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Desafio</h1>
+
+
+<div id="ex">
+        <h2>Exercício 4</h2>
+    
+        CEP: <input type="text" id="cep">
+
+        Endereço Completo: <input type="text" id="endereco">
+
+        Apelido: <input type="text" id="apelido"><br><br>
+        
+    
+        <button type="button" onclick="cadastrar()">Cadastrar CEP</button><br><br>
+    
+        <div id="mensagem4"></div>
+    </div>
+    
+    
+    <script>
+
+        end = [];
+       
+        function cadastrar(){ 
+
+            var endereco_cadastrado = { c:0, e:0, a:0};
+            endereco_cadastrado.c = (cep.value),
+            endereco_cadastrado.e = (endereco.value),
+            endereco_cadastrado.a = (apelido.value);
+
+            end.push(endereco_cadastrado);
+
+            mensagem4.innerHTML = `Número de CEP's cadastrados ${end.length}`
+
+
+            
+
+
+
+        }
+
+
+
+
+
+    </script>
+    <!-- EXERCÍCIO 4 -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

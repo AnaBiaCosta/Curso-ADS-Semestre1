@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 13</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Lista de Exercícios 13 - Vetores</h1>
+
+
+
+    <!-- EXERCÍCIO 1 -->
+    <div id="ex">
+        <h2>Exercício 1</h2>
+
+        <p>Crie um programa no qual o usuário informa os nomes dos filmes que mais gosta, começando pelo seu favorito e depois o 2º que mais gosta e assim por diante.
+                Para ir cadastrando cada filme, ele clica em "Cadastrar filme".
+                Crie um botão "Ver Favoritos". Ao clicar ele, exiba os filmes favoritos, abaixo, uma frase "Total: X".
+                
+                Abaixo, mostre essas frases:
+                 O que mais gosta é A
+                 E desses, o que menos gosta é B</p> <br><br>
+
+
+        Filmes que gosta: <input type="text" id="novo_filme1"> 
+
+        <button type="button" onclick="cadastrar1()">Cadastrar filme</button>
+
+        <button type="button" onclick="mostrar1()">Ver Favoritos</button>
+        
+        
+        <br><br>
+
+        <div id="mensagem1"></div>
+    </div>
+
+
+    <script>
+        var filmes = [];
+
+        function cadastrar1(){
+            filmes.push(novo_filme1.value);
+
+            novo_filme1.value = ''; 
+        }
+
+        function mostrar1(){
+            var texto = `Filmes: ${filmes} <br>
+                         Total: ${filmes.length}<br>
+                         O que mais gosta é: ${filmes[0]} <br>
+                         O que você menos gosta: ${filmes [filmes.length-1]}`; 
+
+            mensagem1.innerHTML = texto;
+        }    
+    </script>
+
+
+
+    <!-- EXERCÍCIO 2 -->
+    <div id="ex">
+        <h2>Exercício 2</h2>
+
+        <p>Crie um programa onde o usuário vá cadastrando os lugares para onde já viajou. Ele digita o nome do lugar e vai clica em "Cadastrar local".
+                Deve haver um outro campo, onde ele digita apenas um número, indicando o local para onde viajou, a partir do número 1 (porque os usuários comuns contam as coisas a partir do 1) e clica em "Relembrar viagem". Se ele informar 1, exiba o primeiro local cadastrado e assim por diante.
+                Porém, se ele informar um número maior do que a quantidade de viagens, exiba: "Você não fez uma Xª viagem!"
+                </p>
+    </div>
+
+
+
+
+
+
+    
+</body>
+</html>

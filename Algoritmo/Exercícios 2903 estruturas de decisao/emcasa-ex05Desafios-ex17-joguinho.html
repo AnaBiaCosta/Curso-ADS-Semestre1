@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Desafio do Jogo!</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h1>Jogo!</h1>
+  <div id="exercise">
+    <div id="plyr1">
+      <img src="https://media.giphy.com/media/OLHy9ERaFUvzW/giphy.gif" id="player1" style="width: 200px"> <br>
+      <div id="life1" style="background-color:blue; height: 20px; width: 200px"></div>
+      <div id="number1" style="display: none">200</div>
+      <button type="button" onclick="getHit1()">Apanhar!</button> <br>
+    </div>
+    <div id="plyr2">
+      <img src="https://media1.giphy.com/media/z6G5rYiGFNIkM/giphy.gif" id="player2" style="width: 200px"><br>
+      <div id="life2" style="background-color:red; height: 20px; width: 200px"></div>
+      <div id="number2" style="display: none">200</div>
+      <button type="button" onclick="getHit2()">Apanhar!</button> <br>
+      <div id="life2width" value="200"></div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+function getHit1() {
+  var newBar1;
+  newBar1 = Number(number1.innerHTML) - 25;
+  var newBar001 = `${newBar1}px`;
+  life1.style.width = newBar001;
+  number1.innerHTML = newBar1;
+  if (number1.innerHTML <= 0) {
+    player1.src = 'http://www.pngall.com/wp-content/uploads/2/Grave-PNG-Picture.png';
+  }
+}
+
+function getHit2() {
+  var newBar2;
+  newBar2 = Number(number2.innerHTML) - 25;
+  var newBar002 = `${newBar2}px`;
+  life2.style.width = newBar002;
+  number2.innerHTML = newBar2;
+  if (number2.innerHTML <= 0) {
+    player2.src = 'http://www.pngall.com/wp-content/uploads/2/Grave-PNG-Picture.png';
+  }
+}
+
+
+</script>

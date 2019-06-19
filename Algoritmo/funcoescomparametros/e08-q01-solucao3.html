@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="frase1" style="color: gray" onclick="marcar(frase1, frase2, frase3, frase4, frase5)">
+        Zona Norte
+    </div>
+    <div id="frase2" style="color: gray" onclick="marcar(frase2, frase1, frase3, frase4, frase5)">
+        Zona Sul
+    </div>
+    <div id="frase3" style="color: gray" onclick="marcar(frase3, frase1, frase2, frase4, frase5)">
+        Zona Leste
+    </div>
+    <div id="frase4" style="color: gray" onclick="marcar(frase4, frase1, frase2, frase3, frase5)">
+        Zona Oeste
+    </div>              
+
+</body>
+</html>
+<script>
+    function marcar(mostrar, esconder1, esconder2, esconder3) {
+        esconder1.style.color = 'gray';
+        esconder2.style.color = 'gray';
+        esconder3.style.color = 'gray';
+        
+        mostrar.style.color = 'blue';
+    }
+</script>

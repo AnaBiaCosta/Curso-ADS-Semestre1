@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 9</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+    <h1>VEJA SE VOCÊ VAI FICAR DE RECUPERAÇÃO :)</h1>
+
+    <form>
+        Nome: <input type="text" id="nome">
+        <br><br>
+
+        Média das continuadas: <input type="number" id="continuada">
+        <br><br>
+
+        Nota da Integrada: <input type="number" id="integrada">
+        <br><br>
+
+        <button type="button" onclick="calcular()">Verificar Resultado</button>
+    </form>
+
+    <div id="msg1" style="color: red"></div>
+    <br>
+    <div id="msg2" style="color:blue"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var media = (Number(continuada.value) * 0.2 + Number(integrada.value) * 0.8);
+
+        if (media >= 5) {
+            msg2.innerHTML = `Parabéns, ${nome.value}, você foi aprovado com média final ${media.toFixed(2)} 
+            <br><img src="feliz.jpg" id="pessoafeliz">.`;
+            msg1.innerHTML = '';
+            
+        } else { 
+            msg1.innerHTML = `Olá, ${nome.value}, infelizmente você foi reprovado com média final ${media.toFixed(2)}.`
+            msg2.innerHTML = '<img src="triste.jpg" id="pessoatriste">';
+        }
+
+    }
+
+
+</script>

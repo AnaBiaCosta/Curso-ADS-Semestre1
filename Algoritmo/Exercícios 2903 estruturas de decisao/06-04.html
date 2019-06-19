@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 6</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h2>Renda familiar</h2>
+
+    <form>
+        Renda do pai: <input type="number" id="rendaPai"> <br>
+        Renda da mãe: <input type="number" id="rendaMae"> <br>
+        Renda dos avós: <input type="number" id="rendaAvos"> <br>
+        <button type="button" onclick="calcRenda()">Verificar situação social</button>
+    </form>
+    <div id="div_msg"></div>
+
+
+</body>
+</html>
+
+<script>
+
+
+function calcRenda() {
+    var rendaFam = Number(rendaPai.value) + Number(rendaMae.value) + Number(rendaAvos.value);
+    if (rendaFam >= 150.55) {
+        div_msg.innerHTML = 'Acima da linha de pobreza!';
+    } else {
+        div_msg.innerHTML = 'Abaixo da linha de pobreza!'   ;
+    }
+}
+
+</script>
+

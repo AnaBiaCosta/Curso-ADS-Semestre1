@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prova</title>
+
+    <link rel="stylesheet" href="neutro.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+    <style>
+            img {
+                height: 100px;
+                width: 100px;
+            }
+        </style>
+        
+</head>
+<body>
+    <h1>FEIRA DA FAMÍLIA FELIZ</h1>
+
+<div id="ex">
+    Qnt de bananas: <input type="number" id="banana">
+    Preço bananas: <input type="number" id="preco_banana">
+    <br><br>
+
+    Qnt de brócolis: <input type="number" id="brocolis">
+    Preço brócolis: <input type="number" id="preco_brocolis">
+    <br><br>
+
+    Qnt de cenoura: <input type="number" id="cenoura">
+    Preço cenoura: <input type="number" id="preco_cenoura">
+    <br><br>
+
+    Qnt de maçã: <input type="number" id="maca">
+    Preço maçã: <input type="number" id="preco_maca">
+    <br><br>
+
+    Quantos Kg você aguenta carregar em sua sacola <input type="number" id="kilos">
+    <br><br>
+
+    <button type="button" onclick="comprar()">Fazer a feira</button>
+
+    <div id="mensagem1"></div>
+    <div id="mensagem2"></div>
+    <div id="mensagem3"></div>
+    <div id="mensagem4"></div>
+</div>
+</body>
+</html>
+
+<script>
+    function comprar(){
+        mensagem1.innerHTML = '';
+        mensagem2.innerHTML = '';
+        mensagem3.innerHTML = '';
+        mensagem4.innerHTML = '';
+
+        var peso_banana = (Number(banana.value)*40);
+        var peso_brocolis = (Number(brocolis.value)*15);
+        var peso_cenoura = (Number(cenoura.value)*30);
+        var peso_maca = (Number(maca.value)*15);
+        var peso_total = (peso_banana + peso_brocolis + peso_cenoura + peso_maca);
+        var peso_total1 = (peso_total/1000);
+
+        var valor1 = banana.value * preco_banana.value;
+        var valor2 = brocolis.value * preco_brocolis.value;
+        var valor3 = cenoura.value * preco_cenoura.value;
+        var valor4 = maca.value * preco_maca.value;
+        var valor_total = (valor1 + valor2 + valor3 + valor4); 
+
+        var contador_banana = 0;
+        var contador_brocolis = 0;
+        var contador_cenoura = 0;
+        var contador_maca = 0; 
+
+
+        if(Number(banana.value) < 0 || Number(banana.value) >15 || Number(brocolis.value)<0 || Number(brocolis.value)>15 
+        || Number(cenoura.value)<0 || Number(cenoura.value)>15 || Number(maca.value) <0 || Number(maca.value) >15 ){
+            alert(`Cada produto deve ter entre 0 e 15 de quantidade`);
+        
+
+        if( Number(kilos.value) < 0.8 || Number(kilos.value) > 20){
+            alert(`O peso que o cabra aguenta deve ter entre 0.8kg e 20kg`);
+        }
+        }
+
+        else { 
+            mensagem1.innerHTML = `Valor total das compras: R$${valor_total} <br> Peso total das compras:${peso_total1}kg`
+            
+            if(peso_total1 > kilos.value){
+            mensagem2.innerHTML = `Embaçou! O usuário não vai conseguir carregar essas compras!`;
+            mensagem2.style.color = "red";
+            } 
+        
+
+        if( Number(banana.value)==0 && Number(maca.value)==0){
+            mensagem3.innerHTML = `Opa! Seria bom você comer mais frutas, né?`
+            mensagem3.style.color = "orange";
+        }
+    }
+
+             while(contador_banana < banana.value){
+                contador_banana++;
+
+                mensagem4.innerHTML += `<img src="banana.jpg">`
+            }
+
+            while(contador_brocolis < brocolis.value){
+                contador_brocolis++;
+
+                mensagem4.innerHTML += `<img src="brocolis.jpg">`
+            }
+
+            while(contador_cenoura < cenoura.value){
+                contador_cenoura++;
+
+                mensagem4.innerHTML += `<img src="cenoura.jpg">`
+            }
+
+            while(contador_maca < maca.value){
+                contador_maca++;
+
+                mensagem4.innerHTML += `<img src="maca.png">`
+            }
+        }
+    
+    
+
+    
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Aula 39</h1>
+
+    <div id="ex">
+
+            <button type="button" onclick="vai()">Vai!</button><br><br>
+            <div id="mensagens"></div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function vai(){
+        mensagens.innerHTML = '';
+
+        setInterval(saudar, 2000);
+        setTimeout(despedir, 1000);
+    }
+
+    function saudar(){
+        mensagens.innerHTML += `Olá, mano! <br>`;
+    }
+
+    function despedir(){
+        mensagens.innerHTML += `Até mais! #partiu! <br>`;
+    }
+</script>

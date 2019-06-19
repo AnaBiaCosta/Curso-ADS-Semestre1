@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 13 - Array VAMOS LÁ BIAAAAA</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Lista 13 - Array</h1>
+
+
+
+<!-- EXERCÍCIO 1  -->
+<div id="ex">
+    <h2>Exercício 1</h2>
+
+    Filmes que mais gosta: <input type="text" id="novo_filme"> 
+    <button type="button" onclick="cadastrar1()">Cadastrar</button>
+    <button type="button" onclick="ver1()">Ver Favoritos</button><br><br>
+
+    <div id="mensagem1"></div>
+</div>
+
+<script>
+    var filmes_guardados = [];
+
+    function cadastrar1(){
+        filmes_guardados.push(novo_filme.value);
+        novo_filme.value = '';
+    }
+
+    function ver1(){
+
+        mensagem1.innerHTML = `Filmes Cadastrados: ${filmes_guardados} <br>
+                                Total: ${filmes_guardados.length} <br>
+                                O que mais gosta é: ${filmes_guardados[0]}<br>
+                                O que menos gosta é: ${filmes_guardados[filmes_guardados.length-1]}`
+    }
+
+</script>
+
+
+
+<!-- EXERCÍCIO 2 -->
+<div id="ex">
+    <h2>Exercício 2</h2>
+
+    Lugares que já viajou: <input type="text" id="novo_lugar">
+    <button type="button" onclick="cadastrar2()">Cadastrar Local</button><br><br>
+
+    Relembrar Lugar: <input type="number" id="relembrar_lugar">
+    <button type="button" onclick="relembrar()">Relembrar</button><br><br>
+
+    <div id="mensagem2"></div>
+</div>
+
+
+<script>
+
+    var guardar_lugar = [];
+
+    function cadastrar2(){
+        guardar_lugar.push(novo_lugar.value);
+        novo_lugar.value = '';
+    }
+
+    function relembrar(){
+
+        if(relembrar_lugar.value <= guardar_lugar.length){
+            mensagem2.innerHTML = `Sua viagem ${relembrar_lugar.value} foi para ${guardar_lugar[Number(relembrar_lugar.value) - 1]}`
+        }
+
+        else{
+            mensagem2.innerHTML = `Você não fez uma ${relembrar_lugar.value}ª viagem!`
+        }
+        
+    }
+</script>
+
+
+
+
+<!-- EXERCÍCIO 3 -->
+<div id="ex">
+    <h2>Exercício 3</h2>
+
+    Projetos: <input type="text" id="novo_projeto">
+    <button type="button" onclick="cadastrar3()">Registrar Projeto</button><br><br>
+
+    <div id="mensagem3"></div>
+</div>
+
+
+<script>
+    var guardar_projetos = [];
+
+
+    function cadastrar3(){
+        guardar_projetos.push(novo_projeto.value);
+        novo_projeto.value = '';
+
+
+        if(guardar_projetos.length <= 4){
+            mensagem3.innerHTML = `Você já fez ${guardar_projetos.length}. Por isso você é um profissional Júnior`
+        }
+
+        else if(guardar_projetos.length >= 5 && guardar_projetos.length <= 12){
+            mensagem3.innerHTML = `Você já fez ${guardar_projetos.length}. 
+                                    Por isso você é um profissional Pleno desde o projeto ${guardar_projetos[4]}`
+        }
+
+        else{
+            mensagem3.innerHTML = `Você já fez ${guardar_projetos.length}. 
+                                    Por isso você é um profissional Sênior desde o projeto ${guardar_projetos[12]}`
+        }
+    }
+
+</script>
+
+
+
+<!-- EXERCÍCIO 4 -->
+<div id="ex">
+    <h2>Exercício 4</h2>
+
+    CEP: <input type="text" id="novo_cep">
+    Endereço Completo: <input type="text" id="novo_endereco">
+    Apelido: <input type="text" id="novo_apelido">
+
+    <button type="button" onclick="cadastrar4()">Cadastrar CEP</button>
+    <div id="mensagem4"></div><br><br>
+
+
+    Pesquisar CEP: <input type="text" id="pesquisar_cep">
+
+    <button type="button" onclick="pesquisar4()">Pesquisar</button><br><br>
+    <div id="pesquisa4"></div>
+</div>
+
+
+<script>
+    var ceps_cadastrados = [];
+
+    function cadastrar4(){
+
+        var ceps = {
+            cep: novo_cep.value,
+            end: novo_endereco.value,
+            apl: novo_apelido.value
+        }
+
+        ceps_cadastrados.push(ceps);
+
+        mensagem4.innerHTML = `${ceps_cadastrados.length} CEPs cadastrados`
+    }
+
+
+    function pesquisar4(){
+        var encontrado = 0;
+
+        for(c=0; c< ceps_cadastrados.length; c++){
+            var cep_atual = ceps_cadastrados[c];
+
+            if(cep_atual.cep == pesquisar_cep.value){
+                encontrado++
+
+                pesquisa4.innerHTML = `Endereço ${cep_atual.apl}: ${cep_atual.end}, CEP: ${cep_atual.cep}`
+            }
+        }
+
+        if(encontrado == 0){
+            pesquisa4.innerHTML = 'CEP não encontrado!'
+        }
+    }
+</script>
+
+
+
+<!-- EXERCÍCIO 5 -->
+<div id="ex">
+    <h2>Exercício 5</h2>
+
+    <p>Crie um programa no qual o usuário informa os nomes dos filmes que mais gosta. Ele digita e clica em "Cadastrar". 
+            Na medida em que vai cadastrando, os filmes vão aparecendo um abaixo do outro abaixo do botão.</p>
+
+
+    Filmes que mais gosta: <input type="text" id="novo_filme5">
+    <button type="button" onclick="cadastrar5(novo_filme5.value)">Cadastrar</button><br><br>
+
+    <div id="mensagem5"></div>
+</div>
+
+
+<script>
+    var filmes_cadastrados = [];
+
+    function cadastrar5(filme){
+
+        filmes_cadastrados.push(filme);
+
+        mensagem5.innerHTML += `${filmes_cadastrados[filmes_cadastrados.length-1]} <br>`
+    }
+</script>
+
+
+
+<!-- EXERCÍCIO 6 -->
+<div id="ex">
+    <h2>Exercício 6</h2>
+
+    <p>Crie um programa no qual o usuário informa os nomes dos filmes que mais gosta. Ele digita e clica em "Cadastrar". 
+            Na medida em que vai cadastrando, os filmes vão aparecendo um abaixo do outro abaixo do botão.
+        
+            Crie ainda um campo para o usuário pesquisar o nome de um filme que já tenha cadastrado e um botão "Pesquisar". 
+            Ao clicar nesse botão, o programa exibe "Você gosta desse filme" ou "Você não curte esse filme", conforme o filme tiver ou não 
+            sido cadastrado.</p><br>
+
+
+    Filmes que mais gosta: <input type="text" id="novo_filme6">
+    <button type="button" onclick="cadastrar6(novo_filme6.value)">Cadastrar</button>
+    <div id="mensagem6"></div><br><br>
+
+
+    Pesquisar filme: <input type="text" id="filme_guardado">
+    <button type="button" onclick="pesquisar()">Pesquisar</button>
+    <div id="filme_pesquisado"></div><br><br>
+</div>
+
+
+<script>
+    var filmes_guardados = [];
+
+    function cadastrar6(filmes){
+        filmes_guardados.push(filmes);
+        filmes.value = '';
+
+        mensagem6.innerHTML += `${filmes_guardados[filmes_guardados.length-1]}<br>`
+    }
+
+
+    function pesquisar(){
+        var cadastrado = 0; 
+
+        for(contador =0; contador < filmes_guardados.length; contador++){
+
+            if(filmes_guardados[contador] == filme_guardado.value){
+                cadastrado++; 
+            }
+        }
+
+        if(cadastrado > 0){
+            filme_pesquisado.innerHTML = 'Você curte esse filme'
+
+        }
+        
+        else{
+            filme_pesquisado.innerHTML = 'Você não curte esse filme'
+        }
+    }
+
+
+</script>
+
+
+
+<!-- EXERCÍCIO 7 -->
+<div id="ex">
+    <h2>Exercício 7</h2>
+
+    <p>Peça para o usuário digitar um número qualquer e, ao clicar em "Registrar", grave esse número de tal forma que, 
+        ao clicar em "Ver números separados", ele veja, um abaixo do outro, primeiro só os ímpares e depois só os pares.</p><br><br>
+
+
+        Número: <input type="number" id="numero">
+        <button type="button" onclick="cadastrar7(numero.value)">Registrar</button>
+        <button type="button" onclick="ver()">Ver números separados</button><br><br>
+
+        <ul id="par"></ul><br>
+        <ul id="impar"></ul>
+</div>
+
+<script>
+    var numero_par = [];
+    var numero_impar = [];
+
+    function cadastrar7(num){
+
+        if(num % 2 == 0){
+            numero_par.push(num)
+        }
+
+        else{
+            numero_impar.push(num)
+        }
+    }
+
+
+    function ver(){
+        par.value = '';
+        impar.value = '';
+
+        for(c=0; c < numero_par.length; c++){
+            par.innerHTML += `<li>${numero_par[c]}</li>`
+        }
+
+        for(c=0; c < numero_impar.length; c++){
+            impar.innerHTML += `<li>${numero_impar[c]}</li>`
+        }
+    }
+</script>
+
+
+
+<!-- EXERCÍCIO 8 -->
+<div id="ex">
+    <h2>Exercício 8</h2>
+
+    <p>Crie uma tela com uma combo SOMENTE com os itens:
+            Homem
+            Mulher
+            Criança
+        Abaixo dessa combo, crie um botão "Entrar no elevador", o qual vai "registrar" em algum lugar o que estava na combo.
+        Deve haver um outro botão "Ver elevador". Ao clicar nele, exiba X imagens ou ícones de homens, Y de mulheres e Z de crianças, 
+        conforme a quantidade cadastrada de cada um.
+        Exiba ainda o seguinte texto:
+           A 1ª pessoa foi um(a) ? (Homem, mulher ou criança)
+           A 4ª pessoa foi um(a) ? (Homem, mulher ou criança)
+           A 7ª pessoa foi um(a) ? (Homem, mulher ou criança)
+           A última pessoa foi um(a) ? (Homem, mulher ou criança)
+        Caso não tenham entrado 4 pessoa no elevador, não exiba as 2ª e 3ª frases. Caso não tenham entrado 7 pessoas, não exiba a 3ª frase.
+        </p><br><br>
+
+        Quem entrou no elevador? 
+         <select id="elevador">
+            <option value="homens">Homem</option>
+            <option value="mulheres">Mulher</option>
+            <option value="criancas">Criança</option>
+        </select>
+
+        <button type="button" onclick="cadastrar8()">Entrar no Elevador</button><br><br>
+
+        <button type="button" onclick="ver_elevador()">Ver elevador</button><br><br>
+
+        <div id="img_pessoas"></div><br>
+        <div id="mensagem8"></div>
+</div>
+
+
+<script>
+    var pessoas = [];
+
+    function cadastrar8(){
+        pessoas.push(elevador.value);
+    }
+
+
+    function ver_elevador(){
+        img_pessoas.innerHTML = '';
+
+        for(contador=0; contador < pessoas.length; contador++){
+            img_pessoas.innerHTML += `<img src="${pessoas[contador]}.jpg">`
+        }
+
+        mensagem8.innerHTML += `A 1ª pessoa foi um(a)? ${pessoas[0]}<br>`
+
+        if(pessoas.length >= 4){
+            mensagem8.innerHTML += `A 4ª pessoa foi um(a)? ${pessoas[3]}<br>`
+        }
+
+        if(pessoas.length >=7){
+            mensagem8.innerHTML += `A 7ª pessoa foi um(a)? ${pessoas[6]}<br>`
+        }
+
+        mensagem8.innerHTML += `A última pessoa foi um(a)? ${pessoas[pessoas.length-1]}<br>`
+    }
+</script>
+
+
+
+<!-- EXERCÍCIO 9 -->
+<div id="ex">
+    <h2>Exercício 9</h2>
+
+    <p>Crie um programa no qual o usuário vá registrando os nomes das linhas de ônibus que ele acaba de pegar. Ele digita e clica em 
+        "Gravar buzão". 
+            Abaixo deve haver outro campo onde ele pesquisa por uma linha que já tenha pego. Ao clicar em pesquisar, ele deve ver uma dessas 
+            frases:
+               Você nunca pegou essa linha (caso não tenha cadastrado ela mesmo)
+               OU
+               Você já pegou essa linha 4 vezes, nessa ordem: 2, 4, 8, 9
+               (supondo que ele cadastrou a mesma linha na 2ª vez, na 4ª vez, na 8ª vez e na 9ª vez)
+            </p><br><br>
+
+
+        Linhas de ônibus: <input type="text" id="linha">
+        <button type="button" onclick="cadastrar9()">Gravar Buzão</button><br><br>
+
+        Pesquisar linha: <input type="text" id="pesquisa9">
+        <button type="button" onclick="pesquisar9()">Pesquisar</button><br><br>
+
+        <div id="mensagem9"></div>
+</div>
+
+
+<script>
+    var onibus = [];
+
+    function cadastrar9(){
+        onibus.push(linha.value)
+    }
+
+
+    function pesquisar9(){
+        mensagem9.innerHTML = '';
+        var vezes = [];
+        var pegou = 0; 
+
+        for(c=0; c < onibus.length; c++){
+            var linha_pegou = onibus[c];
+
+            if(onibus[c] == pesquisa9.value){
+                pegou++;
+                vezes.push(c - (-1));
+            }
+        }
+
+        if(pegou > 0){
+            mensagem9.innerHTML = `Você já pegou essa linha ${pegou} vezes, nessa ordem: ${vezes}`
+        }
+
+        else{
+            mensagem9.innerHTML = 'Você nunca pegou essa linha'
+        }
+    }
+</script>
+
+
+
+
+<!-- EXERCÍCIO 10 -->
+<div id="ex">
+    <h2>Exercício 10</h2>
+
+    <p>Crie um programa no qual o usuário informa um número e clica em "Cadastrar" quantas vezes quiser. Abaixo, deve haver um botão 
+        "Exibir todos", que mostra todos os números cadastrados, um abaixo do outro numa lista ordenada. 
+            Abaixo da lista, exiba:
+            O maior número cadastrado foi: X
+            O menor número cadastrado foi: Y
+        Onde X foi o maior dentre os números cadastrados e  Y foi o menor (NÃO confunda com "primeiro" e "último", não é isso!)</p><br><br>
+
+
+        Número: <input type="number" id="numero_aleatorio">
+        <button type="button" onclick="cadastrar10(numero_aleatorio.value)">Cadastrar</button>
+        <button type="button" onclick="ver10()">Exibir Todos</button>
+
+        <ol id="mensagem10"></ol>
+</div>
+
+
+<script>
+    var guardar = [];
+
+    function cadastrar10(num){
+        guardar.push(num);
+        num.value = '';
+    }
+
+
+    function ver10(){
+    }
+</script>
+
+
+
+
+<!-- EXERCÍCIO 11 -->
+<div id="ex">
+    <h2>Exercício 11</h2>
+
+    <p>Crie um programa no qual o usuário digita o nome de uma linha de metrô e clica em "Cadastrar" quantas vezes quiser. 
+            Porém, se ele digitar algo que não seja "azul" ou "verde", ou "vermelha" ou "amarela" ou "lilás", exiba um alert "Linha não existe. 
+            Cadastro inválido" (OBS: NÃO USE if com "ou" (||) nem "e" (&&) para fazer essa validação).
+            Deve haver um botão chamado "Relatório". Ao clicar nele, exiba, abaixo dele:
+            
+              N imagens de trens azuis, de acordo com a quantidade de vezes que pegou a linha azul
+              N imagens de trens verdes, de acordo com a quantidade de vezes que pegou a linha verde
+              N imagens de trens vermelhos, de acordo com a quantidade de vezes que pegou a linha vermelha
+              N imagens de trens amarelos, de acordo com a quantidade de vezes que pegou a linha amarela
+              N imagens de trens lilás, de acordo com a quantidade de vezes que pegou a linha lilás
+            
+              A linha que você mais pegou foi a X.</p><br><br>
+
+
+
+    Linha de metrô: <input type="text" id="nome_linha">
+    <button type="button" onclick="cadastrar11(nome_linha.value)">Cadastrar</button>
+    <button type="button" onclick="relatar()">Relatório</button><br><br>
+    <div id="mensagem11"></div>
+
+</div>
+
+
+<script>
+    var linhas = ['azul', 'verde', 'vermelha', 'amarela', 'lilás'];
+
+    //contabilizando a linha que é cadastrada
+    var contagens = [0, 0, 0, 0, 0];
+
+
+
+    function cadastrar11(num){
+        var linha_encontrada = 0; 
+
+        for(contador=0; contador < linhas.length; contador++){
+            var nova = linhas.length[contador];
+
+            if(linhas[contador] == num){
+                linha_encontrada++; 
+                contagens[contador]++
+            }
+        }
+
+        if(linha_encontrada == 0){
+            alert('Linha não encontrada. Cadastro Inválido')
+        }
+    }
+
+
+
+    function relatar(){
+        mensagem11.innerHTML = '';
+
+        var maior_contagem = 0;
+        var linha_mais_utilizada; 
+
+
+        for(contador_linha=0; contador_linha < linhas.length; contador_linha++){
+            var nome_linha = linhas[contador_linha]; //encontrando a linha
+
+            for(contador_contagem=0; contador_contagem < contagens[contador_linha]; contador_contagem++){
+                mensagem11.innerHTML += `<img src="trem-${nome_linha}.png"> `
+            }
+
+            if(contagens[contador_linha] > maior_contagem){
+                maior_contagem = contagens[contador_linha];
+                linha_mais_utilizada = linhas[contador_linha]
+            }
+        }
+
+        mensagem11.innerHTML += `<br>A linha que você mais pegou foi a <b>${linha_mais_utilizada}</b>`;
+    }
+
+
+</script>    
+</body>
+</html>

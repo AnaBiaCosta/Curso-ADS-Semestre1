@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista 5</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Operadores Lógicos</h1>
+
+
+    <!-- EXERCÍCIO 1 -->
+    <div id="ex">
+        <h2>Exercício 1</h2>
+
+        Altura da piscina: <input type="number" id="altura">
+
+        <button type="button" onclick="verificar1()">Analisar Piscina</button><br><br>
+
+        <div id="mensagem1"></div>
+    </div>
+
+    <script>
+        function verificar1(){
+
+            mensagem1.innerHTML = '';
+
+            if(altura.value <= 0.3){
+                mensagem1.innerHTML = `Crianças de 0 à 6 meses`;
+            }
+
+            else if(altura.value > 0.3 && altura.value <= 0.5){
+                mensagem1.innerHTML = `Crianças de 7 à 9 meses`;
+            }
+
+            else {
+                mensagem1.innerHTML = `Crianças de 10 à 12 meses`;
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 1 -->
+
+
+    <!-- EXERCÍCIO 2 -->
+    <div id="ex">
+        <h2>Exercício 2</h2>
+
+        Horas de exercício: <input type="number" id="horas">
+
+        Vezes por semana: <input type="number" id="vezes">
+
+        <button type="button" onclick="verificar2()">Calcular Saúde</button><br><br>
+
+        <div id="mensagem2"></div>
+    </div>
+
+    <script>
+        function verificar2(){
+            var conta = (Number(horas.value) * Number(vezes.value));
+
+            if(conta <= 8){
+                mensagem2.innerHTML = 'Assim não vai ficar bom tão cedo!';
+            }
+
+            else if(conta >= 9 && conta <= 12){
+                mensagem2.innerHTML = 'Está no caminho, mas precisa melhorar!';
+            }
+
+            else if(conta >= 13 && conta <=16){
+                mensagem2.innerHTML = 'Está muito bem!'
+            }
+
+            else{
+                mensagem2.innerHTML = 'Calma, não pode exagerar!';
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 2 -->
+
+
+
+    <!-- EXERCÍCIO 3 -->
+    <div id="ex">
+        <h2>Exercício 3</h2>
+
+        Preço do Jantar: <input type="number" id="preco">
+
+        <button type="button" onclick="verificar3()">Verificar Orçamento</button><br><br>
+
+        <div id="mensagem3"></div>
+    </div>
+
+    <script>
+        function verificar3(){
+
+            if(preco.value <= 120){
+                
+                if(preco.value <= 50){
+                    mensagem3.innerHTML = 'Opa! #partiujantar';
+                }
+
+                else if(preco.value > 50 && preco.value <= 80){
+                    mensagem3.innerHTML = 'Vamos esperar p/ comemorar 1 mês';
+                }
+
+                else if (preco.value > 80 && preco.value <= 120){
+                    mensagem3.innerHTML = 'Vamos esperar p/ comemorar 3 meses';
+                }
+            }
+            else{
+                mensagem3.innerHTML = 'Vamos esperar p/ comemorar 6 meses'
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 3 -->
+
+
+    <!-- EXERCÍCIO 4 -->
+    <div id="ex">
+        <h2>Exercício 4</h2>
+
+        Renda Familiar: <input type="number" id="renda">
+
+        <button type="button" onclick="verificar4(renda.value)">Descobrir Classe Social</button><br><br>
+
+        <div id="mensagem4"></div>
+    </div>
+
+    <script>
+        function verificar4(renda){
+
+            if(renda > 2000){
+
+                if(renda > 2000 && renda <= 4000){
+                    mensagem4.innerHTML = 'Classe D';
+                }
+
+                else if(renda > 4000 && renda <= 10000 ){
+                    mensagem4.innerHTML = 'Classe C';
+                }
+
+                else if(renda > 10000 && renda <= 20000){
+                    mensagem4.innerHTML = 'Classe B'
+                }
+
+                else if(renda > 20000){
+                    mensagem4.innerHTML = 'Classe A'
+                }
+
+            }
+
+            else{
+                mensagem4.innerHTML = 'Classe E'
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 4 -->
+
+
+    <!-- EXERCÍCIO 5 -->
+    <div id="ex">
+        <h2>Exercício 5</h2>
+
+        Nota 0: <input type="number" id="nota1"><br><br>
+        Nota 3,5: <input type="number" id="nota2"><br><br>
+        Nota 5: <input type="number" id="nota3"><br><br>
+        Nota 7,5: <input type="number" id="nota4"><br><br>
+        Nota 10: <input type="number" id="nota5"><br><br>
+
+        <button type="button" onclick="verificar5()">Analisar</button><br><br>
+
+        <div id="mensagem5"></div>
+    </div>
+
+    <script>
+        function verificar5(){
+
+            var conta = (Number(nota1.value) + Number(nota2.value) + Number(nota3.value) + 
+                        Number(nota4.value) + Number(nota5.value));
+
+            if(conta > 40){
+                mensagem5.innerHTML = 'Só podem haver 40 notas de alunos'
+            }
+
+            else{
+                if(conta == 40){
+
+                    if(nota5.value >=0 && nota5.value <= 3){
+                        mensagem5.innerHTML = 'Poucos alunos fora da curva';
+                    }
+
+                    else if(nota5.value >= 4 && nota5.value <=8){
+                        mensagem5.innerHTML = 'Alguns alunos fora da curva';
+                    }
+
+                    else if(nota5.value >= 9 && nota5.value <=15){
+                        mensagem5.innerHTML = 'Bastante alunos fora da curva';
+                    }
+
+                    else if(nota5.value > 15){
+                        mensagem5.innerHTML = 'Turma fora da curva';
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 5 -->
+
+
+    <!-- EXERCÍCIO 6 -->
+    <div id="ex">
+        <h2>Exercício 6</h2>
+
+        Login: <input type="text" id="login">
+
+        Senha: <input type="password" id="senha">
+
+        <button type="button" onclick="verificar6(login.value, senha.value)">Entrar</button><br><br>
+
+        <id id="mensagem6"></id>
+    </div>
+
+
+    <script>
+        function verificar6(login, senha){
+
+            if(login == 'amor' && senha == 'amor123'){
+                mensagem6.innerHTML = 'Usuário autenticado!'
+            }
+
+            else{
+                mensagem6.innerHTML = 'Falha na autenticação!'
+            }
+        }
+    </script>
+    <!-- EXERCÍCIO 6 -->
+    
+</body>
+</html>
+ 

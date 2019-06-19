@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <div id="ex">
+
+                <button type="button" onclick="vai()">Vai!</button><br><br>
+                <div id="mensagens"></div>
+        </div>
+</body>
+</html>
+
+<script>
+</script>
+
+<script>
+        let  frutas = 0; 
+        let proteinas = 0; 
+
+
+        function vai(){
+            mensagens.innerHTML = '';
+            comer_fruta();
+            comer_proteina();
+        }
+
+        function comer_fruta(){
+            mensagens.innerHTML += `Comendo uma fruta! <br>`;
+            frutas++;
+
+            if(frutas < 3){
+                setTimeout(comer_fruta, 2000);
+            }
+        }
+
+        function comer_proteina(){
+            mensagens.innerHTML += `Comendo proteína! <br>`;
+            proteinas++;
+
+            if(proteinas < 2){
+                setTimeout(comer_proteina, 3000);
+            }
+        }
+
+</script>

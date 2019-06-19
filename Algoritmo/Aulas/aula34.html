@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 34</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Array com For</h1>
+  
+    <div id="ex">
+            <form>
+
+                Filmes que mais gosta: <input type="text" id="novo_filme">
+                
+                <button type="button" onclick="cadastrar()">Cadastrar filme</button><br><br>
+
+                Pesquisa por filme: <input type="text" id="pesquisa">
+                
+                <button type="button" onclick="pesquisar()">Pesquisar</button><br><br>
+                    
+                <ul id="div_filmes"></ul>
+                <div id="div_pesquisa"></div>
+                
+            </form>
+    </div>
+
+
+    <script>
+        var filmes = [];
+
+        function cadastrar(){
+        filmes.push(novo_filme.value);
+
+        div_filmes.innerHTML = '';
+
+
+        for(indice=0; indice < filmes.length; indice++){
+            div_filmes.innerHTML += `<li>${filmes[indice]}</li>`;
+        }
+
+    }
+
+
+    function pesquisar(){
+
+        var achou = 0; 
+
+        for(indice=0; indice < filmes.length; indice++){
+
+            if(pesquisa.value == filmes[indice]){
+                achou++; 
+            }
+        }
+
+        if(achou > 0){
+            div_pesquisa.innerHTML = 'Você gosta desse filme';
+        }
+        else{
+            div_pesquisa.innerHTML = 'Você não curte esse filme';
+        }
+
+
+    }
+    </script>
+
+
+
+
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3° Continuada - Ana Beatriz</title>
+
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>SEU PAÍS É CAPITALISTA OU SOCIALISTA?</h1>
+
+    <div id="ex">
+        Nome do país: <input type="text" id="nome"><br><br>
+        População do país: <input type="number" id="populacao"><br><br>
+        Grau de liberdade economica: <input type="text" id="liberdade"><br><br>
+
+        <button type="button" onclick="cadastrar(nome.value, Number(populacao.value), liberdade.value)">Cadastrar País</button>
+        <button type="button" onclick="analisar()">Analisar</button><br><br>
+
+        <div id="mensagem"></div>
+    </div>
+</body>
+</html>
+
+
+<script>
+    //array onde serão guardados os dados dos países
+    var pais = []; 
+
+    function cadastrar(n, p, l){
+
+        // Cadastro dos países
+        if(p > 1000 && l >= 0 && l <= 100){
+
+            pais.push({
+                nome: n,
+                populacao: p,
+                liberdade: l,
+                total: 0,
+                status: 0, 
+            })
+        }
+
+        // Se o país não atender aos requisitos
+        else{
+            alert('Valores inválidos!')
+        }
+
+        // Limpando todos os campos 
+        mensagem.innerHTML = '';
+        nome.value = '';
+        populacao.value = '';
+        liberdade.value = '';
+    }
+
+
+    function analisar(){
+        // Limpando todos os campos 
+        mensagem.innerHTML = '';
+        nome.value = '';
+        populacao.value = '';
+        liberdade.value = '';
+
+
+        // Para percorrer o array e achar a posição desejada
+        for(contador = 0; contador < pais.length; contador++){
+
+
+            // Condição para saber qual o status do país
+            
+
+            // PAÍS REPRIMIDO
+            if(pais[contador].liberdade> 0 && pais[contador].liberdade <= 50){
+                pais[contador].total = ((pais[contador].populacao * 22)/100);
+                pais[contador].status = 'Reprimido'; 
+
+                mensagem.innerHTML += `País ${contador + 1}: ${pais[contador].nome} <br>
+                                      Categoria: ${pais[contador].status} <br>
+                                      Habitantes: ${pais[contador].populacao} <br>
+                                      IDH médio provável: 0.60 <br>     
+                                      Desemprego médio provável: 22%, ou seja, talvez ${pais[contador].total} estejam sem emprego <br><br>
+                                      <img src="2.png"> <br><br>`
+            }
+
+
+
+            // PAÍS QUASE REPRIMIDO 
+            else if(pais[contador].liberdade> 50 && pais[contador].liberdade <= 60){
+                pais[contador].total = ((pais[contador].populacao * 15)/100);
+                pais[contador].status = 'Quase Reprimido'; 
+
+                mensagem.innerHTML += `País ${contador + 1}: ${pais[contador].nome}<br>
+                                      Categoria: ${pais[contador].status} <br>
+                                      Habitantes: ${pais[contador].populacao} <br>
+                                      IDH médio provável: 0.65 <br>     
+                                      Desemprego médio provável: 15%, ou seja, talvez ${pais[contador].total} estejam sem emprego <br><br>
+                                      <img src="5.png"> <br><br>`
+            }
+
+
+
+            // PAÍS MODERADAMENTE LIVRE
+            else if(pais[contador].liberdade> 60 && pais[contador].liberdade <= 70){
+                pais[contador].total = ((pais[contador].populacao * 8)/100);
+                pais[contador].status = 'Moderadamente Livre'; 
+
+                mensagem.innerHTML += `País ${contador + 1}: ${pais[contador].nome}<br>
+                                      Categoria: ${pais[contador].status} <br>
+                                      Habitantes: ${pais[contador].populacao} <br>
+                                      IDH médio provável: 0.74 <br>     
+                                      Desemprego médio provável: 8%, ou seja, talvez ${pais[contador].total} estejam sem emprego <br><br>
+                                      <img src="4.png"> <br><br>`
+            }
+
+
+
+            // PAÍS QUASE LIVRE
+            else if(pais[contador].liberdade> 70 && pais[contador].liberdade <= 80){
+                pais[contador].total = ((pais[contador].populacao * 7)/100);
+                pais[contador].status = 'Quase Livre'; 
+
+                mensagem.innerHTML += `País ${contador + 1}: ${pais[contador].nome}<br>
+                                      Categoria: ${pais[contador].status} <br>
+                                      Habitantes: ${pais[contador].populacao} <br>
+                                      IDH médio provável: 0.77 <br>     
+                                      Desemprego médio provável: 7%, ou seja, talvez ${pais[contador].total} estejam sem emprego <br><br>
+                                      <img src="3.png"> <br><br>`
+            }
+
+
+
+            // PAIS LIVRE
+            else if(pais[contador].liberdade> 80 && pais[contador].liberdade <= 100){
+                pais[contador].total = ((pais[contador].populacao * 5)/100);
+                pais[contador].status = 'Livre'; 
+
+                mensagem.innerHTML += `País ${contador + 1}: ${pais[contador].nome}<br>
+                                      Categoria: ${pais[contador].status} <br>
+                                      Habitantes: ${pais[contador].populacao} <br>
+                                      IDH médio provável: 0.85 <br>     
+                                      Desemprego médio provável: 5%, ou seja, talvez ${pais[contador].total} estejam sem emprego <br><br>
+                                      <img src="1.png"> <br><br>`
+            }
+        }
+    }
+
+
+</script>

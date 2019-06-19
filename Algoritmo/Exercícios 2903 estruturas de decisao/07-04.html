@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 7</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>FAÇA SEU CÂMBIO</h1>
+
+    <form>
+        Valor em R$ <input type="number" id="valor_real">
+        <br><br>
+        Cotação do Dólar em R$ <input type="number" id="valor_cotacao">
+        <br><br>
+
+        <button type="button" onclick="calcular()">Converter e Avaliar</button>
+
+    </form>
+
+    <div id="div_msg1"></div>
+    <div id="div_msg2"></div>
+
+</body>
+</html>
+
+<script>
+    function calcular () {
+        var soma = valor_real.value / valor_cotacao.value;
+
+        div_msg1.innerHTML = `R$${valor_real.value}, na cotação atual dá U$${soma}`;
+
+        var frase;
+
+        if (soma > 1000.99) {
+            frase = 'Você tem muitos dólares!'
+
+        } else {
+            frase = 'Você tem poucos dólares!'
+        }
+
+        div_msg2.innerHTML = frase;
+    }
+
+
+</script>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="neutro.css">
 
     <style>
         img{
@@ -15,6 +16,8 @@
 </head>
 <body>
 
+
+    <div id="ex">
 <!-- EXERCÍCIO 2 -->
     Depositado até agora: R$<span id="valor">0</span><br><br>
 
@@ -30,10 +33,10 @@
         valor.innerHTML = cofrinho;
     }
 </script>
+</div>
 
-<br><br><br><br>
 
-
+<div id="ex">
 <!-- EXERCÍCIO 3 -->
 <img src="1.jpg" onclick="kento()"> Votos: <span id="voto1">0</span><br><br>
 
@@ -75,10 +78,10 @@ function ganhar(){
     }
 }
 </script>
-<br><br><br><br>
+</div>
 
 
-
+<div id="ex">
 <!-- EXERCÍCIO 4 -->
 <button type="button" onclick="entrar_homem()">Entrou um Homem</button>
 <button type="button" onclick="entrar_mulher()">Entrou uma Mulher</button>
@@ -102,7 +105,7 @@ function ganhar(){
 
     peso_homem = 90;
     peso_mulher = 75;
-    peso_homem = 40;
+    peso_crianca = 40;
 
     peso_total = Number(p_total.innerHTML);
 
@@ -131,49 +134,50 @@ function entrar_crianca(){
     p_total.innerHTML = peso_total;    
 }
 </script>
-<br><br><br><br>
+</div>
 
 
 
+<div id="ex">
 <!-- EXERCÍCIO 5 -->
-<img src="g1.png" id="imagem">
-<button type="button" onclick="treinar()">Treinar</button>
+
+<img src="g1.png" id="goku">
+<button type="button" onclick="verificar5()">Treinar</button>
 
 
 <script>
-treinar = 0; 
+    treinar = 0; 
 
-function treinar() {
+function verificar5() {
     treinar ++;
 
-    if(treinar > 4){
-        imagem.src = 'g2.jpg';
+    if(treinar < 4){
+        goku.src = 'g1.png'
+    }
+
+    if (treinar >= 4){
+        goku.src = 'g2.jpg';
     }
 
     if (treinar >= 6 ){
-        imagem.src = 'g3.png';
+        goku.src = 'g3.png';
     }
 
     if (treinar >= 10){
-        imagem.src = 'g4.jpg';
+        goku.src = 'g4.jpg';
     }
 
     if (treinar >= 14){
-        imagem.src = 'g5.jpg';
+        goku.src = 'g5.jpg';
     }
 
-    else {
-        imagem.src = 'g6.jpg'
+    if(treinar >15) {
+        goku.src = 'g6.jpg'
     }
-
-
-
-   
 }
 
-
-
 </script>
+</div>
 
 
 

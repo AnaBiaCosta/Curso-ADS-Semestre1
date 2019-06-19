@@ -1,0 +1,79 @@
+/* Um arquivo css só pode conter definições CSS. */
+/* Nele, definimos estilos de tags, classes, ids, etc. */
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#6d6b6b;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #707070;
+    margin-left: 30px;
+    background-image:url('http://static.tumblr.com/201zwmc/qEylnrwyr/imagemmmmmmmm.bmp');
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 40;
+    color:#6d6b6b;
+    text-align: center;
+    -webkit-text-stroke: 3px white;
+}
+/*
+#title {
+    background-color: rgba(255, 255, 255, 0.884);
+    border-style: hidden;
+    border-radius: 5px;
+}*/
+
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 40;
+    color:#6d6b6b;
+    margin: 0px 0px 19.92px 0px;
+}
+
+h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 40;
+    color:#6d6b6b;
+}
+
+
+a {
+    font-weight: 30;
+    font-style: italic;
+    color: #eb8f8f;
+}
+
+form {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#b31e1e;
+}
+
+.formulario {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:#b31e1e;
+}
+
+button {
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#msg {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #11b411;
+}
+
+#exercise {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #aaaaaa;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 30px;
+    background-color: rgba(255, 255, 255, 0.884);
+}
+

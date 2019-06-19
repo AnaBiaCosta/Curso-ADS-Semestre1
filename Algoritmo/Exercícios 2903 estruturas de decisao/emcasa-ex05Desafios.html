@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DESAFIOS AGORA!</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <!--EXERCÍCIO 13-->
+  <h1>DESAFIOS! TANTANTAN!! </h1>
+  <img src="dwight-evil.gif" alt="gif of evil Dwight Schrute">
+
+  <div id="exercise">
+    <h2>Guardando seu dinheiro</h2>
+    <form>
+      Valor do depósito: <input type="number" id="valDeposit">
+      Valor já depositado: <input type="number" id="valAlreadyDeposited" placeholder="0" disabled>
+      <button type="button" onclick="depositing()">Depositar</button>
+    </form>
+    <img id="pictureGoesHere">
+  </div>
+
+  <!--EXERCÍCIO 14-->
+
+  <div id="exercise">
+    <h2>Democracia!</h2>
+    <form>
+      Votos no Zé Ruela <input type="number" id="totalVotesRuela" placeholder="0" disabled> <br>
+      Votos na Maria Bigodenha <input type="number" id="totalVotesMaria" placeholder="0" disabled> <br>
+      <button type="button" onclick="voteRuela()">Votar no Zé Ruela</button>
+      <button type="button" onclick="voteMaria()">Votar na Maria </button> <br><br>
+      <button type="button" onclick="getResult()">Resultado Parcial</button>
+    </form>
+
+
+  </div>
+</body>
+
+</html>
+
+<script>
+  // EXERCÍCIO 14
+  function voteRuela() {
+    totalVotesRuela.value = Number(totalVotesRuela.value) + 1;
+  }
+  
+  function voteMaria() {
+    totalVotesMaria.value = Number(totalVotesMaria.value) + 1;
+  }
+
+  function getResult() {
+    var colorRuela;
+    var colorMaria;
+    if (totalVotesRuela.value > totalVotesMaria.value) {
+      colorRuela = "blue";
+      colorMaria = "red";
+    } else if (totalVotesRuela.value < totalVotesMaria.value) {
+      colorMaria = "blue";
+      colorRuela = "red";
+    } else {
+      colorRuela = "gray";
+      colorMaria = "gray";
+    }
+    totalVotesRuela.style.color = colorRuela;
+    totalVotesMaria.style.color = colorMaria;
+  }
+
+  // EXERCÍCIO 13
+  function depositing() {
+    valAlreadyDeposited.value = Number(valAlreadyDeposited.value) + Number(valDeposit.value);
+    valDeposit.value = 0;
+
+    var image;
+    if (valAlreadyDeposited.value >= 4000) {
+      image = "http://www.stickpng.com/assets/images/580b585b2edbce24c47b2d1d.png";
+    } else {
+
+    }
+    pictureGoesHere.src = image;
+  }
+
+
+
+</script>

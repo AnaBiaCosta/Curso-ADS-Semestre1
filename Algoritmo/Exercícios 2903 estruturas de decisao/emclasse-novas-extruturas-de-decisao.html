@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Novas estruturas de decisão</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <h1>Novas Estruturas de decisão</h1>
+
+    <!--Aula 21-->
+    <div id="exercise">
+        <form>
+            Temperatura, em °C: <input type="number" id="temperature" autofocus>
+            <br><br>
+            <button type="button" onclick="analisarClima()">Analisar clima</button>
+        </form> <br>
+        <div id="div_result"></div>
+    </div>
+
+    <!--EXERCÍCIO 12 AGORA COM IFELSE-->
+    <div id="exercise">
+        <h2>Analisando sua vida</h2>
+        <form>
+            Qual a sua idade? <input type="number" id="userAge"> <br>
+            Quantos filhos você tem? <input type="number" id="userKids"> <br>
+            <button type="button" onclick="analiseLife()">Analisar vida.</button>
+        </form>
+
+        <div id="lifeAge"></div>
+        <div id="lifeKids"></div>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    // EXERCÍCIO 12 AGORA COM IF-SELSE
+
+    function analiseLife() {
+        var phrase1;
+        var phrase2;
+        var agge = Number(userAge.value);
+        var kidds = Number(userKids.value);
+        if (agge < 18) {
+            phrase1 = 'Você é menor de idade';
+            if (agge < 14) {
+                phrase1 = `${phrase1} <br> Você é praticamente uma criança!`;
+            }
+            if (kidds > 0) {
+                phrase2 = 'Nossa, começou cedo, hein!'
+            } else {
+                phrase2 = '';
+            }
+        } else {
+            phrase1 = 'Você é maior de idade';
+            if (kidds <= 0) {
+                phrase2 = '';
+            } else if (kidds >= 3) {
+                phrase2 = 'Não tem tv em casa??'
+            } else {
+                phrase2 = 'Parabéns pelos filhos!'
+            }
+        }
+        lifeAge.innerHTML = phrase1;
+        lifeKids.innerHTML = phrase2;
+    }
+
+    
+
+    //Aula 21
+    function analisarClima() {
+        var phrase;
+        var temp = temperature.value
+        /*
+        1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+        ~~~~~~~~~~~ IF |          else              | ELSE-IF ~~~~~~~~ 
+        */
+        if (temp < 20) { // se estiver frio
+            phrase = 'Frio desconfortável S:'
+        } else /*senão... poréeeeemmmm pera aaeeeee*/ if (temp > 28) {
+            phrase = 'Calor desconfortável :('
+        } else { // 20 < temp < 28
+            phrase = 'Temperatura suportável :)'
+        }
+        div_result.innerHTML = phrase;
+    }
+
+
+</script>

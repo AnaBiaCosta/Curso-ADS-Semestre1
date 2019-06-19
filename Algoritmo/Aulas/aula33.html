@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 33</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Array com For</h1>
+  
+    <div id="ex">
+            <form>
+
+                    Filmes que mais gosta: <input type="text" id="novo_filme">
+                
+                    <button type="button" onclick="cadastrar()">Cadastrar filme</button><br><br>
+                    
+                    <div id="div_filmes"></div>
+                
+                    </form>
+    </div>
+
+
+    <script>
+        var filmes = [];
+
+        function cadastrar(){
+        filmes.push(novo_filme.value);
+
+        div_filmes.innerHTML = '';
+
+
+        for(indice=0; indice < filmes.length; indice++){
+            div_filmes.innerHTML += `${filmes[indice]} <br>`;
+        }
+
+    }
+    </script>
+
+
+
+
+    
+
+
+
+</body>
+</html>

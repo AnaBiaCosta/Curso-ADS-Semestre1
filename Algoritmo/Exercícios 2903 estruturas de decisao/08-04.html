@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 8</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h2>Frutas ou FastFood</h2>
+    
+    <form>
+        O quanto você gosta de frutas? <input type="number" id="numFrutas"> <br>
+        O quanto você gosta de fast-food? <input type="number" id="numFastFood"> <br>
+        <button type="button" onclick="preferencia()">Avaliar sua preferência</button>
+    </form>
+    <div id="div_msg"></div>
+
+
+</body>
+</html>
+
+<script>
+ function preferencia() {
+     var frase;
+    if (numFrutas.value < numFastFood.value) {
+     frase = '<style = "color"> Você gosta mais de fast food. Já prepare sua lápide.';
+    } else if (numFrutas.value > numFastFood.value) {
+     frase = 'Você gosta mais de frutas.';
+    } else {
+     frase = 'Você gosta tanto de frutas quanto de fastfood.'
+    }
+
+    div_msg.innerHTML = frase;
+
+ }
+
+
+
+</script>

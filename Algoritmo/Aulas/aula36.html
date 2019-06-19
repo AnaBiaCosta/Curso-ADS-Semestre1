@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>Aula 36</h1>
+
+    <div id="tabuada"></div>
+    
+</body>
+</html>
+<script>
+    // Fique pedindo para o usuário receber num 'prompt'
+    // um número qualquer forever
+    // porém, se ele digitar algum número maior que 10
+    // pare de perguntar
+
+
+    while(true) { // loop infinito com while true é sempre true
+        var numero = Number(prompt('Digite um número'));
+
+        if (numero > 10){
+            break; // isso MATA o loop 
+        }
+    }
+
+
+
+
+    //2° Exemplo: Usando For
+    // peça 20 palavras ao usuário
+    // maaaaas, se ele digitar 'mamão'
+    // pare de perguntar imediatamente
+
+
+    for(contador=0; contador < 20; contador++){
+        var palavra = prompt('Digite uma palavra');
+
+        if(palavra == 'mamão'){
+            break; // isso MATA o loop
+        }
+    }
+
+
+
+
+// Exibindo uma tabulada incompleta
+    for (a=1; a<10; a++){ // 100%
+        for(b=1; b<10; b++){ // loop quebrado ou interrompido
+            tabuada.innerHTML += `${a} x ${b} = ${a*b} <br>`;
+
+            if(b==7){
+                break;
+            }
+        }
+    }
+</script>

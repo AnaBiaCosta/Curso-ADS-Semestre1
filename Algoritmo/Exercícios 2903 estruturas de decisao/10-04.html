@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 10 - do nosso jeitinho!</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <form>
+        <h1>Avaliação por estrelinhas</h1>
+        Que nota você dá ao atendimento: <input type="number" id="nota">
+        <button type="button" onclick="notaAval()">Avalie aqui</button>
+
+
+    </form>
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+function notaAval() {
+    if (nota.value < 0) {
+        div_msg.innerHTML = 'Não existe avaliação menor que 0!';
+        div_msg.style.color = '#860202';
+    } else if (nota.value <= 2) {
+        div_msg.innerHTML = 'Sua avaliação foi negativa';
+        div_msg.style.color = 'red';
+    } else if (nota.value == 3) {
+        div_msg.innerHTML = 'Sua avaliação foi neutra';
+        div_msg.style.color = 'gray';
+    } else if (nota.value >= 4 && nota.value <= 5) {
+        div_msg.innerHTML = 'Sua avaliação foi positiva';
+        div_msg.style.color = 'blue';
+        alert('Só queria confirmar, meus parabéns!')
+    } else {
+        div_msg.innerHTML = 'Não existe avaliação maior que 5!';
+        div_msg.style.color = 'maroon';
+    }
+}
+</script>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TESTE PARA PROVA VAMOS LÁ</title>
+    <link rel="stylesheet" href="neutro.css">
+</head>
+<body>
+    <h1>TESTE PARA PROVA</h1>
+
+<div id="ex">
+
+    Nome: <input type="text" id="nome"><br><br>
+
+    Quantidade de dias: <input type="number" id="dias"><br><br>
+
+    Quantidade de horas: <input type="number" id="horas"><br><br>
+ 
+    Quantidade de minutos: <input type="number" id="minutos"><br><br>
+
+    <button type="button" onclick="cadastrar(nome.value, Number(dias.value), 
+                Number(horas.value), Number(minutos.value))">Cadastrar</buton>
+
+    <button type="button" onclick="relatar()">Relatório</button><br><br>
+
+    <div id="imagem"></div><br><br>
+    <div id="mensagem"></div>
+
+</div>
+
+
+
+    <script>
+        var astronautas = [];
+
+
+        function cadastrar(n, d, h, m){
+            if(n != '' && d>0 || h>0 || m>0){
+
+                astronautas.push({
+                    nome: n,
+                    dias: d, 
+                    horas: h,
+                    minutos: m,
+                    total: 0, 
+                })
+            }
+
+            else{
+                alert('Informe um tempo de viagem válido!')
+            }
+        }
+
+
+
+        function relatar(){
+            imagem.innerHTML = '';
+            mensagem.innerHTML = '';
+
+
+            for(t=0; t< astronautas.length; t++){
+
+                var tempo = (Number(astronautas[t].dias)*1440 + Number(astronautas[t].horas)*60 + Number(astronautas[t].minutos));
+                var tempo_total = parseInt(tempo / 525600 * 120);
+                astronautas[t].total = tempo_total; 
+
+                imagem.innerHTML += `Viagem ${t+Number(1)}:<br>
+                Astronauta ${astronautas[t].nome} ficou fora por pelo menos ${tempo_total} anos no tempo da Terra. <br><br>`
+
+
+                if(tempo_total <= 1){
+                    imagem.innerHTML += `<img src="1.png"> <br><br>`
+                }
+
+                else if(tempo_total > 1 && tempo_total <= 13){
+                    imagem.innerHTML += `<img src="2.png"> <br><br>`
+                }
+
+                else if(tempo_total > 13 && tempo_total <= 30){
+                    imagem.innerHTML += `<img src="3.png"> <br><br>`
+                }
+
+                else if(tempo_total > 30 && tempo_total <= 45){
+                    imagem.innerHTML += `<img src="4.png"> <br><br>`
+                }
+
+                else if(tempo_total > 45 && tempo_total <= 90){
+                    imagem.innerHTML += `<img src="5.png"> <br><br>`
+                }
+                 else{
+                     imagem.innerHTML +=  `<img src="6.png"> <br><br>`
+                 }
+            }
+
+
+            var astronauta_maior_qnt_viagem = 0; 
+            var astronauta_maior_qnt_viagem_nome; 
+            var qnt_vezes; 
+
+
+            for(c=0; c < astronautas.length; c++){
+
+                if(astronautas[c].total > astronauta_maior_qnt_viagem){
+                    astronauta_maior_qnt_viagem = astronautas[c].total; 
+
+                    astronauta_maior_qnt_viagem_nome = astronautas[c].nome; 
+
+                    qnt_vezes = c + Number(1); 
+
+                }
+
+                
+                mensagem.innerHTML = `O Astronauta que passou mais tempo foi o ${astronauta_maior_qnt_viagem_nome}, <br>
+                que ficou pelo menos ${astronauta_maior_qnt_viagem} anos da Terra vaijando. <br>
+                Essa foi sua <span>${qnt_vezes}</span>ª viagem registrada`;
+
+            }
+        }
+
+    </script>
+
+
+
+
+
+
+    
+</body>
+</html>

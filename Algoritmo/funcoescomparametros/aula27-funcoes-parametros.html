@@ -1,0 +1,48 @@
+<!--
+    
+Crie um programa que tenha 2 frases, uma abaixo da, a princípio ocultas na tela. São elas:
+'Vida de casado é boa. Só perde pra de solteiro'
+e
+'I always will remember us this way'
+
+Devem haver 2 botões na tela: 
+'Sucesso musical no Brasil'
+e 
+'Sucesso musical nos EUA'
+
+Ao clicar no 1ª botão, deve ser exibida a 1ª frase e escondida a 2ª. Ao clicar no 2º, oculta a 1ª frase e exibe a segunda.
+
+OBS: só pode haver 1 função Javascript
+
+-->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="fraseBr" style="display: none;">
+        Vida de casado é boa. Só perde pra de solteiro
+    </div>
+    <div id="fraseEua" style="display: none;">
+        I always will remember us this way
+    </div>    
+
+<button type="button" onclick="musica(fraseBR, fraseEua)">
+    Sucesso musical no Brasil
+</button>
+<button type="button" onclick="musica(fraseEua, fraseBr)">
+    Sucesso musical nos EUA
+</button>
+
+</body>
+</html>
+<script>
+function musica(mostrar, esconder) {
+    mostrar.style.display = 'block'; // exibir
+    esconder.style.display = 'none'; // ocultar
+}
+</script>
