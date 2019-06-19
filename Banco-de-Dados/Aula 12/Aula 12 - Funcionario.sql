@@ -1,5 +1,3 @@
--- VERIFICAR ITENS 17, 
-
 create database ExercicioAula12;
 use ExercicioAula12;
 
@@ -161,39 +159,50 @@ select * from funcionario order by salario desc;
 
 -- Item 17 
 -- exibir os dados dos funcionarios que tenham o salario entre 2000 e 4000
+select * from funcionario where salario > 2000 and salario < 4000;
 select * from funcionario where salario between 2000 and 4000;
 
 -- Item 18
 -- exibir os nomes e os salarios dos funcionarios cujos nomes comecam com a letra j
-select * from funcionario where nomeFun like 'j%';
+select nomeFun, salario from funcionario where nomefun like 'j%';
+
 
 -- Item 19
 -- exibir os nomes e os salarios dos funcionarios cujos nomes terminam com a letra a
-select * from funcionario where nomeFun like '%a';
+select nomefun, salario from funcionario where nomefun like '%a';
+
 
 -- Item 20
 -- exibir os nomes dos funcionarios que tem a letra 'n' como terceira letra do nome
-select * from funcionario where nomeFun like '___n%';
+select nomefun from funcionario where nomefun like '__n%';
+
 
 -- Item 21
 -- exibir os nomes e as datas de nascimento dos funcionarios cujos nomes tenham a letra s como a 5a letra de tras para frente
 select nomeFun, datanasc from funcionario where nomeFun like '%s____';
 
+
 -- Item 22
 -- exibir os dados dos funcionarios que trabalham no depto pesquisa
 select * from funcionario where fkdepto = 105;
+select * from funcionario join departamento on fkdepto = iddepto and iddepto = 105;
+
 
 -- Item 23
 -- exibir os dados dos funcs que trabalham no depto pesquisa e tenham salario acima de 3500
+select * from funcionario join departamento on fkdepto = iddepto and iddepto = 105 and salario > 3500;
 select * from funcionario where fkdepto = 105 and salario > 3500;
+
 
 -- Item 24
  -- exibir os dados dos funcs que trabalham no depto pesquisa e tenham o nome com inicial j
+ select * from funcionario join departamento on fkdepto = iddepto and iddepto = 105 and nomefun like 'j%';
  select * from funcionario where fkdepto = 105 and nomeFun like 'j%';
  
  -- Item 25
  -- exibir o idfunc e o nome de cada func, juntamente com o idfunc e o nome do supervisor. faça com que o titulo da coluna seja idfunc 
  -- para funcionario e idsupervisor para o id do supervisor 
+ 
  
 select f.idfun as idFuncionario, f.nomefun, s.idfun as idSupervisor, s.nomefun 
 							from funcionario as f, funcionario as s where f.idsupervisor = s.idfun;
